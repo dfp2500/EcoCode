@@ -10,6 +10,7 @@
 \usepackage{geometry}
 \usepackage{tocbibind}
 \geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
+\setlength{\parskip}{1em}
 
 \title{EcoCode: Una herramienta para el calculo de la huella de carbono del software}
 \author{Daniel Fernández Jiménez}
@@ -26,34 +27,120 @@
 
 \chapter{Introducción}
 
-\section{La importancia de ser conscientes de la huella de carbono del software}
-En nuestra sociedad tanto la tecnologia como el software del que dispone, son de uso cotidiano, necesario en muchos aspectos y esta en constante evolución. Sin embargo, el impacto ambiental de esta tecnología 
-es un tema que ha cobrado cada vez más relevancia en los últimos años. La creciente preocupación por el cambio climático ha llevado a gran variedad de sectores a buscar formas de reducir su huella de carbono, 
-y el software no es una excepción.
+El objetivo de este trabajo es desarrollar una herramienta que permita calcular la huella de carbono generada por un sistema software. Este cálculo se realizará mediante la medición y análisis de los distintos 
+factores que influyen en el consumo energético del software.
 
-El software, aunque intangible, tiene un impacto medioambiental significativo debido a su consumo de energía y los recursos necesarios para su desarrollo, implementación y mantenimiento. 
-La huella de carbono del software se refiere a la cantidad total de emisiones de gases de efecto invernadero (GEI) asociadas a su ciclo de vida, desde la producción hasta el uso y la eliminación.
-La necesidad de evaluar y reducir la huella de carbono del software es crucial para contribuir a la sostenibilidad ambiental. A medida que la demanda de software aumenta, también lo hace su impacto ambiental. 
-Por lo tanto, es fundamental que los desarrolladores y las organizaciones sean conscientes de este impacto y busquen formas de mitigarlo.
+\section{Contexto}
 
-Reducir la huella de carbono del software no solo es beneficioso para el medio ambiente, sino que también puede resultar en ahorros económicos y una mejora en la eficiencia operativa ya que un software más eficiente consume menos recursos y energía.
-Esto puede traducirse en menores costos operativos y un mejor rendimiento del sistema. Además, las organizaciones que demuestran un compromiso con la sostenibilidad pueden mejorar su reputación y atraer a clientes y empleados que valoran la responsabilidad ambiental.
+\subsection{Cambio climático y gases de efecto invernadero}
 
-\section{Objetivo General}
-El objetivo principal de este trabajo es desarrollar una herramienta que permita calcular la huella de carbono generada por un sistema software, teniendo en cuenta tanto el gasto energetico realizado por el software, su traduccion a Co2eq dependiendo de la fuente de energia utilizada y su gasto asociado
+En la actualidad, está en boca de todos y cada día es más notable el debate sobre el cambio climático y la necesidad de reducir nuestra huella de carbono. Aun así, la gran mayoría, bien por exceso de información, 
+inexactitud en las fuentes o por desinformación interesada, no es consciente de lo que realmente significan estos conceptos. Antes de continuar explicando su importancia, es necesario que conozcamos estos 
+conceptos y su significado.
 
-Además, se ofrecerán recomendaciones prácticas sobre cómo reducir la huella de carbono generada por el software, en función de los resultados obtenidos. Estas recomendaciones estarán orientadas tanto a desarrolladores individuales como a equipos de desarrollo, y se enfocarán en mejorar la eficiencia energética, optimizar el uso del hardware y adaptar las aplicaciones a entornos más sostenibles.
+El calentamiento global es el aumento de la temperatura media de la Tierra, que se ha incrementado en aproximadamente 1.2 grados Celsius desde finales del siglo XIX. Como consecuencia de este aumento, se han 
+producido cambios en los patrones climáticos, lo que ha llevado a fenómenos extremos como sequías, inundaciones y huracanes. A esta serie de cambios que de manera natural no se producirían en un periodo de 
+tiempo tan corto se le denomina cambio climático.
 
-\section{Objetivos Específicos}
-Para lograr el objetivo general, este trabajo se desglosa en los siguientes objetivos específicos:
+El cambio climático es un fenómeno natural que ha ocurrido a lo largo de la historia de la Tierra, pero en la actualidad se ha visto acelerado por la actividad humana. Estos procesos siempre han sido mucho más 
+lentos, hablamos de millones de años.
+
+La Tierra es capaz de retener el calor del sol gracias al efecto invernadero, un fenómeno natural que permite que la temperatura de la Tierra sea adecuada para la vida. Sin esto, la temperatura media sería de 
+-18 grados Celsius, lo que haría imposible la vida. Este efecto se produce gracias a la presencia de gases de efecto invernadero (GEI) en la atmósfera, que en la proporción adecuada actúan como una especie de 
+manta que atrapa el calor.
+
+La quema de combustibles fósiles, la deforestación y la agricultura intensiva son algunas de las actividades que han contribuido a la liberación excesiva de gases de efecto invernadero (GEI) a la atmósfera, lo 
+que provoca un aumento de la temperatura global y hace que se produzca el calentamiento global. Los principales GEI son el dióxido de carbono (CO\textsubscript{2}), el metano (CH\textsubscript{4}) y el óxido 
+nitroso (N\textsubscript{2}O). {https://www.acciona.com/es/cambio-climatico}
+
+Este calentamiento excesivo pone en peligro la supervivencia de muchas especies y ecosistemas, incluido el ser humano. Las consecuencias se pueden organizar en tres grupos distintos: {https://www.sostenibilidad.com/cambio-climatico/impactos-cambio-climatico/}
 
 \begin{itemize}
-    \item \textbf{1:} 
-    \item \textbf{2:} 
-    \item \textbf{3:} 
-    \item \textbf{4:} 
-    \item \textbf{5:} 
+    \item \textbf{Sistemas físicos:} se ve representado por el derretimiento de la masa de hielo terrestre en los polos. Cuando se derrite, el agua fluye hasta el océano, añadiendo volumen al agua del mar. Este 
+    aumento del nivel del mar provoca inundaciones en zonas costeras, desplazando a millones de personas y causando daños en infraestructuras. Además, también se ven afectadas las zonas de ríos y lagos, ya que 
+    el aumento de la temperatura provoca sequías en zonas que antes eran húmedas.
+    
+    \item \textbf{Sistemas biológicos:} en estos sistemas se ve afectada la biodiversidad, ya que el aumento de la temperatura provoca cambios en los ecosistemas, que pueden llevar a la extinción de especies. 
+    Destacan los incendios forestales y el cambio en los patrones migratorios de especies que buscan una mayor garantía de supervivencia en otros lugares.
+    
+    \item \textbf{Sistemas humanos:} en este sistema destacan las muertes y enfermedades provocadas por fenómenos meteorológicos extremos cada vez más frecuentes, como las olas de calor, las tormentas y las 
+    inundaciones; la alteración de los sistemas alimentarios; el aumento de las zoonosis y las enfermedades transmitidas por los alimentos, el agua y los vectores; y los problemas de salud mental. {https://www.who.int/es/news-room/fact-sheets/detail/climate-change-and-health} Además, el cambio climático también afecta a la economía, ya que puede provocar pérdidas en la agricultura, la pesca y el turismo, así como aumentar los costos de la atención médica y la infraestructura.
 \end{itemize}
+
+Estas consecuencias negativas se retroalimentan entre sí y aumentan sus magnitudes. Las sequías provocan incendios que destruyen las cosechas, lo que provoca hambruna y desplazamiento de personas. 
+Las inundaciones provocan la muerte de personas y animales, así como la destrucción de muchos medios económicos de subsistencia, lo que genera un aumento de la pobreza y la desigualdad.
+
+El cambio climático es un problema global que requiere una solución global. La comunidad internacional ha tomado conciencia de la gravedad del problema y ha adoptado una serie de acuerdos y compromisos para 
+reducir las emisiones de gases de efecto invernadero y mitigar los efectos del cambio climático. Uno de los más importantes es el Acuerdo de París, que establece un marco para limitar el aumento de la temperatura 
+global a menos de 2 grados Celsius por encima de los niveles preindustriales y fomentar esfuerzos para limitar el aumento a 1.5 grados Celsius. Este acuerdo fue adoptado en 2015 por 196 países y ha sido ratificado 
+por la mayoría de ellos. El Acuerdo de París establece un marco para que los países presenten sus contribuciones determinadas a nivel nacional (NDC) y revisen sus compromisos cada cinco años. Además, el acuerdo 
+promueve la cooperación internacional y el apoyo financiero a los países en desarrollo para ayudarles a mitigar y adaptarse al cambio climático. {https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris}
+
+Siempre emitiremos carbono mediante nuestras actividades diarias, pero es importante que seamos conscientes de ello y que tomemos medidas para reducir nuestra huella de carbono. Nuestro objetivo es asegurarnos
+de que por cada gramo de carbono que emitimos a la atmosfera obtengamos el mayor valor posible.
+
+\subsection{El papel del software en el consumo energético}
+
+El término ``carbono'' se emplea habitualmente como una forma genérica para describir el impacto de diversas emisiones y actividades que contribuyen al calentamiento global. CO2eq/CO2-eq/CO2e, que representan el 
+equivalente de carbono, es una unidad de medida utilizada para cuantificar dicho impacto. Por ejemplo, una tonelada de metano tiene un efecto de calentamiento similar al de aproximadamente 84 toneladas de CO2 en 
+un periodo de 20 años, por lo que se estandariza como 84 toneladas de CO2e. Este concepto puede simplificarse aún más utilizando únicamente la palabra “carbono”, que suele englobar a todos los gases de efecto 
+invernadero (GEI). (https://learn.greensoftware.foundation/es/carbon-efficiency/)
+
+La electricidad que alimenta nuestros dispositivos y sistemas digitales no surge de la nada: es el resultado de transformar otras formas de energía, como la química o la térmica, en una fuente utilizable. Por 
+ello, cada vez que utilizamos software, desde una simple app en el móvil hasta algoritmos complejos en la nube, estamos consumiendo una porción de esa energía transformada.
+
+Este consumo energético, aunque invisible para el usuario, tiene un impacto ambiental tangible. Por eso, la eficiencia energética en el desarrollo de software no es solo una cuestión técnica, sino también ética. 
+Diseñar aplicaciones que optimicen el uso de recursos permite reducir el uso de electricidad y, con ello, las emisiones asociadas a su generación. (https://learn.greensoftware.foundation/es/carbon-efficiency/)
+
+Ademas, esta optimizacion de los recursos no solo beneficia al medio ambiente, sino que también puede traducirse en un ahorro significativo para las empresas. La reducción del consumo energético se traduce en 
+menores costos operativos y una mayor sostenibilidad a largo plazo.
+
+Un caso paradigmático del alto coste energético del software es el de la inteligencia artificial generativa. El entrenamiento de modelos como Llama 3.1, en sus variantes de 8B, 70B y 405B, supuso el uso de más de 
+39 millones de horas de GPU, generando unas 11.390 toneladas de CO2e, según estimaciones de Meta. Esta cifra equivale a las emisiones anuales de unos 2.400 vehículos o al consumo energético de 1.000 hogares en un 
+año. No obstante, algunos informes recientes, como el publicado por The Guardian, advierten que los grandes proveedores podrían estar infraestimando sus emisiones reales, lo que sugiere que el impacto podría ser 
+incluso mayor. (https://observatorio-ametic.ai/es/inteligencia-artificial-en-sostenibilidad/el-consumo-energetico-de-la-ia-generativa)
+
+Que podemos hacer por nuestra parte en el sector del desarrollo de software para ayudar a mitigar el cambio climático y reducir nuestra huella de carbono?
+
+\section{Objetivo General}
+
+La principal motivación que ha impulsado este proyecto es la urgencia de reducir el impacto ambiental derivado del creciente consumo energético en el desarrollo y uso del software. Por lo tanto, el objetivo 
+principal de este TFG consiste en desarrollar una herramienta que permita calcular de forma integral la huella de carbono generada por un sistema software. Este cálculo tendrá en cuenta el consumo 
+energético, la conversión a emisiones de CO\textsubscript{2} equivalente según la fuente de energía utilizada y el impacto ambiental asociado a la infraestructura y mantenimiento del software.
+
+De esta forma, los desarrolldores pueden obtener una visión clara del impacto ambiental de sus aplicaciones, facilitando la identificación de áreas de mejora y optimización. La herramienta no solo proporcionará 
+un cálculo preciso de la huella de carbono, sino que también ofrecerá recomendaciones prácticas para reducir dicho impacto, promoviendo así un desarrollo más sostenible y responsable.
+
+\section{Objetivos Específicos}
+
+Para alcanzar el objetivo general se han definido los siguientes objetivos específicos:
+
+\begin{itemize}
+    \item Investigar y analizar los principales factores que influyen en el consumo energético de los sistemas software, incluyendo el uso de CPU, memoria, almacenamiento y red.
+    \item Diseñar un modelo de cálculo de la huella de carbono basado en el consumo energético y en las fuentes de energía utilizadas por el sistema.
+    \item Desarrollar una herramienta capaz de monitorizar la actividad de un software durante su ejecución y recoger datos relevantes para el cálculo energético.
+    \item Implementar la conversión del consumo energético en emisiones de CO\textsubscript{2} equivalente, considerando el mix energético del entorno donde se ejecuta el software.
+    \item Validar la herramienta mediante pruebas con diferentes tipos de aplicaciones software y entornos de ejecución.
+    \item Proporcionar un informe detallado con los resultados del análisis y recomendaciones para reducir la huella de carbono del software evaluado.
+    \item Fomentar la concienciación sobre el impacto ambiental del desarrollo software y promover prácticas sostenibles en la industria tecnológica.
+\end{itemize}
+
+\section{Estructura de la Memoria}
+
+Para facilitar la comprensión del proceso seguido y la coherencia en la exposición de los temas, la memoria se estructura de la siguiente manera:
+
+\begin{itemize}
+    \item \textbf{Capítulo 1: Introducción.} Se ha explicado brevemente la motivacion a la hora de la realizción de este proyecto ademas de poner informar al lector sobre el contexto y la importancia de la huella 
+    de carbono en el software.
+    \item \textbf{Capítulo 2: Estado del arte.} Se recopilan las herramientas y métodos existentes para la medición de la huella de carbono en software. Se detectan los puntos fuertes y débiles de estas herramientas, y se incluye una tabla resumen de las mismas. Este capítulo también identifica oportunidades para implementar una herramienta de evaluación más realista y coherente con los sistemas software actuales.
+    \item \textbf{Capítulo 3: Propuesta de implementación de EcoCode.} En este capítulo se presenta \textbf{EcoCode}, la herramienta propuesta en este trabajo, detallando su propuesta de valor frente a otras herramientas existentes. Se especifican los requisitos funcionales y no funcionales, así como el diseño de la interfaz, incluyendo el sitemap, el labeling, el moodboard y los wireframes.
+    \item \textbf{Capítulo 4: Diseño técnico.} Se explica el diseño técnico de EcoCode, incluyendo la selección de librerías, el diseño de la base de datos, y la metodología de desarrollo utilizada. Además, se describen las etapas de implementación y se presentan los puntos críticos de la implementación, con comentarios y pseudocódigo explicativo.
+    \item \textbf{Capítulo 5: Documentación.} Este capítulo incluye el manual de usuario y el manual de instalación de la herramienta. Además, se proporcionan recomendaciones para la publicación del sistema y su accesibilidad en GitHub Pages, donde los usuarios podrán descargar EcoCode.
+    \item \textbf{Capítulo 6: Conclusiones y trabajos futuros.} En este capítulo se recogen las conclusiones obtenidas a lo largo del proyecto, así como las lecciones aprendidas. Se proponen ideas para trabajos futuros relacionados con la mejora de la herramienta y su expansión a otros ámbitos del desarrollo de software sostenible.
+    \item \textbf{Bibliografía.} Se presenta la lista de fuentes consultadas a lo largo de la realización del proyecto.
+    \item \textbf{Anexos.} Incluye materiales adicionales relevantes para el desarrollo del trabajo, como diagramas, tablas y códigos utilizados en la implementación.
+\end{itemize}
+
 
 \chapter{Estado del Arte}
 
