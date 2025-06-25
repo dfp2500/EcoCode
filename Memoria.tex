@@ -137,7 +137,7 @@ los más importantes es el Acuerdo de París, que establece un marco para limita
 el aumento de la temperatura global a menos de 2 grados Celsius por encima de
 los niveles preindustriales y fomentar esfuerzos para limitar el aumento a 1.5
 grados Celsius. Este acuerdo fue adoptado en 2015 por 196 países y ha sido
-ratificado por la mayoría de ellos. El Acuerdo de París establece un marco para
+ratificado por la mayoría de ellos. \textbf{El Acuerdo de París}\footnote{\href{https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris}{https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris}} establece un marco para
 que los países presenten sus contribuciones determinadas a nivel nacional (NDC)
 y revisen sus compromisos cada cinco años. Además, el acuerdo promueve la
 cooperación internacional y el apoyo financiero a los países en desarrollo para
@@ -189,7 +189,27 @@ proveedores podrían estar infraestimando sus emisiones reales, lo que sugiere
 que el impacto podría ser incluso mayor.
 
 Que podemos hacer por nuestra parte en el sector del desarrollo de software
-para ayudar a mitigar el cambio climático y reducir nuestra huella de carbono?
+para ayudar a mitigar el cambio climatico y reducir nuestra huella de carbono?
+
+\subsection{Desafíos específicos del cálculo de la huella de carbono del software}
+Medir la huella de carbono del software presenta complejidades únicas que lo diferencian sustancialmente de otros sectores industriales. A diferencia de procesos físicos donde las emisiones son directamente cuantificables, el software requiere cálculos utilizando datos granulares del mundo real, lo cual es particularmente desafiante en entornos como la nube pública Why Software Carbon Intensity Matters: An Introduction to the SCI Framework – Open Sourcerers.
+Metodologías emergentes: Software Carbon Intensity (SCI)
+La especificación Software Carbon Intensity (SCI) describe una metodología para calcular la tasa de emisiones de carbono de un sistema de software, con el propósito de aumentar la conciencia y transparencia de las credenciales de sostenibilidad de una aplicación Software Carbon Intensity (SCI) Specification. El SCI es una puntuación donde números más bajos son mejores que números más altos, y alcanzar 0 es imposible How Green is your Software? Unravelling the SCI, lo que refleja la realidad inherente del consumo energético del software.
+Complejidades en la obtención de datos
+Uno de los principales desafíos en la adopción del marco SCI es la obtención de datos precisos y granulares, particularmente en cuanto al consumo energético y carbono incorporado, requiriendo colaboración con fabricantes de hardware, operadores de centros de datos y proveedores de energía Calculating software carbon intensity | Thoughtworks. Esta dependencia de terceros contrasta con sectores donde las empresas tienen control directo sobre sus fuentes de emisión.
+Diferencias metodológicas con estándares tradicionales
+Existe una inercia en el dominio hacia las formas existentes de contabilidad de carbono como el Protocolo de Gases de Efecto Invernadero (GHG), que es atribucional versus el enfoque consecuencialista que se defiende dentro del SCI Measure Azure App Sustainability by Using the SCI Score - Azure Architecture Center | Microsoft Learn. Esta diferencia fundamental plantea la pregunta: ¿debe medirse el impacto del software basándose en su consumo actual (atribucional) o en las emisiones que induce mediante su uso (consecuencialista)?
+Variables específicas que afectan el cálculo
+El cálculo de la huella de carbono del software debe considerar variables que no existen en otros sectores:
+
+Intensidad energética del código: Diferentes lenguajes de programación, algoritmos y arquitecturas producen variaciones significativas en el consumo energético para la misma funcionalidad.
+Distribución temporal y geográfica: El mismo software puede tener huellas de carbono drasticamente diferentes dependiendo de cuándo y dónde se ejecute, debido a las variaciones en el mix energético de la red eléctrica.
+Carbono incorporado: Los dispositivos de hardware tienen emisiones asociadas a su fabricación que deben amortizarse durante su vida útil, complicando la atribución al software específico.
+Escalabilidad dinámica: Los sistemas en la nube pueden escalar automáticamente, haciendo que las mediciones puntuales sean insuficientes para caracterizar el impacto real.
+
+Limitaciones de las herramientas actuales
+La mayor barrera en este momento es la escasez de estudios de caso Measure Azure App Sustainability by Using the SCI Score - Azure Architecture Center | Microsoft Learn, lo que limita la validación práctica de las metodologías teóricas. Las herramientas existentes como Cloud Carbon Footprint, que convierte la utilización de la nube en uso estimado de energía y emisiones de carbono Cloud Carbon Footprint - An open source tool to measure and analyze cloud carbon emissions, representan avances significativos pero aún enfrentan limitaciones en la precisión de sus estimaciones debido a la falta de datos granulares de los proveedores.
+Esta complejidad metodológica subraya la necesidad de herramientas especializadas que puedan navegar estas particularidades del software, justificando el desarrollo de soluciones como EcoCode que aborden específicamente estos desafíos de medición.
 
 \section{Objetivo General}
 
@@ -215,7 +235,7 @@ Para alcanzar el objetivo general se han definido los siguientes objetivos
 específicos:
 
 \begin{itemize}
-  \item Investigar y analizar los principales factores que influyen en el consumo
+  \item Investigarlos principales factores que influyen en el consumo
         energético de los sistemas software, incluyendo el uso de CPU, memoria,
         almacenamiento y red.
   \item Diseñar un modelo de cálculo de la huella de carbono basado en el consumo
