@@ -14,10 +14,11 @@
 \usepackage{booktabs}
 \usepackage{listings}
 \usepackage{caption}
+\usepackage[table]{xcolor}
 \usepackage{tcolorbox}
 \usepackage{pifont}
 \usepackage{pdflscape}
-\usepackage[table]{xcolor}
+
 \geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
 \setlength{\parskip}{1em}
 
@@ -104,11 +105,11 @@ son algunas de las actividades que han contribuido a la liberación excesiva de
 gases de efecto invernadero (GEI) a la atmósfera, lo que provoca un aumento de
 la temperatura global y hace que se produzca el calentamiento global. Los
 principales GEI son el dióxido de carbono (CO\textsubscript{2}), el metano
-(CH\textsubscript{4}) y el óxido nitroso (N\textsubscript{2}O).
+(CH\textsubscript{4}) y el óxido nitroso (N\textsubscript{2}O). \cite{ref1}
 
 Este calentamiento excesivo pone en peligro la supervivencia de muchas especies
 y ecosistemas, incluido el ser humano. Las consecuencias se pueden organizar en
-tres grupos distintos:
+tres grupos distintos: \cite{ref2}
 
 \begin{itemize}
   \item \textbf{Sistemas físicos:} se ve representado por el derretimiento de la masa de hielo terrestre en los polos. Cuando se derrite, el agua fluye hasta el océano, añadiendo volumen al agua del mar. Este
@@ -119,7 +120,7 @@ tres grupos distintos:
         Destacan los incendios forestales y el cambio en los patrones migratorios de especies que buscan una mayor garantía de supervivencia en otros lugares.
 
   \item \textbf{Sistemas humanos:} en este sistema destacan las muertes y enfermedades provocadas por fenómenos meteorológicos extremos cada vez más frecuentes, como las olas de calor, las tormentas y las
-        inundaciones; la alteración de los sistemas alimentarios; el aumento de las zoonosis y las enfermedades transmitidas por los alimentos, el agua y los vectores; y los problemas de salud mental. Además, el cambio climático también afecta a la economía, ya que puede provocar pérdidas en la agricultura, la pesca y el turismo, así como aumentar los costos de la atención médica y la infraestructura.
+        inundaciones; la alteración de los sistemas alimentarios; el aumento de las zoonosis y las enfermedades transmitidas por los alimentos, el agua y los vectores; y los problemas de salud mental.\cite{ref3} Además, el cambio climático también afecta a la economía, ya que puede provocar pérdidas en la agricultura, la pesca y el turismo, así como aumentar los costos de la atención médica y la infraestructura.
 \end{itemize}
 
 Estas consecuencias negativas se retroalimentan entre sí y aumentan sus
@@ -141,75 +142,102 @@ ratificado por la mayoría de ellos. \textbf{El Acuerdo de París}\footnote{\hre
 que los países presenten sus contribuciones determinadas a nivel nacional (NDC)
 y revisen sus compromisos cada cinco años. Además, el acuerdo promueve la
 cooperación internacional y el apoyo financiero a los países en desarrollo para
-ayudarles a mitigar y adaptarse al cambio climático.
+ayudarles a mitigar y adaptarse al cambio climático. \cite{ref4}
 
 Siempre emitiremos carbono mediante nuestras actividades diarias, pero es
 importante que seamos conscientes de ello y que tomemos medidas para reducir
 nuestra huella de carbono. Nuestro objetivo es asegurarnos de que por cada
 gramo de carbono que emitimos a la atmosfera obtengamos el mayor valor posible.
 
-\subsection{El papel del software en el consumo energético}
-
-El término ``carbono'' se emplea habitualmente como una forma genérica para
-describir el impacto de diversas emisiones y actividades que contribuyen al
-calentamiento global. CO2eq/CO2-eq/CO2e, que representan el equivalente de
-carbono, es una unidad de medida utilizada para cuantificar dicho impacto. Por
-ejemplo, una tonelada de metano tiene un efecto de calentamiento similar al de
-aproximadamente 84 toneladas de CO2 en un periodo de 20 años, por lo que se
-estandariza como 84 toneladas de CO2e. Este concepto puede simplificarse aún
-más utilizando únicamente la palabra "carbono", que suele englobar a todos los
-gases de efecto invernadero (GEI).
-
-La electricidad que alimenta nuestros dispositivos y sistemas digitales no
-surge de la nada: es el resultado de transformar otras formas de energía, como
-la química o la térmica, en una fuente utilizable. Por ello, cada vez que
-utilizamos software, desde una simple app en el móvil hasta algoritmos
-complejos en la nube, estamos consumiendo una porción de esa energía
-transformada.
-
-Este consumo energético, aunque invisible para el usuario, tiene un impacto
-ambiental tangible. Por eso, la eficiencia energética en el desarrollo de
-software no es solo una cuestión técnica, sino también ética. Diseñar
-aplicaciones que optimicen el uso de recursos permite reducir el uso de
-electricidad y, con ello, las emisiones asociadas a su generación.
-
-Ademas, esta optimizacion de los recursos no solo beneficia al medio ambiente,
-sino que también puede traducirse en un ahorro significativo para las empresas.
-La reducción del consumo energético se traduce en menores costos operativos y
-una mayor sostenibilidad a largo plazo.
-
-Un caso paradigmático del alto coste energético del software es el de la
-inteligencia artificial generativa. El entrenamiento de modelos como Llama 3.1,
-en sus variantes de 8B, 70B y 405B, supuso el uso de más de 39 millones de
-horas de GPU, generando unas 11.390 toneladas de CO2e, según estimaciones de
-Meta. Esta cifra equivale a las emisiones anuales de unos 2.400 vehículos o al
-consumo energético de 1.000 hogares en un año. No obstante, algunos informes
-recientes, como el publicado por The Guardian, advierten que los grandes
-proveedores podrían estar infraestimando sus emisiones reales, lo que sugiere
-que el impacto podría ser incluso mayor.
-
-Que podemos hacer por nuestra parte en el sector del desarrollo de software
-para ayudar a mitigar el cambio climatico y reducir nuestra huella de carbono?
-
 \subsection{Desafíos específicos del cálculo de la huella de carbono del software}
-Medir la huella de carbono del software presenta complejidades únicas que lo diferencian sustancialmente de otros sectores industriales. A diferencia de procesos físicos donde las emisiones son directamente cuantificables, el software requiere cálculos utilizando datos granulares del mundo real, lo cual es particularmente desafiante en entornos como la nube pública Why Software Carbon Intensity Matters: An Introduction to the SCI Framework – Open Sourcerers.
-Metodologías emergentes: Software Carbon Intensity (SCI)
-La especificación Software Carbon Intensity (SCI) describe una metodología para calcular la tasa de emisiones de carbono de un sistema de software, con el propósito de aumentar la conciencia y transparencia de las credenciales de sostenibilidad de una aplicación Software Carbon Intensity (SCI) Specification. El SCI es una puntuación donde números más bajos son mejores que números más altos, y alcanzar 0 es imposible How Green is your Software? Unravelling the SCI, lo que refleja la realidad inherente del consumo energético del software.
-Complejidades en la obtención de datos
-Uno de los principales desafíos en la adopción del marco SCI es la obtención de datos precisos y granulares, particularmente en cuanto al consumo energético y carbono incorporado, requiriendo colaboración con fabricantes de hardware, operadores de centros de datos y proveedores de energía Calculating software carbon intensity | Thoughtworks. Esta dependencia de terceros contrasta con sectores donde las empresas tienen control directo sobre sus fuentes de emisión.
-Diferencias metodológicas con estándares tradicionales
-Existe una inercia en el dominio hacia las formas existentes de contabilidad de carbono como el Protocolo de Gases de Efecto Invernadero (GHG), que es atribucional versus el enfoque consecuencialista que se defiende dentro del SCI Measure Azure App Sustainability by Using the SCI Score - Azure Architecture Center | Microsoft Learn. Esta diferencia fundamental plantea la pregunta: ¿debe medirse el impacto del software basándose en su consumo actual (atribucional) o en las emisiones que induce mediante su uso (consecuencialista)?
-Variables específicas que afectan el cálculo
-El cálculo de la huella de carbono del software debe considerar variables que no existen en otros sectores:
 
-Intensidad energética del código: Diferentes lenguajes de programación, algoritmos y arquitecturas producen variaciones significativas en el consumo energético para la misma funcionalidad.
-Distribución temporal y geográfica: El mismo software puede tener huellas de carbono drasticamente diferentes dependiendo de cuándo y dónde se ejecute, debido a las variaciones en el mix energético de la red eléctrica.
-Carbono incorporado: Los dispositivos de hardware tienen emisiones asociadas a su fabricación que deben amortizarse durante su vida útil, complicando la atribución al software específico.
-Escalabilidad dinámica: Los sistemas en la nube pueden escalar automáticamente, haciendo que las mediciones puntuales sean insuficientes para caracterizar el impacto real.
+\href{https://sci.greensoftware.foundation/}{Software Carbon Intensity (SCI) Specification}
 
-Limitaciones de las herramientas actuales
-La mayor barrera en este momento es la escasez de estudios de caso Measure Azure App Sustainability by Using the SCI Score - Azure Architecture Center | Microsoft Learn, lo que limita la validación práctica de las metodologías teóricas. Las herramientas existentes como Cloud Carbon Footprint, que convierte la utilización de la nube en uso estimado de energía y emisiones de carbono Cloud Carbon Footprint - An open source tool to measure and analyze cloud carbon emissions, representan avances significativos pero aún enfrentan limitaciones en la precisión de sus estimaciones debido a la falta de datos granulares de los proveedores.
-Esta complejidad metodológica subraya la necesidad de herramientas especializadas que puedan navegar estas particularidades del software, justificando el desarrollo de soluciones como EcoCode que aborden específicamente estos desafíos de medición.
+\href{https://www.thoughtworks.com/insights/blog/ethical-tech/calculating-software-carbon-intensity}{Calculating software carbon intensity}
+
+\href{https://tecnovy.com/en/software-carbon-intensity}{Software Carbon Intensity (SCI) \& CO\textsubscript{2} Reduction in IT}
+
+Calcular la huella de carbono del software es más complicado de lo que puede parecer inicialmente. A diferencia de otros sectores industriales donde podemos medir directamente las emisiones (como el humo de una fábrica), en el software tenemos que usar métodos indirectos para relacionar el consumo de recursos informáticos con el impacto ambiental. Esto se vuelve especialmente difícil cuando trabajamos con servicios en la nube, donde no tenemos acceso directo a los datos detallados del hardware.
+
+\subsubsection{Metodologías emergentes: Software Carbon Intensity (SCI)}
+
+Para intentar estandarizar estas mediciones, la Green Software Foundation ha desarrollado la especificación Software Carbon Intensity (SCI), que nos permite calcular cuánto CO$_2$ genera un sistema de software \cite{ref5}. La fórmula es bastante directa:
+
+\begin{equation}
+\text{SCI} = \frac{(E \times I) + M}{R}
+\end{equation}
+
+Pero vamos por partes para entender qué significa cada cosa:
+
+\textbf{Las entradas que necesitas:}
+
+\begin{itemize}
+\item \textbf{E (Energy consumption – Consumo de energía)}: El consumo energético del hardware donde se ejecuta tu software, medido en kilovatios-hora (kWh)
+
+Representa la energía total que necesita el software para ejecutarse.
+
+\textbf{Por ejemplo:} si un software realiza muchas operaciones, utiliza más CPU y RAM, lo que se traduce en mayor consumo energético.
+
+Esta energía puede medirse directamente si se tiene acceso al hardware, o estimarse utilizando métricas proporcionadas por los proveedores de nube o fabricantes.
+
+Cuanto más eficiente sea el software (menos procesos innecesarios, mejor gestión de memoria), menor será E.
+
+\item \textbf{I (Carbon Intensity – Intensidad de carbono)}: Cuánto CO$_2$ genera la red eléctrica de tu región por cada kWh consumido (se mide en gramos de CO$_2$ equivalente por kilovatio-hora (gCO$_2$e/kWh))
+
+No toda la electricidad contamina por igual. El valor \textbf{I} depende del \textbf{origen de la energía} en el lugar donde se ejecuta el software.
+
+\begin{itemize}
+\item Si se genera con carbón o gas, I es alto (más contaminante)
+\item Si proviene de energía solar, eólica o hidroeléctrica, I es bajo
+\end{itemize}
+
+Por eso, ejecutar el mismo software en un país con energía limpia puede reducir significativamente su impacto ambiental.
+
+\item \textbf{M (Carbono incorporado)}: Las emisiones asociadas a la fabricación y eliminación del hardware donde se ejecuta el software (servidores, ordenadores, etc.) Se expresa generalmente en kgCO$_2$e (kilogramos de CO$_2$ equivalente)
+
+\textbf{Ejemplo:} construir un portátil o un servidor ya emite CO$_2$ (por los materiales, el transporte, el ensamblaje...).
+
+Cuando un software se ejecuta, una parte proporcional de ese carbono incorporado se le asigna, en función del tiempo de uso y cuánta parte del equipo utiliza.
+
+Aunque no utilices mucha energía al ejecutar tu software, si lo haces en dispositivos fabricados con alto coste ambiental, M puede ser significativo.
+
+\item \textbf{R (Unidad funcional)}: Cómo mides el ``trabajo'' de tu aplicación. Puede ser por usuario, por petición a la API, por transacción, etc.
+
+Se utiliza para normalizar el cálculo: no importa si el software se usa una vez o mil, lo que queremos saber es cuánto contamina una sola unidad de trabajo.
+
+Así podemos comparar diferentes versiones o soluciones: ¿cuánto CO$_2$eq se emite por una operación?
+\end{itemize}
+
+\textbf{Lo que obtienes:}
+El resultado es una estimación que te dice cuánto CO$_2$eq genera tu software por cada unidad de trabajo (por ejemplo, gramos de CO$_2$eq por usuario o por petición). Cuanto más detallados, específicos y fiables sean los datos de entrada, mas se parecerá esta estimación a la realidad. Cuanto más bajo sea el número, mejor para el medio ambiente. Aunque es imposible llegar a 0 (siempre vas a consumir algo de energía), te ayuda a comparar diferentes soluciones y ver si vas mejorando \cite{ref6}.
+
+\subsubsection{Las variables que lo complican todo}
+
+El problema es que hay muchos factores que hacen que estos cálculos sean realmente complicados:
+
+\textbf{Los lenguajes de programación no son todos iguales:} Los estudios muestran que no todos los lenguajes consumen la misma energía. Por ejemplo, C puede usar hasta 75 veces menos energía que Python para hacer la misma tarea. Java y C\# están en un punto intermedio, consumiendo entre 2 y 3 veces más que C \cite{ref7}. Esto significa que la elección del lenguaje puede tener un impacto enorme en tu huella de carbono.
+
+\textbf{La ubicación y el momento importan muchísimo:} Aquí viene una de las partes más sorprendentes: el mismo programa puede generar 10 veces más CO$_2$ dependiendo de dónde y cuándo se ejecute \cite{ref8}. En Francia, donde usan mucha energía nuclear, la intensidad de carbono es de unos 23g CO$_2$/kWh. En Polonia, que usa mucho carbón, ronda los 503g CO$_2$/kWh. Además, durante un mismo día, estas cifras pueden variar dependiendo de las fuentes de energía que se estén usando en cada momento.
+
+\textbf{El hardware también cuenta:} No podemos olvidarnos de que fabricar los servidores también genera CO$_2$. El carbono incorporado de un servidor típico ronda el 20\% de todas las emisiones en su ciclo de vida \cite{ref9}, y tenemos que repartir esas emisiones entre todas las aplicaciones que va a ejecutar durante su vida útil.
+
+\textbf{Los sistemas se adaptan automáticamente:} Los sistemas modernos pueden aumentar o disminuir automáticamente sus recursos según la demanda. Durante los picos de uso, pueden consumir muchísimo más, así que no basta con medir una vez: necesitas entender los patrones de uso completos.
+
+\subsubsection{El problema de la precisión}
+
+La fórmula del Software Carbon Intensity (SCI) se ha convertido en el estándar más utilizado para medir y comparar las emisiones de carbono de nuestros productos software. Sin embargo, como venimos diciendo anteriormente, presenta una serie de necesidades que afectan la fiabilidad de los resultados obtenidos. El principal inconveniente es que esta fórmula depende en gran medida de datos reales y detallados que, en la mayoría de casos, son muy complicados de conseguir. Obtener mediciones precisas y actualizadas del consumo energético, de la infraestructura utilizada o de los factores de emisión específicos puede resultar tedioso e incluso imposible en muchos entornos de desarrollo. Esta dificultad para acceder a datos fiables obliga a los equipos a utilizar estimaciones y aproximaciones en lugar de mediciones reales, lo que inevitablemente introduce errores en los cálculos finales.
+
+Por otro lado, es importante tener claro que el SCI únicamente calcula las emisiones directas del funcionamiento del producto software. Esto significa que quedan fuera del cálculo muchas otras fuentes de emisiones relacionadas con el desarrollo del producto, como los desplazamientos de los empleados o el consumo energético de las oficinas. Estas emisiones adicionales suelen clasificarse dentro de los diferentes scopes del GHG Protocol y pueden representar una parte significativa de la huella de carbono total del proyecto software.
+
+\subsubsection{Por qué necesitamos herramientas especializadas}
+
+Después de revisar todos estos desafíos, queda claro que medir la huella de carbono del software no es nada sencillo. El problema principal es que, en la práctica, hacer estos cálculos manualmente es muy complicado. Tienes que recopilar información del código, del hardware donde se ejecuta, de la red eléctrica de la región, de cómo usan la aplicación los usuarios... y luego intentar combinar todo eso de manera que tenga sentido.
+
+Esto no solo lleva mucho tiempo, sino que es muy fácil cometer errores o pasar algo por alto. Además, muchos proveedores de servicios en la nube no ofrecen datos detallados sobre el consumo energético o las emisiones de carbono de sus infraestructuras, lo que hace que tengamos que trabajar con estimaciones y aproximaciones que pueden no reflejar la realidad completamente.
+
+Por todo esto, creemos que hace falta desarrollar herramientas especializadas que automaticen este proceso y hagan que sea más accesible para los desarrolladores. Una herramienta que simplifique toda esta complejidad y permita obtener mediciones fiables sin tener que ser un experto en sostenibilidad ambiental.
+
+Esta necesidad es lo que justifica nuestro trabajo: queremos crear una solución que aborde estos problemas y haga que medir la sostenibilidad del software sea algo práctico y factible para cualquier equipo de desarrollo.
 
 \section{Objetivo General}
 
@@ -278,6 +306,53 @@ se presentará una tabla resumen con las principales herramientas y sus
 características, lo que permitirá identificar las oportunidades para una nueva
 herramienta más realista y adaptada a los sistemas software actuales.
 
+\section{Criterios de Evaluación}
+
+En esta sección se definen los criterios fundamentales para la evaluación de herramientas destinadas a la medición de la huella de carbono del software. Estos criterios están orientados a garantizar que la herramienta sea precisa, de fácil uso, accesible para distintos perfiles de usuario y técnicamente robusta.
+
+\subsection*{1. Precisión y Fiabilidad del Cálculo}
+\begin{itemize}
+    \item Utilizar estándares reconocidos y aceptados internacionalmente, como \textbf{GHG Protocol}, \textbf{ISO 14064} u otros modelos científicamente validados.
+    \item Basarse en modelos de estimación documentados y contrastados (por ejemplo, \textit{OneByte} o \textit{Sustainable Web Design}).
+    \item Posibilidad de contextualizar los cálculos en función de la \textbf{intensidad de carbono regional}.
+    \item Transparencia metodológica, detallando claramente los pasos de conversión de datos a emisiones y sus limitaciones.
+\end{itemize}
+
+\subsection*{2. Cobertura y Alcance}
+\begin{itemize}
+    \item Calcular las emisiones generadas por la ejecución local del software y, de forma opcional, permitir estimar las emisiones en entornos cloud.
+    \item Capacidad de incluir los tres alcances definidos por GHG Protocol: \textbf{Scope 1}, \textbf{Scope 2} y \textbf{Scope 3}.
+    \item Desglose granular de las emisiones por región, proceso o recurso utilizado.
+    \item Opción de proyectar emisiones futuras o simular escenarios hipotéticos de reducción.
+\end{itemize}
+
+\subsection*{3. Facilidad de Integración y Uso}
+\begin{itemize}
+    \item Disponibilidad de diferentes interfaces: interfaz web intuitiva, línea de comandos (CLI), API REST, etc.
+    \item Flexibilidad en la instalación, pudiendo ejecutarse de forma local o en contenedores.
+    \item Integración con procesos de desarrollo, de forma que se pueda automatizar su ejecucion cuando se produzcan cambios en el software.
+    \item Visualización interactiva de los resultados, con paneles comprensibles, tablas y gráficos.
+    \item Interfaz de usuario intuitiva que permita a los usuarios introducir los datos de forma sencilla y clara.
+    \item Minimizar dependencias de terceros proveedores sin alternativas de respaldo para asegurar la continuidad y estabilidad del sistema.
+\end{itemize}
+
+\subsection*{4. Accesibilidad y Usabilidad}
+\begin{itemize}
+    \item Baja curva de aprendizaje, de forma que pueda ser utilizada por usuarios no técnicos a un nivel simple.
+    \item Configuración simplificada mediante asistentes o procedimientos guiados.
+    \item Resultados comprensibles y adaptados a distintos perfiles de usuario (usuarios no técnicos, responsables de sostenibilidad, perfiles técnicos).
+    \item Inclusión de comparativas y equivalencias contextualizadas (por ejemplo, emisiones expresadas en kilómetros recorridos en coche o consumo energético doméstico).
+    \item Sistema de puntuación y ranking de los resultados, de forma que se pueda saber claramente si el resultado obtenido es bueno o malo.
+    \item Consejos prácticos y personalizados para la mejora de la huella de carbono del software analizado, orientados a distintos perfiles de usuario.
+\end{itemize}
+
+\subsection*{5. Capacidad de Exportación y Reporte}
+\begin{itemize}
+  \item Permite guardar los datos en formatos sencillos y compatibles, como hojas de cálculo (CSV) o archivos de texto estructurados (JSON).
+  \item Genera informes que se pueden personalizar según las necesidades, por ejemplo, para auditorías o presentaciones dentro de la empresa.
+  \item Mantiene un historial de los datos, facilitando ver cómo cambian las emisiones a lo largo del tiempo.
+\end{itemize}
+
 \section{Análisis de herramientas existentes}
 
 Se ha realizado un análisis exhaustivo de algunas herramientas ya existentes
@@ -316,18 +391,6 @@ sostenibilidad. Gracias a su integración con \textbf{AWS Organizations}\footnot
 posible consolidar las métricas de distintas cuentas en un solo panel. Los
 datos pueden exportarse mediante \textbf{Data Exports}\footnote{Función de AWS que envía datos de emisiones y costes a un bucket S3 para que puedas procesarlos en otras herramientas.} para ser analizados en
 herramientas como \textbf{Amazon QuickSight}\footnote{Servicio de BI en AWS que permite crear paneles y análisis visuales con los datos de emisiones exportados.} o mediante consultas SQL.
-\textbf{Para usar la herramienta:}
-\begin{enumerate}
-  \item Iniciar sesión con tu cuenta en la consola de AWS y abrir Billing and Cost
-        Management.
-  \item En el menú lateral, seleccionar \textbf{Customer Carbon Footprint Tool}.
-  \item Elegir el \textbf{mes de inicio} y el \textbf{mes de fin}.
-\end{enumerate}
-Esto mostrará una vista con la \textbf{información} de nuestras emisiones, permitiéndonos revisar el periodo de tiempo que deseemos.
-\begin{center}
-  \includegraphics[width=0.8\textwidth]{imagenes/AWS_1.png}
-  \captionof{figure}{Vista de la herramienta AWS Customer Carbon Footprint Tool.}
-\end{center}
 \subsection*{Puntos fuertes:}
 \begin{itemize}
   \item \textbf{Cobertura histórica}: muestra datos desde enero de 2020, con hasta 36 meses de historial disponible.
@@ -385,36 +448,6 @@ para analizar el consumo de red y CPU en \textbf{APIs}\footnote{Conjunto de
 para comprobar que nuevas versiones del software no incrementen su huella de
 carbono. Además, sirve para comparar alternativas tecnológicas desde un enfoque
 de sostenibilidad.
-
-Se puede probar instalándolo en nuestro equipo mediante el \textbf{gestor de
-  paquetes} npm\footnote{Herramienta que instala y gestiona librerías o
-  herramientas, como npm para proyectos JavaScript.}:
-
-\begin{tcolorbox}[colback=codebackground, colframe=codeborder, boxrule=0.8pt, arc=0mm, boxsep=5pt, left=5pt, right=5pt, top=5pt, bottom=5pt]
-  \begin{lstlisting}[language=bash]
-  npm install -g @grnsft/if
-  \end{lstlisting}
-\end{tcolorbox}
-
-Creamos un fichero \textbf{IMP}\footnote{Archivo de configuración de Impact
-  Framework en formato YAML; define qué métricas y plugins usar.} con la
-extensión \textbf{.yml}\footnote{Archivo de configuración de Impact Framework
-  en formato YAML; define qué métricas y plugins usar.}, el cual contendrá las
-configuraciones y los datos necesarios para medir el impacto energético y
-ambiental de nuestra aplicación:
-
-\begin{center}
-  \includegraphics[width=0.8\textwidth]{imagenes/IF_1.png}
-  \captionof{figure}{Archivo IMP de ejemplo}
-\end{center}
-
-Tras esto, lo podemos ejecutar con:
-
-\begin{tcolorbox}[colback=codebackground, colframe=codeborder, boxrule=0.8pt, arc=0mm, boxsep=5pt, left=5pt, right=5pt, top=5pt, bottom=5pt]
-  \begin{lstlisting}[language=bash]
-  if-run --IMP <path-to-your-IMP>
-  \end{lstlisting}
-\end{tcolorbox}
 
 \subsection*{Puntos fuertes:}
 
@@ -483,6 +516,365 @@ huella de carbono o adaptarse en \textbf{entornos distribuidos y
 requieren ajustarse a diferentes niveles de intensidad energética según la
 localización.
 
+\subsection*{Puntos fuertes:}
+
+\begin{itemize}
+  \item \textbf{Optimización dinámica}: ajusta la ejecución del software según la disponibilidad de energía limpia.
+  \item \textbf{Versatilidad de uso}: ofrece tanto \textbf{API web} como \textbf{CLI}, adaptándose a distintos entornos de desarrollo.
+  \item \textbf{Integración con proveedores diversos}: conecta con servicios como \textbf{WattTime} o \textbf{Electricity Maps} mediante \textbf{plugins}.
+  \item \textbf{Estandarización automática}: convierte unidades dispares a \textbf{gCO\textsubscript{2}/kWh} para facilitar el análisis.
+  \item \textbf{Agregación regional}: combina datos de múltiples fuentes según la ubicación geográfica.
+\end{itemize}
+
+\subsection*{Puntos débiles:}
+
+\begin{itemize}
+  \item \textbf{Requiere implementación}: es necesario modificar el código de la aplicación para aprovechar sus funcionalidades.
+  \item \textbf{Dependencia de terceros}: la precisión depende de la calidad de los datos de \textbf{WattTime} o \textbf{Electricity Maps}.
+  \item \textbf{Curva de aprendizaje}: integrar la herramienta correctamente puede requerir esfuerzo técnico para configurar \textbf{.NET Core}, \textbf{Docker} y \textbf{pipelines CI/CD}.
+  \item \textbf{Información limitada}: no ofrece desglose de la \textbf{mezcla energética}\footnote{Composición porcentual de fuentes renovables y no renovables que alimentan una red eléctrica.}, solo la \textbf{intensidad agregada de carbono}\footnote{Valor promedio de intensidad de carbono calculado a partir de múltiples fuentes o regiones.}.
+  \item \textbf{Conectividad constante}: necesita acceso continuo a las APIs, lo que lo hace inviable en entornos con mala conexión.
+\end{itemize}
+
+\section*{Cloud Carbon Footprint}
+
+\href{https://www.cloudcarbonfootprint.org/}{https://www.cloudcarbonfootprint.org/}
+
+\href{https://www.cloudcarbonfootprint.org/docs/}{https://www.cloudcarbonfootprint.org/docs/}
+
+Cloud Carbon Footprint es una herramienta gratuita y de código abierto diseñada
+para visualizar el impacto ambiental de las infraestructuras cloud\footnote{Conjunto de recursos tecnol´ogicos (como servidores, redes y almacenamiento) ofrecidos por provee-
+dores en la nube para ejecutar servicios y aplicaciones.} de
+proveedores como \textbf{AWS}, \textbf{Azure}\footnote{Plataforma de
+  servicios en la nube proporcionada por Microsoft, similar a AWS y GCP.} y
+\textbf{GCP}\footnote{Google Cloud Platform, conjunto de servicios de
+  computación en la nube desarrollados por Google.}. Analiza los datos de
+facturación y uso para estimar el consumo energético y las emisiones asociadas.
+Su objetivo es proporcionar a las empresas una visión detallada de su huella de
+carbono en la nube, ayudándolas a tomar decisiones informadas para optimizar
+recursos y reducir emisiones.
+
+La herramienta es \textbf{multicloud}\footnote{Estrategia o herramienta que
+  permite trabajar simultáneamente con múltiples proveedores de servicios
+  cloud.}, lo que significa que es compatible con AWS, Azure y GCP, y permite
+desglosar las métricas por cuenta, servicio y periodo. Cloud Carbon Footprint
+también ofrece recomendaciones específicas para la optimización de costos y la
+reducción de emisiones, tales como \textit{rightsizing}\footnote{Técnica de
+  optimización que consiste en ajustar los recursos cloud al tamaño y uso
+  necesario, evitando sobredimensionamiento.} o eliminación de \textbf{instancias
+  inactivas}\footnote{Máquina virtual u otro recurso en la nube que está
+  encendido pero no está siendo utilizado, consumiendo energía y generando costes
+  innecesarios.}. Además, cuenta con una buena variedad de opciones de
+visualización, como paneles interactivos y la capacidad de exportar datos en
+formatos \textbf{CSV} y \textbf{JSON}.
+
+Una de las funcionalidades destacadas es la estimación de ahorros de costo y
+carbono a futuro, proporcionando proyecciones basadas en las recomendaciones
+aplicadas. Esto permite a las organizaciones priorizar sus acciones de
+optimización y tomar medidas para reducir tanto los costos como el impacto
+ambiental de sus \textbf{infraestructuras cloud}.
+
+\subsection*{Puntos fuertes:}
+
+\begin{itemize}
+  \item \textbf{Compatibilidad multicloud}: integración con los principales proveedores de nube (AWS, Azure y GCP).
+  \item \textbf{Análisis detallado}: desglose de emisiones por cuenta, servicio y período, facilitando la identificación de áreas problemáticas.
+  \item \textbf{Recomendaciones accionables}: sugiere optimizaciones específicas con estimaciones de ahorro en costos y emisiones.
+  \item \textbf{Visualización interactiva}: paneles personalizables que facilitan la comprensión de datos complejos.
+  \item \textbf{Código abierto}: permite personalización y contribuciones de la comunidad.
+\end{itemize}
+
+\subsection*{Puntos débiles:}
+
+\begin{itemize}
+  \item \textbf{Configuración inicial}: requiere conocimientos técnicos para la configuración de proveedores cloud.
+  \item \textbf{Precisión variable}: las estimaciones pueden variar según la calidad y completitud de los datos de facturación disponibles.
+  \item \textbf{Dependencia de datos externos}: requiere acceso a las APIs o datos de facturación de los proveedores cloud.
+\end{itemize}
+
+\section*{Carbonalyser}
+
+\href{https://theshiftproject.org/en/}{https://theshiftproject.org/en/}
+
+\href{https://addons.mozilla.org/es-ES/firefox/addon/carbonalyser/}{https://addons.mozilla.org/es-ES/firefox/addon/carbonalyser/}
+
+\href{https://github.com/carbonalyser/Carbonalyser}{https://github.com/carbonalyser/Carbonalyser}
+
+\textbf{Carbonalyser} es una extensión de navegador gratuita que permite visualizar el impacto ambiental del uso de Internet. Estima las emisiones de carbono derivadas de la navegación web a partir de la cantidad de datos transmitidos, utilizando el modelo \textbf{"1byte"}\footnote{Modelo de estimación del consumo energético y emisiones de CO\textsubscript{2} basado en la cantidad de datos transmitidos por Internet, propuesto por \textit{The Shift Project}.} desarrollado por \textit{The Shift Project}. A través de esta herramienta, los usuarios pueden comprender mejor el impacto de su navegación en términos de consumo energético y emisiones de CO\textsubscript{2}, ajustado a la intensidad de carbono de su región.
+
+Está disponible para \textbf{Firefox}, y existen versiones \textit{fork} para
+\textbf{Chrome} y \textbf{Edge}, lo que facilita su instalación y uso. La
+extensión procesa toda la información de manera \textbf{local}, sin enviar
+datos a servidores externos, lo que garantiza la privacidad del usuario. La
+visualización es intuitiva, mostrando un ranking de sitios web, datos
+transmitidos y comparaciones con actividades físicas cotidianas (como el uso de
+un móvil o la conducción).
+
+Carbonalyser es además código abierto bajo licencia MIT, con el código alojado
+en \textbf{GitHub}\footnote{Plataforma de desarrollo colaborativo basada en Git que permite almacenar, compartir y revisar
+código fuente.}. Permite configurar la ubicación eléctrica para ajustar las
+estimaciones a la \textbf{intensidad de carbono regional}\footnote{Valor medio de emisiones por kWh en una región concreta, utilizado para estimar el impacto energético del centro de datos.}, ayudando a que el análisis
+sea más contextual y educativo.
+
+\subsection*{Puntos fuertes:}
+
+\begin{itemize}
+  \item \textbf{Muy fácil de usar}: instalación rápida en Firefox (y forks disponibles para Chrome y Edge).
+  \item \textbf{Procesamiento 100\% local}: no transmite datos a terceros, garantizando privacidad.
+  \item \textbf{Visualización clara y educativa}: rankings, comparativas y equivalencias comprensibles.
+  \item \textbf{Código abierto y gratuito}: bajo licencia MIT, con comunidad en GitHub.
+  \item \textbf{Cálculo adaptado por región}: permite configurar la localización eléctrica del usuario.
+  \item \textbf{Herramienta útil para educación}: ideal para concienciar sobre sostenibilidad digital.
+\end{itemize}
+
+\subsection*{Puntos débiles:}
+
+\begin{itemize}
+  \item \textbf{Limitado al tráfico web}: no mide el impacto de componentes fuera del navegador.
+  \item \textbf{Basado en modelos generalistas}: utiliza estimaciones teóricas ("1byte"), no mediciones de hardware reales.
+  \item \textbf{No almacena datos históricos}: se reinicia al cerrar el navegador, sin seguimiento continuo.
+  \item \textbf{No integrable en otros sistemas}: no puede incorporarse a software externo o pipelines.
+  \item \textbf{Desarrollo inactivo}: última versión publicada en 2020, con escasa evolución desde entonces.
+  \item \textbf{Permisos elevados}: requiere acceso a pestañas y solicitudes web, lo que puede generar reticencias en entornos corporativos.
+  \item \textbf{Cálculo adaptado por región limitado}: Solo permite elegir entre regiones muy amplias como Europa o Estados Unidos, lo que hace menos preciso el cálculo.
+\end{itemize}
+
+\section*{\textbf{GreenFrame}}
+
+\url{https://greenframe.io/}
+
+\url{https://docs.greenframe.io/}
+
+\url{https://marmelab.com/en/}
+
+\textbf{GreenFrame} es una solución enfocada en medir el consumo energético y las emisiones de carbono generadas por aplicaciones web durante su ejecución. Permite realizar auditorías detalladas mediante una combinación de herramientas como una interfaz web, una línea de comandos (CLI) y escenarios personalizables a través de \textbf{Playwright}\footnote{Herramienta de automatización de pruebas web que permite simular acciones del usuario (clics, escritura, navegación) en navegadores reales.}, lo que permite simular interacciones reales con la aplicación.
+
+Es especialmente útil en entornos de desarrollo, ya que permite comparar el
+impacto entre versiones de una misma aplicación o entre diferentes páginas.
+También se puede integrar con \textbf{GitHub} para bloquear automáticamente \textbf{pull
+  requests}\footnote{Solicitud para fusionar cambios de una rama a otra en un
+  repositorio Git, sujeta a revisión antes de ser aceptada.} que superen un
+umbral de emisiones establecido, contribuyendo a una cultura
+\textbf{DevOps}\footnote{Práctica que integra desarrollo (Dev) y operaciones
+  (Ops) para agilizar la entrega y mejorar la calidad del software.} más
+sostenible.
+
+GreenFrame realiza un análisis de \textbf{pila completa}, teniendo en cuenta el
+uso de CPU, red, memoria, disco y \textbf{PUE}\footnote{(Power Usage
+  Effectiveness) Métrica para evaluar la eficiencia energética de un centro de
+  datos.} (Power Usage Effectiveness), con distinción entre tráfico
+\textbf{intranet} e \textbf{internet}. Está basado en un modelo científico
+desarrollado junto al \textbf{CNRS}\footnote{Centro Nacional de Investigación
+  Científica de Francia. Participa en el modelo científico detrás de GreenFrame.}
+(Centro Nacional para la Investigación Científica de Francia), que ha sido
+\textbf{validado académicamente}.
+
+\textbf{Puntos fuertes:}
+\begin{itemize}
+  \item \textbf{Alta precisión y detalle}: mide múltiples métricas (CPU, memoria, red, disco, PUE), diferenciando tráfico local y externo.
+  \item \textbf{Pensado para desarrolladores}: comparativas entre versiones y páginas específicas.
+  \item \textbf{Soporta distintos niveles de análisis}: desde páginas individuales hasta aplicaciones completas (\textit{full-stack}).
+  \item \textbf{Integración CI/CD}: integración con GitHub para evitar merges si se supera un umbral de emisiones.
+  \item \textbf{Modelo validado científicamente}: desarrollado con el CNRS, transparente en metodología general.
+\end{itemize}
+
+\textbf{Puntos débiles:}
+\begin{itemize}
+  \item \textbf{Modelo parcialmente cerrado}: la conversión a energía y CO$_2$ no es completamente transparente (algunos elementos son secretos comerciales).
+  \item \textbf{Limitaciones en versión gratuita}: no incluye almacenamiento histórico ni visualización temporal; requiere conocimientos técnicos para usar la CLI.
+  \item \textbf{No modela interacciones largas}: se centra en visitas individuales, sin simular sesiones prolongadas.
+  \item \textbf{Web UI completa solo en plan Enterprise}: requiere suscripción de pago
+        (12€/usuario/mes).
+  \item \textbf{Curva de aprendizaje}: uso de CLI y Playwright implica mayor complejidad técnica.
+\end{itemize}
+
+\section*{\textbf{Website Carbon Calculator}}
+
+\url{https://www.websitecarbon.com/}
+
+\url{https://www.websitecarbon.com/how-does-it-work/}
+
+\textbf{Website Carbon Calculator} es una herramienta online gratuita que estima la huella de carbono de un sitio web analizando factores como el peso de la página, los recursos cargados, el tipo de contenido y la localización del servidor. Proporciona una puntuación energética (de la \textbf{A a la G}), una estimación de emisiones por visita y recomendaciones prácticas para mejorar la eficiencia.
+
+Está pensada para facilitar una primera \textbf{auditoría}\footnote{Evaluación
+  sistemática de una página web para determinar su eficiencia energética y huella
+  digital.} accesible y sin conocimientos técnicos previos, siendo ideal para
+usuarios no técnicos, diseñadores web y campañas de sensibilización. También
+ofrece una \textbf{API REST}\footnote{Interfaz de programación que permite
+  acceder a los servicios del sitio mediante solicitudes HTTP automatizadas.}
+para integraciones automatizadas.
+
+\textbf{Puntos fuertes:}
+\begin{itemize}
+  \item \textbf{Extremadamente accesible}: no requiere conocimientos técnicos.
+  \item \textbf{Rápido y visual}: análisis en pocos segundos con resultados claros.
+  \item \textbf{Comparación global}: útil para campañas de concienciación y benchmarking.
+  \item \textbf{Gratuito y abierto}: interfaz sin coste y documentación disponible.
+  \item \textbf{API disponible}: permite automatizar análisis desde scripts o plataformas externas.
+\end{itemize}
+
+\textbf{Puntos débiles:}
+\begin{itemize}
+  \item \textbf{Modelo simplificado}: no mide interacciones complejas ni escenarios completos.
+  \item \textbf{Menor precisión técnica}: basado en estimaciones generales, no analiza procesos del lado servidor.
+  \item \textbf{No incluye comportamiento dinámico}: ignora scripts posteriores a la carga inicial.
+  \item \textbf{No distingue tráfico local/internacional}: aplica valores promedio que pueden no reflejar la realidad específica.
+  \item \textbf{Sin personalización ni históricos}: cada análisis es aislado, sin seguimiento temporal.
+\end{itemize}
+
+\section*{\textbf{Ecograder}}
+
+\url{https://ecograder.com/}
+
+\textbf{Ecograder} es una herramienta gratuita que analiza la sostenibilidad de sitios web desde una perspectiva técnica y ambiental. Proporciona una puntuación de 1 a 100 basada en criterios como eficiencia del frontend, peso de la página, experiencia de usuario (UX) y uso de hosting sostenible. Utiliza el script \textbf{CO2.js}\footnote{Biblioteca de código abierto que estima las emisiones de carbono de una página web basándose en cuatro áreas: dispositivo, red, servidor y hardware.} para calcular las emisiones estimadas de carbono.
+
+Es ideal para consultoras, desarrolladores web y diseñadores que buscan evaluar
+y mejorar la eficiencia ambiental de sus sitios de forma rápida, sin necesidad
+de configuración ni conocimientos avanzados.
+
+\textbf{Puntos fuertes:}
+\begin{itemize}
+  \item \textbf{Interfaz visual e intuitiva}: muestra resultados desglosados por categoría (peso, UX, hosting), con gráficas y explicaciones claras.
+  \item \textbf{Puntuación global (1–100)}: facilita la interpretación rápida del rendimiento ecológico de un sitio web.
+  \item \textbf{Recomendaciones técnicas útiles}: incluye sugerencias concretas como minificar recursos, reducir llamadas HTTP, o cambiar a un proveedor de hosting verde.
+  \item \textbf{Basado en CO2.js}: ofrece transparencia y confianza al usar una metodología reconocida y de código abierto para estimar emisiones.
+  \item \textbf{Acceso instantáneo}: sólo requiere introducir una URL para obtener el análisis, sin necesidad de registro ni instalación.
+  \item \textbf{Evaluación multidimensional}\footnote{Análisis que contempla varios factores técnicos y ambientales, como eficiencia del código, UX, tamaño de archivos y uso de energía sostenible.}: considera tanto eficiencia técnica como prácticas sostenibles (energía renovable, peso de recursos, etc.).
+\end{itemize}
+
+\textbf{Puntos débiles:}
+\begin{itemize}
+  \item \textbf{Limitado al frontend}: no evalúa consumo energético de servidores, APIs, bases de datos u otros elementos backend, solo hace una estimación del consumo energético basada en el tráfico de red y la intensidad de carbono regional.
+  \item \textbf{Resultados poco estables}: las puntuaciones pueden variar entre análisis consecutivos debido a cambios dinámicos en el sitio o actualizaciones de la propia herramienta.
+  \item \textbf{Sin simulaciones de usuario}: no permite crear escenarios personalizados ni medir la huella en flujos de interacción reales.
+  \item \textbf{No guarda históricos}: no permite comparar resultados a lo largo del tiempo ni registrar progresos entre versiones.
+  \item \textbf{Un solo análisis por vez}: no se pueden evaluar varias páginas simultáneamente desde la interfaz actual ya que aún no cuentan con una API.
+\end{itemize}
+
+\section*{\textbf{CodeCarbon}}
+
+\url{https://codecarbon.io/}
+
+\url{https://mlco2.github.io/codecarbon/}
+
+\textbf{CodeCarbon} es una biblioteca ligera de Python diseñada para estimar las emisiones de CO$_2$ asociadas a la ejecución de scripts y procesos computacionales. Calcula el consumo energético de CPU, GPU y RAM, y convierte estos datos en emisiones aproximadas según la \textbf{intensidad de carbono regional} de la región geográfica donde se ejecuta el código. Se integra fácilmente mediante \textbf{decoradores}\footnote{Función en Python que modifica el comportamiento de otra función o método.} o \textbf{gestores de contexto}\footnote{Estructura que gestiona recursos con `with` en Python.}.
+
+Es una solución ideal para proyectos de ciencia de datos, *machine learning* o
+cualquier \textbf{pipeline}\footnote{Secuencia automatizada de procesos o
+  tareas en datos o código.} Python que quiera monitorizar su huella de carbono.
+
+\textbf{Puntos fuertes:}
+\begin{itemize}
+  \item \textbf{Integración sencilla en Python}: basta con añadir un \textbf{decorador\textsuperscript{2}} o usar un bloque \texttt{with}, sin alterar significativamente el código.
+  \item \textbf{Contextualización clara de resultados}: incluye equivalencias (km en coche, horas de televisión) para entender el impacto.
+  \item \textbf{Modos online y offline}: online obtiene intensidad de carbono actualizada vía APIs como \textbf{ElectricityMap}\footnote{Servicio que ofrece datos sobre intensidad de carbono del consumo eléctrico en tiempo real.}; offline permite especificar región manualmente (códigos ISO).
+  \item \textbf{Ligero y eficiente}: pensado para no ralentizar significativamente los procesos.
+  \item \textit{Útil en notebooks, scripts y pipelines de \textbf{CI/CD}}: encaja en \textbf{Jupyter Notebooks}\footnote{Entorno interactivo para escribir y ejecutar código en Python.}, *scripts* y cualquier pipeline mediante \textbf{CLI} o decoradores.
+  \item \textbf{Comunidad activa y bien documentado}: disponible en \textbf{PyPI\textsuperscript{12}}, con ejemplos y documentación clara.
+\end{itemize}
+
+\textbf{Puntos débiles:}
+\begin{itemize}
+  \item \textbf{Dependencia de datos externos}: precisión limitada si la API de intensidad de carbono no está actualizada.
+  \item \textbf{Sin simulaciones de usuario}: no mide flujos de interacción reales, solo bloques de código.
+  \item \textbf{Requiere configuración previa}: es necesario generar y gestionar el archivo de configuración.
+  \item \textbf{Almacenamiento local}: offline solo guarda en `.csv`, sin historiales automáticos.
+  \item \textbf{Sin API propia para análisis masivo}: no permite evaluar múltiples proyectos simultáneamente desde la web.
+\end{itemize}
+
+\begin{section}{\textbf{Conclusiones de la comparativa de herramientas}}
+
+\end {section}
+
+\chapter{Propuesta de implementación de EcoCode}
+
+\section{Propuesta de valor}
+
+\section{Diseño de la interfaz de usuario}
+
+\chapter{Diseño Técnico}
+
+\section{Historia de desarrollo}
+
+\section{Diseño de pruebas}
+
+\chapter{Documentación}
+
+\section{Publicacion}
+
+\chapter{Conclusiones y trabajos futuros}
+
+% Bibliografía
+\chapter*{Bibliografía}
+\addcontentsline{toc}{chapter}{Bibliografía}
+\begin{thebibliography}{99}
+  \bibitem{ref1}\hypertarget{bib:1}{}\href{https://www.acciona.com/es/cambio-climatico}{ACCIONA - Cambio Climático.}
+
+\bibitem{ref2}\hypertarget{bib:2}{}\href{https://www.sostenibilidad.com/cambio-climatico/impactos-cambio-climatico/}{Sostenibilidad - Impactos del Cambio Climático. }
+
+\bibitem{ref3}\hypertarget{bib:3}{}\href{https://www.who.int/es/news-room/fact-sheets/detail/climate-change-and-health}{Organización Mundial de la Salud - Cambio climático y salud. }
+
+\bibitem{ref4}\hypertarget{bib:4}{}\href{https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris}{UNFCCC - El Acuerdo de París. }
+
+\bibitem{ref5}\hypertarget{bib:5}{}\href{https://sci.greensoftware.foundation/}{Green Software Foundation - Software Carbon Intensity (SCI) Specification}
+
+\bibitem{ref6}\hypertarget{bib:6}{}\href{https://www.v2.ai/insights/how-green-is-your-software-unravelling-the-software-carbon-intensity}{Michael Zajer - How Green is your Software? Unravelling the SCI}
+
+\bibitem{ref7}\hypertarget{bib:7}{}\href{https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf}{Pereira et al. - Energy efficiency across programming languages}
+
+\bibitem{ref8}\hypertarget{bib:8}{}\href{https://app.electricitymaps.com/map}{Electricity Maps - Live CO2 emissions of electricity consumption}
+
+\bibitem{ref9}\hypertarget{bib:9}{}\href{https://www.techcarbonstandard.org/technology-categories/lifecycle/example/server}{Data Centre and Server Hardware Example Emissions}
+\end{thebibliography}
+
+\appendix
+\chapter{Anexos}
+\section{Configuracion y uso de herramientas analizadas}
+\subsection{AWS customer carbon footprint tool}
+\begin{enumerate}
+  \item Iniciar sesión con tu cuenta en la consola de AWS y abrir Billing and Cost
+        Management.
+  \item En el menú lateral, seleccionar \textbf{Customer Carbon Footprint Tool}.
+  \item Elegir el \textbf{mes de inicio} y el \textbf{mes de fin}.
+\end{enumerate}
+Esto mostrará una vista con la \textbf{información} de nuestras emisiones, permitiéndonos revisar el periodo de tiempo que deseemos.
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{imagenes/AWS_1.png}
+  \captionof{figure}{Vista de la herramienta AWS Customer Carbon Footprint Tool.}
+\end{center}
+
+\subsection{Impact Framework}
+Se puede probar instalándolo en nuestro equipo mediante el \textbf{gestor de
+  paquetes} npm\footnote{Herramienta que instala y gestiona librerías o
+  herramientas, como npm para proyectos JavaScript.}:
+
+\begin{tcolorbox}[colback=codebackground, colframe=codeborder, boxrule=0.8pt, arc=0mm, boxsep=5pt, left=5pt, right=5pt, top=5pt, bottom=5pt]
+  \begin{lstlisting}[language=bash]
+  npm install -g @grnsft/if
+  \end{lstlisting}
+\end{tcolorbox}
+
+Creamos un fichero \textbf{IMP}\footnote{Archivo de configuración de Impact
+  Framework en formato YAML; define qué métricas y plugins usar.} con la
+extensión \textbf{.yml}\footnote{Archivo de configuración de Impact Framework
+  en formato YAML; define qué métricas y plugins usar.}, el cual contendrá las
+configuraciones y los datos necesarios para medir el impacto energético y
+ambiental de nuestra aplicación:
+
+\begin{center}
+  \includegraphics[width=0.8\textwidth]{imagenes/IF_1.png}
+  \captionof{figure}{Archivo IMP de ejemplo}
+\end{center}
+
+Tras esto, lo podemos ejecutar con:
+
+\begin{tcolorbox}[colback=codebackground, colframe=codeborder, boxrule=0.8pt, arc=0mm, boxsep=5pt, left=5pt, right=5pt, top=5pt, bottom=5pt]
+  \begin{lstlisting}[language=bash]
+  if-run --IMP <path-to-your-IMP>
+  \end{lstlisting}
+\end{tcolorbox}
+
+\subsection{Carbon Aware SDK}
 Para usarlo por \textbf{CLI} necesitamos
 tener \textbf{.NET Core}\footnote{Plataforma de ejecución multiplataforma de
   Microsoft para construir y ejecutar aplicaciones.} (o usar
@@ -562,64 +954,7 @@ facilita la integración en cualquier \textbf{stack}\footnote{Conjunto de
   tecnologías (lenguajes, frameworks, bases de datos) utilizadas conjuntamente en
   un proyecto.}.
 
-\subsection*{Puntos fuertes:}
-
-\begin{itemize}
-  \item \textbf{Optimización dinámica}: ajusta la ejecución del software según la disponibilidad de energía limpia.
-  \item \textbf{Versatilidad de uso}: ofrece tanto \textbf{API web} como \textbf{CLI}, adaptándose a distintos entornos de desarrollo.
-  \item \textbf{Integración con proveedores diversos}: conecta con servicios como \textbf{WattTime} o \textbf{Electricity Maps} mediante \textbf{plugins}.
-  \item \textbf{Estandarización automática}: convierte unidades dispares a \textbf{gCO\textsubscript{2}/kWh} para facilitar el análisis.
-  \item \textbf{Agregación regional}: combina datos de múltiples fuentes según la ubicación geográfica.
-\end{itemize}
-
-\subsection*{Puntos débiles:}
-
-\begin{itemize}
-  \item \textbf{Requiere implementación}: es necesario modificar el código de la aplicación para aprovechar sus funcionalidades.
-  \item \textbf{Dependencia de terceros}: la precisión depende de la calidad de los datos de \textbf{WattTime} o \textbf{Electricity Maps}.
-  \item \textbf{Curva de aprendizaje}: integrar la herramienta correctamente puede requerir esfuerzo técnico para configurar \textbf{.NET Core}, \textbf{Docker} y \textbf{pipelines CI/CD}.
-  \item \textbf{Información limitada}: no ofrece desglose de la \textbf{mezcla energética}\footnote{Composición porcentual de fuentes renovables y no renovables que alimentan una red eléctrica.}, solo la \textbf{intensidad agregada de carbono}\footnote{Valor promedio de intensidad de carbono calculado a partir de múltiples fuentes o regiones.}.
-  \item \textbf{Conectividad constante}: necesita acceso continuo a las APIs, lo que lo hace inviable en entornos con mala conexión.
-\end{itemize}
-
-\section*{Cloud Carbon Footprint}
-
-\href{https://www.cloudcarbonfootprint.org/}{https://www.cloudcarbonfootprint.org/}
-
-\href{https://www.cloudcarbonfootprint.org/docs/}{https://www.cloudcarbonfootprint.org/docs/}
-
-Cloud Carbon Footprint es una herramienta gratuita y de código abierto diseñada
-para visualizar el impacto ambiental de las infraestructuras cloud\footnote{Conjunto de recursos tecnol´ogicos (como servidores, redes y almacenamiento) ofrecidos por provee-
-dores en la nube para ejecutar servicios y aplicaciones.} de
-proveedores como \textbf{AWS}, \textbf{Azure}\footnote{Plataforma de
-  servicios en la nube proporcionada por Microsoft, similar a AWS y GCP.} y
-\textbf{GCP}\footnote{Google Cloud Platform, conjunto de servicios de
-  computación en la nube desarrollados por Google.}. Analiza los datos de
-facturación y uso para estimar el consumo energético y las emisiones asociadas.
-Su objetivo es proporcionar a las empresas una visión detallada de su huella de
-carbono en la nube, ayudándolas a tomar decisiones informadas para optimizar
-recursos y reducir emisiones.
-
-La herramienta es \textbf{multicloud}\footnote{Estrategia o herramienta que
-  permite trabajar simultáneamente con múltiples proveedores de servicios
-  cloud.}, lo que significa que es compatible con AWS, Azure y GCP, y permite
-desglosar las métricas por cuenta, servicio y periodo. Cloud Carbon Footprint
-también ofrece recomendaciones específicas para la optimización de costos y la
-reducción de emisiones, tales como \textit{rightsizing}\footnote{Técnica de
-  optimización que consiste en ajustar los recursos cloud al tamaño y uso
-  necesario, evitando sobredimensionamiento.} o eliminación de \textbf{instancias
-  inactivas}\footnote{Máquina virtual u otro recurso en la nube que está
-  encendido pero no está siendo utilizado, consumiendo energía y generando costes
-  innecesarios.}. Además, cuenta con una buena variedad de opciones de
-visualización, como paneles interactivos y la capacidad de exportar datos en
-formatos \textbf{CSV} y \textbf{JSON}.
-
-Una de las funcionalidades destacadas es la estimación de ahorros de costo y
-carbono a futuro, proporcionando proyecciones basadas en las recomendaciones
-aplicadas. Esto permite a las organizaciones priorizar sus acciones de
-optimización y tomar medidas para reducir tanto los costos como el impacto
-ambiental de sus \textbf{infraestructuras cloud}.
-
+\subsection{Cloud Carbon Footprint}
 Para comenzar con Cloud Carbon Footprint, la forma más recomendada es crear una
 aplicación independiente usando la línea de comandos. Esto se hace con el
 paquete ejecutando el comando del gestor de paquetes npx:
@@ -675,48 +1010,7 @@ usando \textbf{Gitpod}\footnote{Plataforma basada en la nube que permite lanzar
 que te permite probar la aplicación sin configuraciones locales, aunque es
 menos flexible para personalización a largo plazo.
 
-\subsection*{Puntos fuertes:}
-
-\begin{itemize}
-  \item \textbf{Compatibilidad multicloud}: integración con los principales proveedores de nube (AWS, Azure y GCP).
-  \item \textbf{Análisis detallado}: desglose de emisiones por cuenta, servicio y período, facilitando la identificación de áreas problemáticas.
-  \item \textbf{Recomendaciones accionables}: sugiere optimizaciones específicas con estimaciones de ahorro en costos y emisiones.
-  \item \textbf{Visualización interactiva}: paneles personalizables que facilitan la comprensión de datos complejos.
-  \item \textbf{Código abierto}: permite personalización y contribuciones de la comunidad.
-\end{itemize}
-
-\subsection*{Puntos débiles:}
-
-\begin{itemize}
-  \item \textbf{Configuración inicial}: requiere conocimientos técnicos para la configuración de proveedores cloud.
-  \item \textbf{Precisión variable}: las estimaciones pueden variar según la calidad y completitud de los datos de facturación disponibles.
-  \item \textbf{Dependencia de datos externos}: requiere acceso a las APIs o datos de facturación de los proveedores cloud.
-\end{itemize}
-
-\section*{Carbonalyser}
-
-\href{https://theshiftproject.org/en/}{https://theshiftproject.org/en/}
-
-\href{https://addons.mozilla.org/es-ES/firefox/addon/carbonalyser/}{https://addons.mozilla.org/es-ES/firefox/addon/carbonalyser/}
-
-\href{https://github.com/carbonalyser/Carbonalyser}{https://github.com/carbonalyser/Carbonalyser}
-
-\textbf{Carbonalyser} es una extensión de navegador gratuita que permite visualizar el impacto ambiental del uso de Internet. Estima las emisiones de carbono derivadas de la navegación web a partir de la cantidad de datos transmitidos, utilizando el modelo \textbf{"1byte"}\footnote{Modelo de estimación del consumo energético y emisiones de CO\textsubscript{2} basado en la cantidad de datos transmitidos por Internet, propuesto por \textit{The Shift Project}.} desarrollado por \textit{The Shift Project}. A través de esta herramienta, los usuarios pueden comprender mejor el impacto de su navegación en términos de consumo energético y emisiones de CO\textsubscript{2}, ajustado a la intensidad de carbono de su región.
-
-Está disponible para \textbf{Firefox}, y existen versiones \textit{fork} para
-\textbf{Chrome} y \textbf{Edge}, lo que facilita su instalación y uso. La
-extensión procesa toda la información de manera \textbf{local}, sin enviar
-datos a servidores externos, lo que garantiza la privacidad del usuario. La
-visualización es intuitiva, mostrando un ranking de sitios web, datos
-transmitidos y comparaciones con actividades físicas cotidianas (como el uso de
-un móvil o la conducción).
-
-Carbonalyser es además código abierto bajo licencia MIT, con el código alojado
-en \textbf{GitHub}\footnote{Plataforma de desarrollo colaborativo basada en Git que permite almacenar, compartir y revisar
-código fuente.}. Permite configurar la ubicación eléctrica para ajustar las
-estimaciones a la \textbf{intensidad de carbono regional}\footnote{Valor medio de emisiones por kWh en una región concreta, utilizado para estimar el impacto energético del centro de datos.}, ayudando a que el análisis
-sea más contextual y educativo.
-
+\subsection{Carbonalyser}
 Al ser una extensión del navegador, es tan fácil como obtenerla como cualquier
 otra mediante el buscador de extensiones del navegador.
 
@@ -741,59 +1035,7 @@ dirá toda la información relevante en relación al análisis.
   \captionof{figure}{Resultados del análisis de emisiones}
 \end{center}
 
-\subsection*{Puntos fuertes:}
-
-\begin{itemize}
-  \item \textbf{Muy fácil de usar}: instalación rápida en Firefox (y forks disponibles para Chrome y Edge).
-  \item \textbf{Procesamiento 100\% local}: no transmite datos a terceros, garantizando privacidad.
-  \item \textbf{Visualización clara y educativa}: rankings, comparativas y equivalencias comprensibles.
-  \item \textbf{Código abierto y gratuito}: bajo licencia MIT, con comunidad en GitHub.
-  \item \textbf{Cálculo adaptado por región}: permite configurar la localización eléctrica del usuario.
-  \item \textbf{Herramienta útil para educación}: ideal para concienciar sobre sostenibilidad digital.
-\end{itemize}
-
-\subsection*{Puntos débiles:}
-
-\begin{itemize}
-  \item \textbf{Limitado al tráfico web}: no mide el impacto de componentes fuera del navegador.
-  \item \textbf{Basado en modelos generalistas}: utiliza estimaciones teóricas ("1byte"), no mediciones de hardware reales.
-  \item \textbf{No almacena datos históricos}: se reinicia al cerrar el navegador, sin seguimiento continuo.
-  \item \textbf{No integrable en otros sistemas}: no puede incorporarse a software externo o pipelines.
-  \item \textbf{Desarrollo inactivo}: última versión publicada en 2020, con escasa evolución desde entonces.
-  \item \textbf{Permisos elevados}: requiere acceso a pestañas y solicitudes web, lo que puede generar reticencias en entornos corporativos.
-  \item \textbf{Cálculo adaptado por región limitado}: Solo permite elegir entre regiones muy amplias como Europa o Estados Unidos, lo que hace menos preciso el cálculo.
-\end{itemize}
-
-\section*{\textbf{GreenFrame}}
-
-\url{https://greenframe.io/}
-
-\url{https://docs.greenframe.io/}
-
-\url{https://marmelab.com/en/}
-
-\textbf{GreenFrame} es una solución enfocada en medir el consumo energético y las emisiones de carbono generadas por aplicaciones web durante su ejecución. Permite realizar auditorías detalladas mediante una combinación de herramientas como una interfaz web, una línea de comandos (CLI) y escenarios personalizables a través de \textbf{Playwright}\footnote{Herramienta de automatización de pruebas web que permite simular acciones del usuario (clics, escritura, navegación) en navegadores reales.}, lo que permite simular interacciones reales con la aplicación.
-
-Es especialmente útil en entornos de desarrollo, ya que permite comparar el
-impacto entre versiones de una misma aplicación o entre diferentes páginas.
-También se puede integrar con \textbf{GitHub} para bloquear automáticamente \textbf{pull
-  requests}\footnote{Solicitud para fusionar cambios de una rama a otra en un
-  repositorio Git, sujeta a revisión antes de ser aceptada.} que superen un
-umbral de emisiones establecido, contribuyendo a una cultura
-\textbf{DevOps}\footnote{Práctica que integra desarrollo (Dev) y operaciones
-  (Ops) para agilizar la entrega y mejorar la calidad del software.} más
-sostenible.
-
-GreenFrame realiza un análisis de \textbf{pila completa}, teniendo en cuenta el
-uso de CPU, red, memoria, disco y \textbf{PUE}\footnote{(Power Usage
-  Effectiveness) Métrica para evaluar la eficiencia energética de un centro de
-  datos.} (Power Usage Effectiveness), con distinción entre tráfico
-\textbf{intranet} e \textbf{internet}. Está basado en un modelo científico
-desarrollado junto al \textbf{CNRS}\footnote{Centro Nacional de Investigación
-  Científica de Francia. Participa en el modelo científico detrás de GreenFrame.}
-(Centro Nacional para la Investigación Científica de Francia), que ha sido
-\textbf{validado académicamente}.
-
+\subsection{Greenframe}
 La forma más accesible y recomendada para comenzar con \textbf{GreenFrame} es a
 través de su interfaz web.
 
@@ -868,41 +1110,7 @@ integrarlo en un \textbf{pipeline de integración continua
 automatizados. Estas opciones son más potentes para desarrolladores que buscan
 incorporar la sostenibilidad en sus flujos de trabajo.
 
-\textbf{Puntos fuertes:}
-\begin{itemize}
-  \item \textbf{Alta precisión y detalle}: mide múltiples métricas (CPU, memoria, red, disco, PUE), diferenciando tráfico local y externo.
-  \item \textbf{Pensado para desarrolladores}: comparativas entre versiones y páginas específicas.
-  \item \textbf{Soporta distintos niveles de análisis}: desde páginas individuales hasta aplicaciones completas (\textit{full-stack}).
-  \item \textbf{Integración CI/CD}: integración con GitHub para evitar merges si se supera un umbral de emisiones.
-  \item \textbf{Modelo validado científicamente}: desarrollado con el CNRS, transparente en metodología general.
-\end{itemize}
-
-\textbf{Puntos débiles:}
-\begin{itemize}
-  \item \textbf{Modelo parcialmente cerrado}: la conversión a energía y CO$_2$ no es completamente transparente (algunos elementos son secretos comerciales).
-  \item \textbf{Limitaciones en versión gratuita}: no incluye almacenamiento histórico ni visualización temporal; requiere conocimientos técnicos para usar la CLI.
-  \item \textbf{No modela interacciones largas}: se centra en visitas individuales, sin simular sesiones prolongadas.
-  \item \textbf{Web UI completa solo en plan Enterprise}: requiere suscripción de pago
-        (12€/usuario/mes).
-  \item \textbf{Curva de aprendizaje}: uso de CLI y Playwright implica mayor complejidad técnica.
-\end{itemize}
-
-\section*{\textbf{Website Carbon Calculator}}
-
-\url{https://www.websitecarbon.com/}
-
-\url{https://www.websitecarbon.com/how-does-it-work/}
-
-\textbf{Website Carbon Calculator} es una herramienta online gratuita que estima la huella de carbono de un sitio web analizando factores como el peso de la página, los recursos cargados, el tipo de contenido y la localización del servidor. Proporciona una puntuación energética (de la \textbf{A a la G}), una estimación de emisiones por visita y recomendaciones prácticas para mejorar la eficiencia.
-
-Está pensada para facilitar una primera \textbf{auditoría}\footnote{Evaluación
-  sistemática de una página web para determinar su eficiencia energética y huella
-  digital.} accesible y sin conocimientos técnicos previos, siendo ideal para
-usuarios no técnicos, diseñadores web y campañas de sensibilización. También
-ofrece una \textbf{API REST}\footnote{Interfaz de programación que permite
-  acceder a los servicios del sitio mediante solicitudes HTTP automatizadas.}
-para integraciones automatizadas.
-
+\subsection{Website Carbon Calculator}
 La forma más sencilla y recomendada de utilizar Website Carbon Calculator es a
 través de su interfaz web.
 
@@ -945,34 +1153,7 @@ El resultado del análisis incluye:
   \includegraphics[width=0.7\textwidth]{imagenes/WCC_3.png}
 \end{center}
 
-\textbf{Puntos fuertes:}
-\begin{itemize}
-  \item \textbf{Extremadamente accesible}: no requiere conocimientos técnicos.
-  \item \textbf{Rápido y visual}: análisis en pocos segundos con resultados claros.
-  \item \textbf{Comparación global}: útil para campañas de concienciación y benchmarking.
-  \item \textbf{Gratuito y abierto}: interfaz sin coste y documentación disponible.
-  \item \textbf{API disponible}: permite automatizar análisis desde scripts o plataformas externas.
-\end{itemize}
-
-\textbf{Puntos débiles:}
-\begin{itemize}
-  \item \textbf{Modelo simplificado}: no mide interacciones complejas ni escenarios completos.
-  \item \textbf{Menor precisión técnica}: basado en estimaciones generales, no analiza procesos del lado servidor.
-  \item \textbf{No incluye comportamiento dinámico}: ignora scripts posteriores a la carga inicial.
-  \item \textbf{No distingue tráfico local/internacional}: aplica valores promedio que pueden no reflejar la realidad específica.
-  \item \textbf{Sin personalización ni históricos}: cada análisis es aislado, sin seguimiento temporal.
-\end{itemize}
-
-\section*{\textbf{Ecograder}}
-
-\url{https://ecograder.com/}
-
-\textbf{Ecograder} es una herramienta gratuita que analiza la sostenibilidad de sitios web desde una perspectiva técnica y ambiental. Proporciona una puntuación de 1 a 100 basada en criterios como eficiencia del frontend, peso de la página, experiencia de usuario (UX) y uso de hosting sostenible. Utiliza el script \textbf{CO2.js}\footnote{Biblioteca de código abierto que estima las emisiones de carbono de una página web basándose en cuatro áreas: dispositivo, red, servidor y hardware.} para calcular las emisiones estimadas de carbono.
-
-Es ideal para consultoras, desarrolladores web y diseñadores que buscan evaluar
-y mejorar la eficiencia ambiental de sus sitios de forma rápida, sin necesidad
-de configuración ni conocimientos avanzados.
-
+\subsection{Ecograder}
 Para usarlo solo necesitaremos entrar en su web \url{https://ecograder.com/} y
 introducir la URL de la web que queremos analizar.
 
@@ -1013,37 +1194,7 @@ para generar recomendaciones de optimización.
   \includegraphics[width=0.9\textwidth]{imagenes/Ecograder_5.png}
 \end{center}
 
-\textbf{Puntos fuertes:}
-\begin{itemize}
-  \item \textbf{Interfaz visual e intuitiva}: muestra resultados desglosados por categoría (peso, UX, hosting), con gráficas y explicaciones claras.
-  \item \textbf{Puntuación global (1–100)}: facilita la interpretación rápida del rendimiento ecológico de un sitio web.
-  \item \textbf{Recomendaciones técnicas útiles}: incluye sugerencias concretas como minificar recursos, reducir llamadas HTTP, o cambiar a un proveedor de hosting verde.
-  \item \textbf{Basado en CO2.js}: ofrece transparencia y confianza al usar una metodología reconocida y de código abierto para estimar emisiones.
-  \item \textbf{Acceso instantáneo}: sólo requiere introducir una URL para obtener el análisis, sin necesidad de registro ni instalación.
-  \item \textbf{Evaluación multidimensional}\footnote{Análisis que contempla varios factores técnicos y ambientales, como eficiencia del código, UX, tamaño de archivos y uso de energía sostenible.}: considera tanto eficiencia técnica como prácticas sostenibles (energía renovable, peso de recursos, etc.).
-\end{itemize}
-
-\textbf{Puntos débiles:}
-\begin{itemize}
-  \item \textbf{Limitado al frontend}: no evalúa consumo energético de servidores, APIs, bases de datos u otros elementos backend, solo hace una estimación del consumo energético basada en el tráfico de red y la intensidad de carbono regional.
-  \item \textbf{Resultados poco estables}: las puntuaciones pueden variar entre análisis consecutivos debido a cambios dinámicos en el sitio o actualizaciones de la propia herramienta.
-  \item \textbf{Sin simulaciones de usuario}: no permite crear escenarios personalizados ni medir la huella en flujos de interacción reales.
-  \item \textbf{No guarda históricos}: no permite comparar resultados a lo largo del tiempo ni registrar progresos entre versiones.
-  \item \textbf{Un solo análisis por vez}: no se pueden evaluar varias páginas simultáneamente desde la interfaz actual ya que aún no cuentan con una API.
-\end{itemize}
-
-\section*{\textbf{CodeCarbon}}
-
-\url{https://codecarbon.io/}
-
-\url{https://mlco2.github.io/codecarbon/}
-
-\textbf{CodeCarbon} es una biblioteca ligera de Python diseñada para estimar las emisiones de CO$_2$ asociadas a la ejecución de scripts y procesos computacionales. Calcula el consumo energético de CPU, GPU y RAM, y convierte estos datos en emisiones aproximadas según la \textbf{intensidad de carbono regional} de la región geográfica donde se ejecuta el código. Se integra fácilmente mediante \textbf{decoradores}\footnote{Función en Python que modifica el comportamiento de otra función o método.} o \textbf{gestores de contexto}\footnote{Estructura que gestiona recursos con `with` en Python.}.
-
-Es una solución ideal para proyectos de ciencia de datos, *machine learning* o
-cualquier \textbf{pipeline}\footnote{Secuencia automatizada de procesos o
-  tareas en datos o código.} Python que quiera monitorizar su huella de carbono.
-
+\subsection{CodeCarbon}
 Para poder usarlo en nuestros proyectos instalaremos el paquete de Python
 usando los gestores de paquete \textbf{pip}\footnote{Herramienta para instalar
   y gestionar paquetes de Python.} o \textbf{conda}\footnote{Gestor de entornos y
@@ -1167,130 +1318,5 @@ Además, dispones de dos formas de visualizar los datos recopilados:
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/CC_5.png}
 \end{center}
-
-\textbf{Puntos fuertes:}
-\begin{itemize}
-  \item \textbf{Integración sencilla en Python}: basta con añadir un \textbf{decorador\textsuperscript{2}} o usar un bloque \texttt{with}, sin alterar significativamente el código.
-  \item \textbf{Contextualización clara de resultados}: incluye equivalencias (km en coche, horas de televisión) para entender el impacto.
-  \item \textbf{Modos online y offline}: online obtiene intensidad de carbono actualizada vía APIs como \textbf{ElectricityMap}\footnote{Servicio que ofrece datos sobre intensidad de carbono del consumo eléctrico en tiempo real.}; offline permite especificar región manualmente (códigos ISO).
-  \item \textbf{Ligero y eficiente}: pensado para no ralentizar significativamente los procesos.
-  \item \textit{Útil en notebooks, scripts y pipelines de \textbf{CI/CD}}: encaja en \textbf{Jupyter Notebooks}\footnote{Entorno interactivo para escribir y ejecutar código en Python.}, *scripts* y cualquier pipeline mediante \textbf{CLI} o decoradores.
-  \item \textbf{Comunidad activa y bien documentado}: disponible en \textbf{PyPI\textsuperscript{12}}, con ejemplos y documentación clara.
-\end{itemize}
-
-\textbf{Puntos débiles:}
-\begin{itemize}
-  \item \textbf{Dependencia de datos externos}: precisión limitada si la API de intensidad de carbono no está actualizada.
-  \item \textbf{Sin simulaciones de usuario}: no mide flujos de interacción reales, solo bloques de código.
-  \item \textbf{Requiere configuración previa}: es necesario generar y gestionar el archivo de configuración.
-  \item \textbf{Almacenamiento local}: offline solo guarda en `.csv`, sin historiales automáticos.
-  \item \textbf{Sin API propia para análisis masivo}: no permite evaluar múltiples proyectos simultáneamente desde la web.
-\end{itemize}
-
-\begin{section}{\textbf{Conclusiones de la comparativa de herramientas}}
-
-% Comandos para ticks y cruces de colores
-\newcommand{\tick}{\textcolor{green!60!black}{\ding{51}}}
-\newcommand{\cross}{\textcolor{red}{\ding{55}}}
-
-% Tabla 1: AWS CCFT, Impact Framework, Carbon Aware SDK, Cloud Carbon Footprint, Carbonalyser
-\begin{landscape}
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.3}
-\scriptsize
-\rowcolors{2}{gray!10}{white}
-\begin{tabular}{|p{4.2cm}|c|c|c|c|c|}
-\hline
-\rowcolor{gray!30}
-\textbf{Criterio} & \textbf{AWS CCFT} & \textbf{Impact Framework} & \textbf{Carbon Aware SDK} & \textbf{Cloud Carbon Footprint} & \textbf{Carbonalyser} \\
-\hline
-Cobertura multicloud                         & \cross & \tick & \tick & \tick & \cross \\
-Integración CI/CD                            & \cross & \tick & \tick & \cross & \cross \\
-Código abierto                               & \cross & \tick & \tick & \tick & \tick \\
-Visualización de resultados                  & \tick  & \cross & \tick & \tick & \tick \\
-Requiere conocimientos técnicos altos        & \cross & \tick & \tick & \cross & \cross \\
-Estimación basada en datos reales            & \cross & \cross & \tick & \cross & \cross \\
-Históricos/Benchmarking                      & \tick  & \cross & \cross & \tick & \cross \\
-Personalización/Plugins                      & \cross & \tick & \tick & \cross & \cross \\
-Fácil de usar                                & \cross & \cross & \cross & \cross & \tick \\
-Análisis detallado (CPU, red, memoria, etc.) & \tick  & \cross & \tick & \tick & \cross \\
-% Nuevos criterios
-Recomendaciones automáticas                  & \cross & \cross & \cross & \tick & \cross \\
-Soporte backend y frontend                   & \cross & \tick & \tick & \tick & \cross \\
-Licencia y coste                             & \cross & \tick & \tick & \tick & \tick \\
-Actualización y mantenimiento activo         & \tick  & \tick & \tick & \tick & \cross \\
-Interfaz de Usuario                          & \tick  & \cross & \cross & \tick & \tick \\
-\hline
-\end{tabular}
-\caption{Comparativa visual de puntos clave (I). \tick: Sí / Ventajoso, \cross: No / Limitado}
-\end{table}
-\end{landscape}
-
-% Tabla 2: GreenFrame, Website Carbon, Ecograder, CodeCarbon
-\begin{landscape}
-\begin{table}[H]
-\centering
-\renewcommand{\arraystretch}{1.3}
-\scriptsize
-\rowcolors{2}{gray!10}{white}
-\begin{tabular}{|p{4.2cm}|c|c|c|c|}
-\hline
-\rowcolor{gray!30}
-\textbf{Criterio} & \textbf{GreenFrame} & \textbf{Website Carbon} & \textbf{Ecograder} & \textbf{CodeCarbon} \\
-\hline
-Cobertura multicloud                         & \tick & \cross & \cross & \tick \\
-Integración CI/CD                            & \tick & \cross & \cross & \tick \\
-Código abierto                               & \cross & \tick & \tick & \tick \\
-Visualización de resultados                  & \tick & \tick & \tick & \tick \\
-Requiere conocimientos técnicos altos        & \tick & \cross & \cross & \tick \\
-Estimación basada en datos reales            & \tick & \cross & \cross & \tick \\
-Históricos/Benchmarking                      & \cross & \cross & \cross & \tick \\
-Personalización/Plugins                      & \cross & \cross & \cross & \cross \\
-Fácil de usar                                & \cross & \tick & \tick & \cross \\
-Análisis detallado (CPU, red, memoria, etc.) & \tick & \cross & \cross & \tick \\
-% Nuevos criterios
-Recomendaciones automáticas                  & \tick & \tick & \tick & \cross \\
-Soporte backend y frontend                   & \tick & \cross & \cross & \tick \\
-Licencia y coste                             & \cross & \tick & \tick & \tick \\
-Actualización y mantenimiento activo         & \tick & \tick & \tick & \tick \\
-Interfaz de Usuario                          & \tick & \tick & \tick & \cross \\
-\hline
-\end{tabular}
-\caption{Comparativa visual de puntos clave (II). \tick: Sí / Ventajoso, \cross: No / Limitado}
-\end{table}
-\end{landscape}
-
-\end {section}
-
-\chapter{Propuesta de implementación de EcoCode}
-
-\section{Propuesta de valor}
-
-\section{Diseño de la interfaz de usuario}
-
-\chapter{Diseño Técnico}
-
-\section{Historia de desarrollo}
-
-\section{Diseño de pruebas}
-
-\chapter{Documentación}
-
-\section{Publicacion}
-
-\chapter{Conclusiones y trabajos futuros}
-
-% Bibliografía
-\chapter*{Bibliografía}
-\addcontentsline{toc}{chapter}{Bibliografía}
-\begin{thebibliography}{99}
-  \bibitem{ref1}\hypertarget{bib:1}{}\href{https://www.acciona.com/es/cambio-climatico}{https://www.acciona.com/es/cambio-climatico}
-  \bibitem{ref2}\hypertarget{bib:2}{}\href{https://www.sostenibilidad.com/cambio-climatico/impactos-cambio-climatico/}{https://www.sostenibilidad.com/cambio-climatico/impactos-cambio-climatico/}
-  \bibitem{ref3}\hypertarget{bib:3}{}\href{https://www.who.int/es/news-room/fact-sheets/detail/climate-change-and-health}{https://www.who.int/es/news-room/fact-sheets/detail/climate-change-and-health}
-  \bibitem{ref4}\hypertarget{bib:4}{}\href{https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris}{https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris}
-  \bibitem{ref5}\hypertarget{bib:5}{}\href{https://learn.greensoftware.foundation/es/carbon-efficiency/}{https://learn.greensoftware.foundation/es/carbon-efficiency/}
-  \bibitem{ref6}\hypertarget{bib:6}{}\href{https://observatorio-ametic.ai/es/inteligencia-artificial-en-sostenibilidad/el-consumo-energetico-de-la-ia-generativa}{https://observatorio-ametic.ai/es/inteligencia-artificial-en-sostenibilidad/el-consumo-energetico-de-la-ia-generativa}
-\end{thebibliography}
 
 \end{document}
