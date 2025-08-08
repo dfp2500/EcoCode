@@ -159,57 +159,92 @@ gramo de carbono que emitimos a la atmosfera obtengamos el mayor valor posible.
 
 Calcular la huella de carbono del software es más complicado de lo que puede parecer inicialmente. A diferencia de otros sectores industriales donde podemos medir directamente las emisiones (como el humo de una fábrica), en el software tenemos que usar métodos indirectos para relacionar el consumo de recursos informáticos con el impacto ambiental. Esto se vuelve especialmente difícil cuando trabajamos con servicios en la nube, donde no tenemos acceso directo a los datos detallados del hardware.
 
-\subsubsection{Metodologías emergentes: Software Carbon Intensity (SCI)}
+\subsubsection*{Modelos existentes para calcular la huella de carbono del software}
 
-Para intentar estandarizar estas mediciones, la Green Software Foundation ha desarrollado la especificación Software Carbon Intensity (SCI), que nos permite calcular cuánto CO$_2$ genera un sistema de software \cite{ref5}. La fórmula es bastante directa:
-
-\begin{equation}
-\text{SCI} = \frac{(E \times I) + M}{R}
-\end{equation}
-
-Pero vamos por partes para entender qué significa cada cosa:
-
-\textbf{Las entradas que necesitas:}
+Actualmente existen diversas metodologías que buscan estandarizar la medición de emisiones asociadas al software. Aunque el modelo SCI (\textit{Software Carbon Intensity}) es uno de los más adoptados, no es el único enfoque, y cada uno tiene sus puntos fuertes y débiles.
 
 \begin{itemize}
-\item \textbf{E (Energy consumption – Consumo de energía)}: El consumo energético del hardware donde se ejecuta tu software, medido en kilovatios-hora (kWh)
+  \item \textbf{Software Carbon Intensity (SCI)} \\
+  \href{https://sci.greensoftware.foundation/}{https://sci.greensoftware.foundation/}
 
-Representa la energía total que necesita el software para ejecutarse.
+  Propuesto por la Green Software Foundation, este modelo se basa en una fórmula clara que combina el consumo energético, la intensidad de carbono de la electricidad utilizada, el carbono incorporado del hardware y una unidad funcional para normalizar el cálculo.
+  
+  \textbf{Ventajas:}
+  \begin{itemize}
+    \item Enfoque modular que facilita la implementación
+    \item Permite comparaciones entre diferentes versiones del software
+    \item Facilita la identificación de puntos de mejora específicos
+  \end{itemize}
+  \textbf{Desventajas:}
+  \begin{itemize}
+    \item Requiere datos precisos y actualizados difíciles de obtener
+    \item No contempla emisiones indirectas (desarrollo, mantenimiento, etc.)
+  \end{itemize}
+  
+  \vspace{0.8em}
 
-\textbf{Por ejemplo:} si un software realiza muchas operaciones, utiliza más CPU y RAM, lo que se traduce en mayor consumo energético.
+  \item \textbf{Greenhouse Gas Protocol (GHG Protocol) Adaptado al Software} \\
+  \href{https://ghgprotocol.org/}{https://ghgprotocol.org/}
 
-Esta energía puede medirse directamente si se tiene acceso al hardware, o estimarse utilizando métricas proporcionadas por los proveedores de nube o fabricantes.
+  El GHG Protocol es una metodología general ampliamente utilizada para calcular emisiones en empresas. En el contexto del software, se adapta para incluir emisiones de tipo Scope 1 (directas), Scope 2 (energía comprada) y Scope 3 (indirectas, como viajes o proveedores de nube).
+  
+  \textbf{Ventajas:}
+  \begin{itemize}
+    \item Proporciona una visión más completa del ciclo de vida del software
+    \item Considera el impacto organizacional integral
+    \item Metodología reconocida y estandarizada
+  \end{itemize}
+  \textbf{Desventajas:}
+  \begin{itemize}
+    \item Su aplicación al software requiere adaptación manual de las categorías
+    \item Puede resultar ambiguo y complejo de implementar
+    \item Falta de especificidad para el dominio del software
+  \end{itemize}
+  
+  \vspace{0.8em}
 
-Cuanto más eficiente sea el software (menos procesos innecesarios, mejor gestión de memoria), menor será E.
+  \item \textbf{Life Cycle Assessment (LCA)} \\
+  \url{https://en.wikipedia.org/wiki/Life-cycle_assessment}
 
-\item \textbf{I (Carbon Intensity – Intensidad de carbono)}: Cuánto CO$_2$ genera la red eléctrica de tu región por cada kWh consumido (se mide en gramos de CO$_2$ equivalente por kilovatio-hora (gCO$_2$e/kWh))
+  El análisis de ciclo de vida es una técnica exhaustiva que considera todas las etapas del ciclo del software, desde el desarrollo hasta la retirada del sistema.
+  
+  \textbf{Ventajas:}
+  \begin{itemize}
+    \item Evaluación exhaustiva y completa
+    \item Útil para conocer el impacto total del producto
+    \item Incluye hardware, transporte, mantenimiento y otros factores
+  \end{itemize}
+  \textbf{Desventajas:}
+  \begin{itemize}
+    \item Extremadamente costoso y lento de aplicar
+    \item Poco viable para proyectos ágiles o con recursos limitados
+    \item Complejidad operativa elevada
+  \end{itemize}
+  
+  \vspace{0.8em}
 
-No toda la electricidad contamina por igual. El valor \textbf{I} depende del \textbf{origen de la energía} en el lugar donde se ejecuta el software.
+  \item \textbf{Herramientas de Estimación Basadas en Energía (Joulemeter, PowerAPI, Scaphandre...)} \\
+  \href{https://www.powerapi.org/}{https://www.powerapi.org/}
 
-\begin{itemize}
-\item Si se genera con carbón o gas, I es alto (más contaminante)
-\item Si proviene de energía solar, eólica o hidroeléctrica, I es bajo
+  \href{https://github.com/hubblo-org/scaphandre}{https://github.com/hubblo-org/scaphandre}
+
+  Estas herramientas estiman el consumo energético en tiempo real o de forma simulada, para luego convertirlo en emisiones utilizando factores de conversión específicos.
+  
+  \textbf{Ventajas:}
+  \begin{itemize}
+    \item Ideales para análisis dinámicos o en tiempo de ejecución
+    \item Fáciles de integrar en entornos DevOps
+    \item Proporcionan retroalimentación inmediata
+  \end{itemize}
+  \textbf{Desventajas:}
+  \begin{itemize}
+    \item Se centran exclusivamente en el consumo energético
+    \item No consideran el carbono incorporado del hardware
+    \item Omiten otros factores indirectos importantes
+  \end{itemize}
 \end{itemize}
 
-Por eso, ejecutar el mismo software en un país con energía limpia puede reducir significativamente su impacto ambiental.
-
-\item \textbf{M (Carbono incorporado)}: Las emisiones asociadas a la fabricación y eliminación del hardware donde se ejecuta el software (servidores, ordenadores, etc.) Se expresa generalmente en kgCO$_2$e (kilogramos de CO$_2$ equivalente)
-
-\textbf{Ejemplo:} construir un portátil o un servidor ya emite CO$_2$ (por los materiales, el transporte, el ensamblaje...).
-
-Cuando un software se ejecuta, una parte proporcional de ese carbono incorporado se le asigna, en función del tiempo de uso y cuánta parte del equipo utiliza.
-
-Aunque no utilices mucha energía al ejecutar tu software, si lo haces en dispositivos fabricados con alto coste ambiental, M puede ser significativo.
-
-\item \textbf{R (Unidad funcional)}: Cómo mides el ``trabajo'' de tu aplicación. Puede ser por usuario, por petición a la API, por transacción, etc.
-
-Se utiliza para normalizar el cálculo: no importa si el software se usa una vez o mil, lo que queremos saber es cuánto contamina una sola unidad de trabajo.
-
-Así podemos comparar diferentes versiones o soluciones: ¿cuánto CO$_2$eq se emite por una operación?
-\end{itemize}
-
-\textbf{Lo que obtienes:}
-El resultado es una estimación que te dice cuánto CO$_2$eq genera tu software por cada unidad de trabajo (por ejemplo, gramos de CO$_2$eq por usuario o por petición). Cuanto más detallados, específicos y fiables sean los datos de entrada, mas se parecerá esta estimación a la realidad. Cuanto más bajo sea el número, mejor para el medio ambiente. Aunque es imposible llegar a 0 (siempre vas a consumir algo de energía), te ayuda a comparar diferentes soluciones y ver si vas mejorando \cite{ref6}.
+Cada enfoque responde a necesidades distintas. Por eso, la elección de una metodología depende tanto del tipo de software como del objetivo del análisis. Algunas metodologías priorizan la precisión, otras la rapidez o la facilidad de adopción.
 
 \subsubsection{Las variables que lo complican todo}
 
@@ -222,12 +257,6 @@ El problema es que hay muchos factores que hacen que estos cálculos sean realme
 \textbf{El hardware también cuenta:} No podemos olvidarnos de que fabricar los servidores también genera CO$_2$. El carbono incorporado de un servidor típico ronda el 20\% de todas las emisiones en su ciclo de vida \cite{ref9}, y tenemos que repartir esas emisiones entre todas las aplicaciones que va a ejecutar durante su vida útil.
 
 \textbf{Los sistemas se adaptan automáticamente:} Los sistemas modernos pueden aumentar o disminuir automáticamente sus recursos según la demanda. Durante los picos de uso, pueden consumir muchísimo más, así que no basta con medir una vez: necesitas entender los patrones de uso completos.
-
-\subsubsection{El problema de la precisión}
-
-La fórmula del Software Carbon Intensity (SCI) se ha convertido en el estándar más utilizado para medir y comparar las emisiones de carbono de nuestros productos software. Sin embargo, como venimos diciendo anteriormente, presenta una serie de necesidades que afectan la fiabilidad de los resultados obtenidos. El principal inconveniente es que esta fórmula depende en gran medida de datos reales y detallados que, en la mayoría de casos, son muy complicados de conseguir. Obtener mediciones precisas y actualizadas del consumo energético, de la infraestructura utilizada o de los factores de emisión específicos puede resultar tedioso e incluso imposible en muchos entornos de desarrollo. Esta dificultad para acceder a datos fiables obliga a los equipos a utilizar estimaciones y aproximaciones en lugar de mediciones reales, lo que inevitablemente introduce errores en los cálculos finales.
-
-Por otro lado, es importante tener claro que el SCI únicamente calcula las emisiones directas del funcionamiento del producto software. Esto significa que quedan fuera del cálculo muchas otras fuentes de emisiones relacionadas con el desarrollo del producto, como los desplazamientos de los empleados o el consumo energético de las oficinas. Estas emisiones adicionales suelen clasificarse dentro de los diferentes scopes del GHG Protocol y pueden representar una parte significativa de la huella de carbono total del proyecto software.
 
 \subsubsection{Por qué necesitamos herramientas especializadas}
 
@@ -306,51 +335,139 @@ se presentará una tabla resumen con las principales herramientas y sus
 características, lo que permitirá identificar las oportunidades para una nueva
 herramienta más realista y adaptada a los sistemas software actuales.
 
+\subsubsection{Metodologías emergentes: Software Carbon Intensity (SCI)}
+
+Para intentar estandarizar estas mediciones, la Green Software Foundation ha desarrollado la especificación Software Carbon Intensity (SCI), que nos permite calcular cuánto CO$_2$ genera un sistema de software \cite{ref5}. Esta metodología se ha convertido en el estándar de referencia para la medición de la huella de carbono del software y será la base tanto para evaluar las herramientas existentes como para desarrollar nuestra propia solución.
+
+La fórmula del SCI es bastante directa:
+
+\begin{equation}
+\text{SCI} = \frac{(E \times I) + M}{R}
+\end{equation}
+
+Pero vamos por partes para entender qué significa cada cosa:
+
+\textbf{Las entradas que necesitas:}
+
+\begin{itemize}
+\item \textbf{E (Energy consumption – Consumo de energía)}: El consumo energético del hardware donde se ejecuta tu software, medido en kilovatios-hora (kWh)
+
+Representa la energía total que necesita el software para ejecutarse.
+
+\textbf{Por ejemplo:} si un software realiza muchas operaciones, utiliza más CPU y RAM, lo que se traduce en mayor consumo energético.
+
+Esta energía puede medirse directamente si se tiene acceso al hardware, o estimarse utilizando métricas proporcionadas por los proveedores de nube o fabricantes.
+
+Cuanto más eficiente sea el software (menos procesos innecesarios, mejor gestión de memoria), menor será E.
+
+\item \textbf{I (Carbon Intensity – Intensidad de carbono)}: Cuánto CO$_2$ genera la red eléctrica de tu región por cada kWh consumido (se mide en gramos de CO$_2$ equivalente por kilovatio-hora (gCO$_2$e/kWh))
+
+No toda la electricidad contamina por igual. El valor \textbf{I} depende del \textbf{origen de la energía} en el lugar donde se ejecuta el software.
+
+\begin{itemize}
+\item Si se genera con carbón o gas, I es alto (más contaminante)
+\item Si proviene de energía solar, eólica o hidroeléctrica, I es bajo
+\end{itemize}
+
+Por eso, ejecutar el mismo software en un país con energía limpia puede reducir significativamente su impacto ambiental.
+
+\item \textbf{M (Carbono incorporado)}: Las emisiones asociadas a la fabricación y eliminación del hardware donde se ejecuta el software (servidores, ordenadores, etc.) Se expresa generalmente en kgCO$_2$e (kilogramos de CO$_2$ equivalente)
+
+\textbf{Ejemplo:} construir un portátil o un servidor ya emite CO$_2$ (por los materiales, el transporte, el ensamblaje...).
+
+Cuando un software se ejecuta, una parte proporcional de ese carbono incorporado se le asigna, en función del tiempo de uso y cuánta parte del equipo utiliza.
+
+Aunque no utilices mucha energía al ejecutar tu software, si lo haces en dispositivos fabricados con alto coste ambiental, M puede ser significativo.
+
+\item \textbf{R (Unidad funcional)}: Cómo mides el ``trabajo'' de tu aplicación. Puede ser por usuario, por petición a la API, por transacción, etc.
+
+Se utiliza para normalizar el cálculo: no importa si el software se usa una vez o mil, lo que queremos saber es cuánto contamina una sola unidad de trabajo.
+
+Así podemos comparar diferentes versiones o soluciones: ¿cuánto CO$_2$eq se emite por una operación?
+\end{itemize}
+
+\textbf{Lo que obtienes:}
+El resultado es una estimación que te dice cuánto CO$_2$eq genera tu software por cada unidad de trabajo (por ejemplo, gramos de CO$_2$eq por usuario o por petición). Cuanto más detallados, específicos y fiables sean los datos de entrada, mas se parecerá esta estimación a la realidad. Cuanto más bajo sea el número, mejor para el medio ambiente. Aunque es imposible llegar a 0 (siempre vas a consumir algo de energía), te ayuda a comparar diferentes soluciones y ver si vas mejorando \cite{ref6}.
+
+\subsubsection{Justificación de la elección del estándar SCI}
+
+Tras analizar las diferentes metodologías disponibles para el cálculo de la huella de carbono del software, se ha decidido adoptar el estándar \textbf{Software Carbon Intensity (SCI)} como base para nuestro trabajo. Esta decisión se fundamenta en los siguientes criterios:
+
+\begin{itemize}
+\item \textbf{Reconocimiento internacional}: El SCI es desarrollado y mantenido por la Green Software Foundation, una organización reconocida en el ámbito de la sostenibilidad del software, lo que le confiere credibilidad y aceptación en la comunidad técnica.
+
+\item \textbf{Enfoque integral}: A diferencia de otras metodologías que se centran únicamente en aspectos específicos (como el consumo energético o las emisiones directas), el SCI considera tanto el consumo energético (E), la intensidad de carbono regional (I), el carbono incorporado del hardware (M) y la normalización por unidad funcional (R).
+
+\item \textbf{Comparabilidad}: La normalización por unidad funcional permite comparar diferentes versiones de software, diferentes tecnologías y diferentes implementaciones de manera objetiva, facilitando la toma de decisiones informadas.
+
+\item \textbf{Adaptabilidad}: El modelo se puede adaptar a diferentes tipos de software, desde aplicaciones web hasta sistemas embebidos, y a diferentes entornos de ejecución, incluyendo infraestructura local y servicios en la nube.
+
+\item \textbf{Transparencia metodológica}: La fórmula es clara, documentada y reproducible, lo que facilita la verificación de resultados y la adopción por parte de la comunidad.
+
+\item \textbf{Integración con estándares existentes}: El SCI se alinea con otros estándares de sostenibilidad como el GHG Protocol, facilitando la integración en reportes corporativos de sostenibilidad.
+\end{itemize}
+
+Aunque otras metodologías como el \textbf{Life Cycle Assessment (LCA)} ofrecen una visión más exhaustiva del ciclo de vida completo del software, su complejidad operativa y coste los hacen poco viables para proyectos ágiles o con recursos limitados. Por otro lado, herramientas basadas únicamente en estimaciones de energía como \textbf{PowerAPI} carecen de la visión integral que proporciona el SCI.
+
+El \textbf{GHG Protocol} adaptado al software, aunque valioso, presenta ambigüedades en su aplicación específica al dominio del software y requiere adaptaciones manuales que pueden introducir inconsistencias.
+
+Por estas razones, el SCI representa el equilibrio óptimo entre precisión, facilidad de implementación y reconocimiento internacional, convirtiéndose en la elección más adecuada para nuestro proyecto.
+
+\subsubsection{El problema de la precisión}
+
+La fórmula del Software Carbon Intensity (SCI) se ha convertido en el estándar más utilizado para medir y comparar las emisiones de carbono de nuestros productos software. Sin embargo, como venimos diciendo anteriormente, presenta una serie de necesidades que afectan la fiabilidad de los resultados obtenidos. El principal inconveniente es que esta fórmula depende en gran medida de datos reales y detallados que, en la mayoría de casos, son muy complicados de conseguir. Obtener mediciones precisas y actualizadas del consumo energético, de la infraestructura utilizada o de los factores de emisión específicos puede resultar tedioso e incluso imposible en muchos entornos de desarrollo. Esta dificultad para acceder a datos fiables obliga a los equipos a utilizar estimaciones y aproximaciones en lugar de mediciones reales, lo que inevitablemente introduce errores en los cálculos finales.
+
+Por otro lado, es importante tener claro que el SCI únicamente calcula las emisiones directas del funcionamiento del producto software. Esto significa que quedan fuera del cálculo muchas otras fuentes de emisiones relacionadas con el desarrollo del producto, como los desplazamientos de los empleados o el consumo energético de las oficinas. Estas emisiones adicionales suelen clasificarse dentro de los diferentes scopes del GHG Protocol y pueden representar una parte significativa de la huella de carbono total del proyecto software.
+
 \section{Criterios de Evaluación}
 
-En esta sección se definen los criterios fundamentales para la evaluación de herramientas destinadas a la medición de la huella de carbono del software. Estos criterios están orientados a garantizar que la herramienta sea precisa, de fácil uso, accesible para distintos perfiles de usuario y técnicamente robusta.
+En esta sección se definen los criterios fundamentales para la evaluación de herramientas destinadas a la medición de la huella de carbono del software. Estos criterios están orientados a garantizar que la herramienta sea precisa, de fácil uso, accesible para distintos perfiles de usuario y técnicamente robusta. Todos los criterios se basan en el estándar \textbf{Software Carbon Intensity (SCI)} adoptado para este trabajo, asegurando coherencia metodológica en la evaluación.
 
 \subsection*{1. Precisión y Fiabilidad del Cálculo}
 \begin{itemize}
-    \item Utilizar estándares reconocidos y aceptados internacionalmente, como \textbf{GHG Protocol}, \textbf{ISO 14064} u otros modelos científicamente validados.
-    \item Basarse en modelos de estimación documentados y contrastados (por ejemplo, \textit{OneByte} o \textit{Sustainable Web Design}).
-    \item Posibilidad de contextualizar los cálculos en función de la \textbf{intensidad de carbono regional}.
-    \item Transparencia metodológica, detallando claramente los pasos de conversión de datos a emisiones y sus limitaciones.
+    \item \textbf{Adopción del estándar SCI}: Utiliza el estándar \textbf{Software Carbon Intensity (SCI)} como metodología principal, implementando correctamente la fórmula $(E \times I + M)/R$.
+    \item \textbf{Modelos de estimación}: Se basa en modelos de estimación documentados y contrastados (como \textit{OneByte}, \textit{Sustainable Web Design} o modelos propios validados).
+    \item \textbf{Contextualización regional}: Permite configurar la intensidad de carbono específica de la región donde se ejecuta el software (gCO$_2$e/kWh).
+    \item \textbf{Transparencia metodológica}: Documenta claramente los pasos de conversión de datos a emisiones, incluyendo las limitaciones y supuestos utilizados.
+    \item \textbf{Validación de resultados}: Proporciona mecanismos para verificar la precisión de los cálculos mediante comparaciones con datos reales o benchmarks establecidos.
 \end{itemize}
 
 \subsection*{2. Cobertura y Alcance}
 \begin{itemize}
-    \item Calcular las emisiones generadas por la ejecución local del software y, de forma opcional, permitir estimar las emisiones en entornos cloud.
-    \item Capacidad de incluir los tres alcances definidos por GHG Protocol: \textbf{Scope 1}, \textbf{Scope 2} y \textbf{Scope 3}.
-    \item Desglose granular de las emisiones por región, proceso o recurso utilizado.
-    \item Opción de proyectar emisiones futuras o simular escenarios hipotéticos de reducción.
+    \item \textbf{Entornos de ejecución}: Soporta mediciones en entornos locales, cloud (AWS, Azure, GCP) y híbridos.
+    \item \textbf{Alcances de emisiones}: Incluye Scope 1 (directas), Scope 2 (energía comprada) y Scope 3 (indirectas) según el GHG Protocol.
+    \item \textbf{Granularidad de análisis}: Permite desglose de emisiones por componente (CPU, memoria, red, almacenamiento), proceso, servicio o región.
+    \item \textbf{Proyecciones y simulaciones}: Ofrece capacidad de proyectar emisiones futuras o simular escenarios hipotéticos de reducción.
+    \item \textbf{Integración de carbono incorporado}: Considera las emisiones asociadas a la fabricación y eliminación del hardware utilizado.
 \end{itemize}
 
 \subsection*{3. Facilidad de Integración y Uso}
 \begin{itemize}
-    \item Disponibilidad de diferentes interfaces: interfaz web intuitiva, línea de comandos (CLI), API REST, etc.
-    \item Flexibilidad en la instalación, pudiendo ejecutarse de forma local o en contenedores.
-    \item Integración con procesos de desarrollo, de forma que se pueda automatizar su ejecucion cuando se produzcan cambios en el software.
-    \item Visualización interactiva de los resultados, con paneles comprensibles, tablas y gráficos.
-    \item Interfaz de usuario intuitiva que permita a los usuarios introducir los datos de forma sencilla y clara.
-    \item Minimizar dependencias de terceros proveedores sin alternativas de respaldo para asegurar la continuidad y estabilidad del sistema.
+    \item \textbf{Interfaces disponibles}: Ofrece múltiples interfaces (web, CLI, API REST, SDK) para diferentes casos de uso.
+    \item \textbf{Flexibilidad de instalación}: Se puede ejecutar localmente, en contenedores, o como servicio en la nube.
+    \item \textbf{Integración con CI/CD}: Permite automatizar la medición en pipelines de desarrollo continuo.
+    \item \textbf{Visualización de resultados}: Proporciona paneles interactivos, gráficos y tablas comprensibles.
+    \item \textbf{Interfaz intuitiva}: Diseño de usuario que facilita la introducción de datos y configuración sin conocimientos técnicos avanzados.
+    \item \textbf{Independencia de proveedores}: Minimiza dependencias de terceros sin alternativas de respaldo.
 \end{itemize}
 
 \subsection*{4. Accesibilidad y Usabilidad}
 \begin{itemize}
-    \item Baja curva de aprendizaje, de forma que pueda ser utilizada por usuarios no técnicos a un nivel simple.
-    \item Configuración simplificada mediante asistentes o procedimientos guiados.
-    \item Resultados comprensibles y adaptados a distintos perfiles de usuario (usuarios no técnicos, responsables de sostenibilidad, perfiles técnicos).
-    \item Inclusión de comparativas y equivalencias contextualizadas (por ejemplo, emisiones expresadas en kilómetros recorridos en coche o consumo energético doméstico).
-    \item Sistema de puntuación y ranking de los resultados, de forma que se pueda saber claramente si el resultado obtenido es bueno o malo.
-    \item Consejos prácticos y personalizados para la mejora de la huella de carbono del software analizado, orientados a distintos perfiles de usuario.
+    \item \textbf{Curva de aprendizaje}: Requiere mínimos conocimientos técnicos para uso básico, con opciones avanzadas para expertos.
+    \item \textbf{Configuración guiada}: Incluye asistentes o procedimientos paso a paso para la configuración inicial.
+    \item \textbf{Adaptación a perfiles}: Resultados y recomendaciones adaptados a diferentes perfiles (desarrolladores, responsables de sostenibilidad, usuarios no técnicos).
+    \item \textbf{Equivalencias contextualizadas}: Expresa resultados en términos comprensibles (km en coche, horas de TV, árboles plantados).
+    \item \textbf{Sistema de puntuación}: Proporciona métricas claras (escalas, rankings, categorías) para evaluar el rendimiento ambiental.
+    \item \textbf{Recomendaciones personalizadas}: Ofrece consejos prácticos y específicos para mejorar la huella de carbono del software analizado.
 \end{itemize}
 
 \subsection*{5. Capacidad de Exportación y Reporte}
 \begin{itemize}
-  \item Permite guardar los datos en formatos sencillos y compatibles, como hojas de cálculo (CSV) o archivos de texto estructurados (JSON).
-  \item Genera informes que se pueden personalizar según las necesidades, por ejemplo, para auditorías o presentaciones dentro de la empresa.
-  \item Mantiene un historial de los datos, facilitando ver cómo cambian las emisiones a lo largo del tiempo.
+    \item \textbf{Formatos de exportación}: Permite exportar datos en formatos estándar (CSV, JSON, Excel) y APIs para integración.
+    \item \textbf{Generación de informes}: Crea informes personalizables para auditorías, presentaciones corporativas o cumplimiento normativo.
+    \item \textbf{Historial y seguimiento}: Mantiene un registro histórico de mediciones para análisis de tendencias y evolución temporal.
+    \item \textbf{Comparativas y benchmarks}: Permite comparar resultados con estándares de la industria o versiones anteriores.
+    \item \textbf{Colaboración y compartición}: Facilita el trabajo en equipo y la compartición de resultados entre stakeholders.
 \end{itemize}
 
 \section{Análisis de herramientas existentes}
