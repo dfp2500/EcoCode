@@ -4,7 +4,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{adjustbox}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage{geometry}
@@ -18,6 +20,7 @@
 \usepackage{tcolorbox}
 \usepackage{pifont}
 \usepackage{pdflscape}
+\usepackage{tikz}
 
 \geometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
 \setlength{\parskip}{1em}
@@ -72,6 +75,8 @@ influyen en el consumo energético del software.
 
 \section{Contexto}
 
+En esta sección de contexto abordaremos dos cuestiones clave. En primer lugar, en la sección 1.1.1 se expone cómo el cambio climático constituye un problema global, cuáles son sus causas y las principales consecuencias derivadas del aumento de gases de efecto invernadero. Posteriormente, en la sección 1.1.2 se analiza cómo, aunque el software sea un producto digital e intangible, su uso masivo genera un impacto ambiental significativo debido al consumo energético asociado, lo que plantea desafíos específicos a la hora de calcular su huella de carbono.
+
 \subsection{Cambio climático y gases de efecto invernadero}
 
 En la actualidad, está en boca de todos y cada día es más notable el debate
@@ -105,11 +110,11 @@ son algunas de las actividades que han contribuido a la liberación excesiva de
 gases de efecto invernadero (GEI) a la atmósfera, lo que provoca un aumento de
 la temperatura global y hace que se produzca el calentamiento global. Los
 principales GEI son el dióxido de carbono (CO\textsubscript{2}), el metano
-(CH\textsubscript{4}) y el óxido nitroso (N\textsubscript{2}O). \cite{ref1}
+(CH\textsubscript{4}) y el óxido nitroso (N\textsubscript{2}O) \cite{ref1}.
 
 Este calentamiento excesivo pone en peligro la supervivencia de muchas especies
 y ecosistemas, incluido el ser humano. Las consecuencias se pueden organizar en
-tres grupos distintos: \cite{ref2}
+tres grupos distintos \cite{ref2}: 
 
 \begin{itemize}
   \item \textbf{Sistemas físicos:} se ve representado por el derretimiento de la masa de hielo terrestre en los polos. Cuando se derrite, el agua fluye hasta el océano, añadiendo volumen al agua del mar. Este
@@ -120,7 +125,7 @@ tres grupos distintos: \cite{ref2}
         Destacan los incendios forestales y el cambio en los patrones migratorios de especies que buscan una mayor garantía de supervivencia en otros lugares.
 
   \item \textbf{Sistemas humanos:} en este sistema destacan las muertes y enfermedades provocadas por fenómenos meteorológicos extremos cada vez más frecuentes, como las olas de calor, las tormentas y las
-        inundaciones; la alteración de los sistemas alimentarios; el aumento de las zoonosis y las enfermedades transmitidas por los alimentos, el agua y los vectores; y los problemas de salud mental.\cite{ref3} Además, el cambio climático también afecta a la economía, ya que puede provocar pérdidas en la agricultura, la pesca y el turismo, así como aumentar los costos de la atención médica y la infraestructura.
+        inundaciones; la alteración de los sistemas alimentarios; el aumento de las zoonosis y las enfermedades transmitidas por los alimentos, el agua y los vectores; y los problemas de salud mental \cite{ref3}. Además, el cambio climático también afecta a la economía, ya que puede provocar pérdidas en la agricultura, la pesca y el turismo, así como aumentar los costos de la atención médica y la infraestructura.
 \end{itemize}
 
 Estas consecuencias negativas se retroalimentan entre sí y aumentan sus
@@ -139,10 +144,10 @@ el aumento de la temperatura global a menos de 2 grados Celsius por encima de
 los niveles preindustriales y fomentar esfuerzos para limitar el aumento a 1.5
 grados Celsius. Este acuerdo fue adoptado en 2015 por 196 países y ha sido
 ratificado por la mayoría de ellos. \textbf{El Acuerdo de París}\footnote{\href{https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris}{https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris}} establece un marco para
-que los países presenten sus contribuciones determinadas a nivel nacional (NDC)
+que los países presenten sus \textit{Contribuciones Determinadas a Nivel Nacional} (NDC)
 y revisen sus compromisos cada cinco años. Además, el acuerdo promueve la
 cooperación internacional y el apoyo financiero a los países en desarrollo para
-ayudarles a mitigar y adaptarse al cambio climático. \cite{ref4}
+ayudarles a mitigar y adaptarse al cambio climático \cite{ref4}. 
 
 Siempre emitiremos carbono mediante nuestras actividades diarias, pero es
 importante que seamos conscientes de ello y que tomemos medidas para reducir
@@ -165,83 +170,83 @@ Actualmente existen diversas metodologías que buscan estandarizar la medición 
 
 \begin{itemize}
   \item \textbf{Software Carbon Intensity (SCI)} \\
-  \href{https://sci.greensoftware.foundation/}{https://sci.greensoftware.foundation/}
+        \href{https://sci.greensoftware.foundation/}{https://sci.greensoftware.foundation/}
 
-  Propuesto por la Green Software Foundation, este modelo se basa en una fórmula clara que combina el consumo energético, la intensidad de carbono de la electricidad utilizada, el carbono incorporado del hardware y una unidad funcional para normalizar el cálculo.
-  
-  \textbf{Ventajas:}
-  \begin{itemize}
-    \item Enfoque modular que facilita la implementación
-    \item Permite comparaciones entre diferentes versiones del software
-    \item Facilita la identificación de puntos de mejora específicos
-  \end{itemize}
-  \textbf{Desventajas:}
-  \begin{itemize}
-    \item Requiere datos precisos y actualizados difíciles de obtener
-    \item No contempla emisiones indirectas (desarrollo, mantenimiento, etc.)
-  \end{itemize}
-  
-  \vspace{0.8em}
+        Propuesto por la Green Software Foundation, este modelo se basa en una fórmula clara que combina el consumo energético, la intensidad de carbono de la electricidad utilizada, el carbono incorporado del hardware y una unidad funcional para normalizar el cálculo.
 
-  \item \textbf{Greenhouse Gas Protocol (GHG Protocol) Adaptado al Software} \\
-  \href{https://ghgprotocol.org/}{https://ghgprotocol.org/}
+        \textbf{Ventajas:}
+        \begin{itemize}
+          \item Enfoque modular que facilita la implementación.
+          \item Permite comparaciones entre diferentes versiones del software.
+          \item Facilita la identificación de puntos de mejora específicos.
+        \end{itemize}
+        \textbf{Desventajas:}
+        \begin{itemize}
+          \item Requiere datos precisos y actualizados difíciles de obtener.
+          \item No contempla emisiones indirectas (desarrollo, mantenimiento, etc.).
+        \end{itemize}
 
-  El GHG Protocol es una metodología general ampliamente utilizada para calcular emisiones en empresas. En el contexto del software, se adapta para incluir emisiones de tipo Scope 1 (directas), Scope 2 (energía comprada) y Scope 3 (indirectas, como viajes o proveedores de nube).
-  
-  \textbf{Ventajas:}
-  \begin{itemize}
-    \item Proporciona una visión más completa del ciclo de vida del software
-    \item Considera el impacto organizacional integral
-    \item Metodología reconocida y estandarizada
-  \end{itemize}
-  \textbf{Desventajas:}
-  \begin{itemize}
-    \item Su aplicación al software requiere adaptación manual de las categorías
-    \item Puede resultar ambiguo y complejo de implementar
-    \item Falta de especificidad para el dominio del software
-  \end{itemize}
-  
-  \vspace{0.8em}
+        \vspace{0.8em}
 
-  \item \textbf{Life Cycle Assessment (LCA)} \\
-  \url{https://en.wikipedia.org/wiki/Life-cycle_assessment}
+  \item \textit{\textbf{Greenhouse Gas Protocol (GHG Protocol) Adaptado al Software}} \\
+        \href{https://ghgprotocol.org/}{https://ghgprotocol.org/}
 
-  El análisis de ciclo de vida es una técnica exhaustiva que considera todas las etapas del ciclo del software, desde el desarrollo hasta la retirada del sistema.
-  
-  \textbf{Ventajas:}
-  \begin{itemize}
-    \item Evaluación exhaustiva y completa
-    \item Útil para conocer el impacto total del producto
-    \item Incluye hardware, transporte, mantenimiento y otros factores
-  \end{itemize}
-  \textbf{Desventajas:}
-  \begin{itemize}
-    \item Extremadamente costoso y lento de aplicar
-    \item Poco viable para proyectos ágiles o con recursos limitados
-    \item Complejidad operativa elevada
-  \end{itemize}
-  
-  \vspace{0.8em}
+        El \textit{GHG Protocol} es una metodología general ampliamente utilizada para calcular emisiones en empresas. En el contexto del software, se adapta para incluir emisiones de tipo \textit{Scope 1} (directas), \textit{Scope 2} (energía comprada) y \textit{Scope 3} (indirectas, como viajes o proveedores de nube).
+
+        \textbf{Ventajas:}
+        \begin{itemize}
+          \item Proporciona una visión más completa del ciclo de vida del software.
+          \item Considera el impacto organizacional integral.
+          \item Metodología reconocida y estandarizada.
+        \end{itemize}
+        \textbf{Desventajas:}
+        \begin{itemize}
+          \item Su aplicación al software requiere adaptación manual de las categorías.
+          \item Puede resultar ambiguo y complejo de implementar.
+          \item Falta de especificidad para el dominio del software.
+        \end{itemize}
+
+        \vspace{0.8em}
+
+  \item \textit{\textbf{Life Cycle Assessment (LCA)}} \\
+        \url{https://en.wikipedia.org/wiki/Life-cycle_assessment}
+
+        El análisis de ciclo de vida es una técnica exhaustiva que considera todas las etapas del ciclo del software, desde el desarrollo hasta la retirada del sistema.
+
+        \textbf{Ventajas:}
+        \begin{itemize}
+          \item Evaluación exhaustiva y completa.
+          \item Útil para conocer el impacto total del producto.
+          \item Incluye hardware, transporte, mantenimiento y otros factores.
+        \end{itemize}
+        \textbf{Desventajas:}
+        \begin{itemize}
+          \item Extremadamente costoso y lento de aplicar.
+          \item Poco viable para proyectos ágiles o con recursos limitados.
+          \item Complejidad operativa elevada: en software es difícil medir todo lo que implica su ciclo de vida, como el consumo de servidores, la fabricación del hardware, las actualizaciones y el mantenimiento. Reunir todos estos datos es muy complicado y muchas veces no están disponibles. Por eso, aunque se podría aplicar usando estimaciones, los resultados serían menos fiables.
+        \end{itemize}
+
+        \vspace{0.8em}
 
   \item \textbf{Herramientas de Estimación Basadas en Energía (Joulemeter, PowerAPI, Scaphandre...)} \\
-  \href{https://www.powerapi.org/}{https://www.powerapi.org/}
+        \href{https://www.powerapi.org/}{https://www.powerapi.org/}
 
-  \href{https://github.com/hubblo-org/scaphandre}{https://github.com/hubblo-org/scaphandre}
+        \href{https://github.com/hubblo-org/scaphandre}{https://github.com/hubblo-org/scaphandre}
 
-  Estas herramientas estiman el consumo energético en tiempo real o de forma simulada, para luego convertirlo en emisiones utilizando factores de conversión específicos.
-  
-  \textbf{Ventajas:}
-  \begin{itemize}
-    \item Ideales para análisis dinámicos o en tiempo de ejecución
-    \item Fáciles de integrar en entornos DevOps
-    \item Proporcionan retroalimentación inmediata
-  \end{itemize}
-  \textbf{Desventajas:}
-  \begin{itemize}
-    \item Se centran exclusivamente en el consumo energético
-    \item No consideran el carbono incorporado del hardware
-    \item Omiten otros factores indirectos importantes
-  \end{itemize}
+        Estas herramientas estiman el consumo energético en tiempo real o de forma simulada, para luego convertirlo en emisiones utilizando factores de conversión específicos.
+
+        \textbf{Ventajas:}
+        \begin{itemize}
+          \item Ideales para análisis dinámicos o en tiempo de ejecución.
+          \item Fáciles de integrar en entornos DevOps, como aquellos que automatizan despliegues, pruebas y monitorización continua.
+          \item Proporcionan retroalimentación inmediata.
+        \end{itemize}
+        \textbf{Desventajas:}
+        \begin{itemize}
+          \item Se centran exclusivamente en el consumo energético.
+          \item No consideran el carbono incorporado del hardware.
+          \item Omiten otros factores indirectos importantes.
+        \end{itemize}
 \end{itemize}
 
 Cada enfoque responde a necesidades distintas. Por eso, la elección de una metodología depende tanto del tipo de software como del objetivo del análisis. Algunas metodologías priorizan la precisión, otras la rapidez o la facilidad de adopción.
@@ -342,48 +347,48 @@ Para intentar estandarizar estas mediciones, la Green Software Foundation ha des
 La fórmula del SCI es bastante directa:
 
 \begin{equation}
-\text{SCI} = \frac{(E \times I) + M}{R}
+  \text{SCI} = \frac{(E \times I) + M}{R}
 \end{equation}
+
+El resultado de la fórmula, \textbf{SCI}, pertenece al conjunto de los números reales positivos ($\mathbb{R}^{+}$) y representa la cantidad de CO$_2$ emitida por cada unidad funcional del software (por ejemplo, por usuario, transacción o sesión). Cuanto mayor sea el número, mayor es la cantidad de carbono emitida por unidad de uso, por lo que indica un mayor impacto ambiental del software. Por el contrario, un valor más bajo refleja un software más eficiente y con menor huella de carbono. La magnitud de SCI depende directamente del consumo energético, de la intensidad de carbono de la electricidad utilizada y del carbono incorporado en el hardware que ejecuta el software.
 
 Pero vamos por partes para entender qué significa cada cosa:
 
-\textbf{Las entradas que necesitas:}
-
 \begin{itemize}
-\item \textbf{E (Energy consumption – Consumo de energía)}: El consumo energético del hardware donde se ejecuta tu software, medido en kilovatios-hora (kWh)
+  \item \textbf{E (Energy consumption – Consumo de energía)}: El consumo energético del hardware donde se ejecuta tu software, medido en kilovatios-hora (kWh)
 
-Representa la energía total que necesita el software para ejecutarse.
+        Representa la energía total que necesita el software para ejecutarse.
 
-\textbf{Por ejemplo:} si un software realiza muchas operaciones, utiliza más CPU y RAM, lo que se traduce en mayor consumo energético.
+        \textbf{Por ejemplo:} si un software realiza muchas operaciones, utiliza más CPU y RAM, lo que se traduce en mayor consumo energético.
 
-Esta energía puede medirse directamente si se tiene acceso al hardware, o estimarse utilizando métricas proporcionadas por los proveedores de nube o fabricantes.
+        Esta energía puede medirse directamente si se tiene acceso al hardware, o estimarse utilizando métricas proporcionadas por los proveedores de nube o fabricantes.
 
-Cuanto más eficiente sea el software (menos procesos innecesarios, mejor gestión de memoria), menor será E.
+        Cuanto más eficiente sea el software (menos procesos innecesarios, mejor gestión de memoria), menor será E.
 
-\item \textbf{I (Carbon Intensity – Intensidad de carbono)}: Cuánto CO$_2$ genera la red eléctrica de tu región por cada kWh consumido (se mide en gramos de CO$_2$ equivalente por kilovatio-hora (gCO$_2$e/kWh))
+  \item \textbf{I (Carbon Intensity – Intensidad de carbono)}: Cuánto CO$_2$ genera la red eléctrica de tu región por cada kWh consumido (se mide en gramos de CO$_2$ equivalente por kilovatio-hora (gCO$_2$e/kWh))
 
-No toda la electricidad contamina por igual. El valor \textbf{I} depende del \textbf{origen de la energía} en el lugar donde se ejecuta el software.
+        No toda la electricidad contamina por igual. El valor \textbf{I} depende del \textbf{origen de la energía} en el lugar donde se ejecuta el software.
 
-\begin{itemize}
-\item Si se genera con carbón o gas, I es alto (más contaminante)
-\item Si proviene de energía solar, eólica o hidroeléctrica, I es bajo
-\end{itemize}
+        \begin{itemize}
+          \item Si se genera con carbón o gas, I es alto (más contaminante)
+          \item Si proviene de energía solar, eólica o hidroeléctrica, I es bajo
+        \end{itemize}
 
-Por eso, ejecutar el mismo software en un país con energía limpia puede reducir significativamente su impacto ambiental.
+        Por eso, ejecutar el mismo software en un país con energía limpia puede reducir significativamente su impacto ambiental.
 
-\item \textbf{M (Carbono incorporado)}: Las emisiones asociadas a la fabricación y eliminación del hardware donde se ejecuta el software (servidores, ordenadores, etc.) Se expresa generalmente en kgCO$_2$e (kilogramos de CO$_2$ equivalente)
+  \item \textbf{M (Carbono incorporado)}: Las emisiones asociadas a la fabricación y eliminación del hardware donde se ejecuta el software (servidores, ordenadores, etc.) Se expresa generalmente en kgCO$_2$e (kilogramos de CO$_2$ equivalente)
 
-\textbf{Ejemplo:} construir un portátil o un servidor ya emite CO$_2$ (por los materiales, el transporte, el ensamblaje...).
+        \textbf{Ejemplo:} construir un portátil o un servidor ya emite CO$_2$ (por los materiales, el transporte, el ensamblaje...).
 
-Cuando un software se ejecuta, una parte proporcional de ese carbono incorporado se le asigna, en función del tiempo de uso y cuánta parte del equipo utiliza.
+        Cuando un software se ejecuta, una parte proporcional de ese carbono incorporado se le asigna, en función del tiempo de uso y cuánta parte del equipo utiliza.
 
-Aunque no utilices mucha energía al ejecutar tu software, si lo haces en dispositivos fabricados con alto coste ambiental, M puede ser significativo.
+        Aunque no utilices mucha energía al ejecutar tu software, si lo haces en dispositivos fabricados con alto coste ambiental, M puede ser significativo.
 
-\item \textbf{R (Unidad funcional)}: Cómo mides el ``trabajo'' de tu aplicación. Puede ser por usuario, por petición a la API, por transacción, etc.
+  \item \textbf{R (Unidad funcional)}: Cómo mides el ``trabajo'' de tu aplicación. Puede ser por usuario, por petición a la API, por transacción, etc.
 
-Se utiliza para normalizar el cálculo: no importa si el software se usa una vez o mil, lo que queremos saber es cuánto contamina una sola unidad de trabajo.
+        Se utiliza para normalizar el cálculo: no importa si el software se usa una vez o mil, lo que queremos saber es cuánto contamina una sola unidad de trabajo.
 
-Así podemos comparar diferentes versiones o soluciones: ¿cuánto CO$_2$eq se emite por una operación?
+        Así podemos comparar diferentes versiones o soluciones: ¿cuánto CO$_2$eq se emite por una operación?
 \end{itemize}
 
 \textbf{Lo que obtienes:}
@@ -394,17 +399,17 @@ El resultado es una estimación que te dice cuánto CO$_2$eq genera tu software 
 Tras analizar las diferentes metodologías disponibles para el cálculo de la huella de carbono del software, se ha decidido adoptar el estándar \textbf{Software Carbon Intensity (SCI)} como base para nuestro trabajo. Esta decisión se fundamenta en los siguientes criterios:
 
 \begin{itemize}
-\item \textbf{Reconocimiento internacional}: El SCI es desarrollado y mantenido por la Green Software Foundation, una organización reconocida en el ámbito de la sostenibilidad del software, lo que le confiere credibilidad y aceptación en la comunidad técnica.
+  \item \textbf{Reconocimiento internacional}: El SCI es desarrollado y mantenido por la Green Software Foundation, una organización reconocida en el ámbito de la sostenibilidad del software, lo que le confiere credibilidad y aceptación en la comunidad técnica.
 
-\item \textbf{Enfoque integral}: A diferencia de otras metodologías que se centran únicamente en aspectos específicos (como el consumo energético o las emisiones directas), el SCI considera tanto el consumo energético (E), la intensidad de carbono regional (I), el carbono incorporado del hardware (M) y la normalización por unidad funcional (R).
+  \item \textbf{Enfoque integral}: A diferencia de otras metodologías que se centran únicamente en aspectos específicos (como el consumo energético o las emisiones directas), el SCI considera tanto el consumo energético (E), la intensidad de carbono regional (I), el carbono incorporado del hardware (M) y la normalización por unidad funcional (R).
 
-\item \textbf{Comparabilidad}: La normalización por unidad funcional permite comparar diferentes versiones de software, diferentes tecnologías y diferentes implementaciones de manera objetiva, facilitando la toma de decisiones informadas.
+  \item \textbf{Comparabilidad}: La normalización por unidad funcional permite comparar diferentes versiones de software, diferentes tecnologías y diferentes implementaciones de manera objetiva, facilitando la toma de decisiones informadas.
 
-\item \textbf{Adaptabilidad}: El modelo se puede adaptar a diferentes tipos de software, desde aplicaciones web hasta sistemas embebidos, y a diferentes entornos de ejecución, incluyendo infraestructura local y servicios en la nube.
+  \item \textbf{Adaptabilidad}: El modelo se puede adaptar a diferentes tipos de software, desde aplicaciones web hasta sistemas embebidos, y a diferentes entornos de ejecución, incluyendo infraestructura local y servicios en la nube.
 
-\item \textbf{Transparencia metodológica}: La fórmula es clara, documentada y reproducible, lo que facilita la verificación de resultados y la adopción por parte de la comunidad.
+  \item \textbf{Transparencia metodológica}: La fórmula es clara, documentada y reproducible, lo que facilita la verificación de resultados y la adopción por parte de la comunidad.
 
-\item \textbf{Integración con estándares existentes}: El SCI se alinea con otros estándares de sostenibilidad como el GHG Protocol, facilitando la integración en reportes corporativos de sostenibilidad.
+  \item \textbf{Integración con estándares existentes}: El SCI se alinea con otros estándares de sostenibilidad como el GHG Protocol, facilitando la integración en reportes corporativos de sostenibilidad.
 \end{itemize}
 
 Aunque otras metodologías como el \textbf{Life Cycle Assessment (LCA)} ofrecen una visión más exhaustiva del ciclo de vida completo del software, su complejidad operativa y coste los hacen poco viables para proyectos ágiles o con recursos limitados. Por otro lado, herramientas basadas únicamente en estimaciones de energía como \textbf{PowerAPI} carecen de la visión integral que proporciona el SCI.
@@ -425,49 +430,48 @@ En esta sección se definen los criterios fundamentales para la evaluación de h
 
 \subsection*{1. Precisión y Fiabilidad del Cálculo}
 \begin{itemize}
-    \item \textbf{Adopción del estándar SCI}: Utiliza el estándar \textbf{Software Carbon Intensity (SCI)} como metodología principal, implementando correctamente la fórmula $(E \times I + M)/R$.
-    \item \textbf{Modelos de estimación}: Se basa en modelos de estimación documentados y contrastados (como \textit{OneByte}, \textit{Sustainable Web Design} o modelos propios validados).
-    \item \textbf{Contextualización regional}: Permite configurar la intensidad de carbono específica de la región donde se ejecuta el software (gCO$_2$e/kWh).
-    \item \textbf{Transparencia metodológica}: Documenta claramente los pasos de conversión de datos a emisiones, incluyendo las limitaciones y supuestos utilizados.
-    \item \textbf{Validación de resultados}: Proporciona mecanismos para verificar la precisión de los cálculos mediante comparaciones con datos reales o benchmarks establecidos.
+  \item \textbf{Adopción del estándar SCI}: Utiliza el estándar \textbf{Software Carbon Intensity (SCI)} como metodología principal, implementando correctamente la fórmula $(E \times I + M)/R$.
+  \item \textbf{Modelos de estimación}: Se basa en modelos de estimación documentados y contrastados (como \textit{OneByte}, \textit{Sustainable Web Design} o modelos propios validados).
+  \item \textbf{Contextualización regional}: Permite configurar la intensidad de carbono específica de la región donde se ejecuta el software (gCO$_2$e/kWh).
+  \item \textbf{Transparencia metodológica}: Documenta claramente los pasos de conversión de datos a emisiones, incluyendo las limitaciones y supuestos utilizados.
+  \item \textbf{Validación de resultados}: Proporciona mecanismos para verificar la precisión de los cálculos mediante comparaciones con datos reales o benchmarks establecidos.
 \end{itemize}
 
 \subsection*{2. Cobertura y Alcance}
 \begin{itemize}
-    \item \textbf{Entornos de ejecución}: Soporta mediciones en entornos locales, cloud (AWS, Azure, GCP) y híbridos.
-    \item \textbf{Alcances de emisiones}: Incluye Scope 1 (directas), Scope 2 (energía comprada) y Scope 3 (indirectas) según el GHG Protocol.
-    \item \textbf{Granularidad de análisis}: Permite desglose de emisiones por componente (CPU, memoria, red, almacenamiento), proceso, servicio o región.
-    \item \textbf{Proyecciones y simulaciones}: Ofrece capacidad de proyectar emisiones futuras o simular escenarios hipotéticos de reducción.
-    \item \textbf{Integración de carbono incorporado}: Considera las emisiones asociadas a la fabricación y eliminación del hardware utilizado.
+  \item \textbf{Entornos de ejecución}: Soporta mediciones en entornos locales, cloud (AWS, Azure, GCP) y híbridos.
+  \item \textbf{Alcances de emisiones}: Incluye Scope 1 (directas), Scope 2 (energía comprada) y Scope 3 (indirectas) según el GHG Protocol.
+  \item \textbf{Granularidad de análisis}: Permite desglose de emisiones por componente (CPU, memoria, red, almacenamiento), proceso, servicio o región.
+  \item \textbf{Proyecciones y simulaciones}: Ofrece capacidad de proyectar emisiones futuras o simular escenarios hipotéticos de reducción.
+  \item \textbf{Integración de carbono incorporado}: Considera las emisiones asociadas a la fabricación y eliminación del hardware utilizado.
 \end{itemize}
 
 \subsection*{3. Facilidad de Integración y Uso}
 \begin{itemize}
-    \item \textbf{Interfaces disponibles}: Ofrece múltiples interfaces (web, CLI, API REST, SDK) para diferentes casos de uso.
-    \item \textbf{Flexibilidad de instalación}: Se puede ejecutar localmente, en contenedores, o como servicio en la nube.
-    \item \textbf{Integración con CI/CD}: Permite automatizar la medición en pipelines de desarrollo continuo.
-    \item \textbf{Visualización de resultados}: Proporciona paneles interactivos, gráficos y tablas comprensibles.
-    \item \textbf{Interfaz intuitiva}: Diseño de usuario que facilita la introducción de datos y configuración sin conocimientos técnicos avanzados.
-    \item \textbf{Independencia de proveedores}: Minimiza dependencias de terceros sin alternativas de respaldo.
+  \item \textbf{Interfaces disponibles}: Ofrece múltiples interfaces (web, CLI, API REST, SDK) para diferentes casos de uso.
+  \item \textbf{Flexibilidad de instalación}: Se puede ejecutar localmente, en contenedores, o como servicio en la nube.
+  \item \textbf{Integración con CI/CD}: Permite automatizar la medición en pipelines de desarrollo continuo.
+  \item \textbf{Visualización de resultados}: Proporciona paneles interactivos, gráficos y tablas comprensibles.
+  \item \textbf{Interfaz intuitiva}: Diseño de usuario que facilita la introducción de datos y configuración sin conocimientos técnicos avanzados.
+  \item \textbf{Independencia de proveedores}: Minimiza dependencias de terceros sin alternativas de respaldo.
 \end{itemize}
 
 \subsection*{4. Accesibilidad y Usabilidad}
 \begin{itemize}
-    \item \textbf{Curva de aprendizaje}: Requiere mínimos conocimientos técnicos para uso básico, con opciones avanzadas para expertos.
-    \item \textbf{Configuración guiada}: Incluye asistentes o procedimientos paso a paso para la configuración inicial.
-    \item \textbf{Adaptación a perfiles}: Resultados y recomendaciones adaptados a diferentes perfiles (desarrolladores, responsables de sostenibilidad, usuarios no técnicos).
-    \item \textbf{Equivalencias contextualizadas}: Expresa resultados en términos comprensibles (km en coche, horas de TV, árboles plantados).
-    \item \textbf{Sistema de puntuación}: Proporciona métricas claras (escalas, rankings, categorías) para evaluar el rendimiento ambiental.
-    \item \textbf{Recomendaciones personalizadas}: Ofrece consejos prácticos y específicos para mejorar la huella de carbono del software analizado.
+  \item \textbf{Curva de aprendizaje}: Requiere mínimos conocimientos técnicos para uso básico, con opciones avanzadas para expertos.
+  \item \textbf{Configuración guiada}: Incluye asistentes o procedimientos paso a paso para la configuración inicial.
+  \item \textbf{Adaptación a perfiles}: Resultados y recomendaciones adaptados a diferentes perfiles (desarrolladores, responsables de sostenibilidad, usuarios no técnicos).
+  \item \textbf{Equivalencias contextualizadas}: Expresa resultados en términos comprensibles (km en coche, horas de TV, árboles plantados).
+  \item \textbf{Sistema de puntuación}: Proporciona métricas claras (escalas, rankings, categorías) para evaluar el rendimiento ambiental.
+  \item \textbf{Recomendaciones personalizadas}: Ofrece consejos prácticos y específicos para mejorar la huella de carbono del software analizado.
 \end{itemize}
 
 \subsection*{5. Capacidad de Exportación y Reporte}
 \begin{itemize}
-    \item \textbf{Formatos de exportación}: Permite exportar datos en formatos estándar (CSV, JSON, Excel) y APIs para integración.
-    \item \textbf{Generación de informes}: Crea informes personalizables para auditorías, presentaciones corporativas o cumplimiento normativo.
-    \item \textbf{Historial y seguimiento}: Mantiene un registro histórico de mediciones para análisis de tendencias y evolución temporal.
-    \item \textbf{Comparativas y benchmarks}: Permite comparar resultados con estándares de la industria o versiones anteriores.
-    \item \textbf{Colaboración y compartición}: Facilita el trabajo en equipo y la compartición de resultados entre stakeholders.
+  \item \textbf{Formatos de exportación}: Permite exportar datos en formatos estándar (CSV, JSON, Excel) y APIs para integración.
+  \item \textbf{Generación de informes}: Crea informes personalizables para auditorías, presentaciones corporativas o cumplimiento normativo.
+  \item \textbf{Historial y seguimiento}: Mantiene un registro histórico de mediciones para análisis de tendencias y evolución temporal.
+  \item \textbf{Comparativas y benchmarks}: Permite comparar resultados con estándares de la industria o versiones anteriores.
 \end{itemize}
 
 \section{Análisis de herramientas existentes}
@@ -480,6 +484,11 @@ es capaz de realizar cada herramienta y para qué sirve. Esto nos servirá para
 dilucidar una propuesta propia con lo aprendido.
 
 \subsection*{AWS Customer Carbon Footprint Tool}
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{imagenes/AWS_Logo.png}
+\end{center}
+
 \href{https://aws.amazon.com/es/}{https://aws.amazon.com/es/}
 
 \href{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/what-is-ccft.html}{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/what-is-ccft.html}
@@ -527,6 +536,10 @@ herramientas como \textbf{Amazon QuickSight}\footnote{Servicio de BI en AWS que 
 \end{itemize}
 
 \section*{Impact Framework}
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{imagenes/Impact_Logo.png}
+\end{center}
 
 \href{https://greensoftware.foundation/}{https://greensoftware.foundation/}
 
@@ -585,6 +598,10 @@ de sostenibilidad.
 \end{itemize}
 
 \subsection*{Carbon Aware SDK}
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{imagenes/Carbon_Logo.png}
+\end{center}
 
 \href{https://greensoftware.foundation/}{https://greensoftware.foundation/}
 
@@ -655,13 +672,17 @@ localización.
 
 \section*{Cloud Carbon Footprint}
 
+\begin{center}
+\includegraphics[width=0.3\textwidth]{imagenes/Cloud_Logo.png}
+\end{center}
+
 \href{https://www.cloudcarbonfootprint.org/}{https://www.cloudcarbonfootprint.org/}
 
 \href{https://www.cloudcarbonfootprint.org/docs/}{https://www.cloudcarbonfootprint.org/docs/}
 
 Cloud Carbon Footprint es una herramienta gratuita y de código abierto diseñada
 para visualizar el impacto ambiental de las infraestructuras cloud\footnote{Conjunto de recursos tecnol´ogicos (como servidores, redes y almacenamiento) ofrecidos por provee-
-dores en la nube para ejecutar servicios y aplicaciones.} de
+  dores en la nube para ejecutar servicios y aplicaciones.} de
 proveedores como \textbf{AWS}, \textbf{Azure}\footnote{Plataforma de
   servicios en la nube proporcionada por Microsoft, similar a AWS y GCP.} y
 \textbf{GCP}\footnote{Google Cloud Platform, conjunto de servicios de
@@ -711,6 +732,10 @@ ambiental de sus \textbf{infraestructuras cloud}.
 
 \section*{Carbonalyser}
 
+\begin{center}
+\includegraphics[width=0.3\textwidth]{imagenes/Carbonalyser_Logo.png}
+\end{center}
+
 \href{https://theshiftproject.org/en/}{https://theshiftproject.org/en/}
 
 \href{https://addons.mozilla.org/es-ES/firefox/addon/carbonalyser/}{https://addons.mozilla.org/es-ES/firefox/addon/carbonalyser/}
@@ -729,7 +754,7 @@ un móvil o la conducción).
 
 Carbonalyser es además código abierto bajo licencia MIT, con el código alojado
 en \textbf{GitHub}\footnote{Plataforma de desarrollo colaborativo basada en Git que permite almacenar, compartir y revisar
-código fuente.}. Permite configurar la ubicación eléctrica para ajustar las
+  código fuente.}. Permite configurar la ubicación eléctrica para ajustar las
 estimaciones a la \textbf{intensidad de carbono regional}\footnote{Valor medio de emisiones por kWh en una región concreta, utilizado para estimar el impacto energético del centro de datos.}, ayudando a que el análisis
 sea más contextual y educativo.
 
@@ -757,6 +782,10 @@ sea más contextual y educativo.
 \end{itemize}
 
 \section*{\textbf{GreenFrame}}
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{imagenes/GreenFrame_Logo.png}
+\end{center}
 
 \url{https://greenframe.io/}
 
@@ -807,6 +836,10 @@ desarrollado junto al \textbf{CNRS}\footnote{Centro Nacional de Investigación
 
 \section*{\textbf{Website Carbon Calculator}}
 
+\begin{center}
+\includegraphics[width=0.3\textwidth]{imagenes/Website_Logo.png}
+\end{center}
+
 \url{https://www.websitecarbon.com/}
 
 \url{https://www.websitecarbon.com/how-does-it-work/}
@@ -841,6 +874,10 @@ para integraciones automatizadas.
 
 \section*{\textbf{Ecograder}}
 
+\begin{center}
+\includegraphics[width=0.3\textwidth]{imagenes/Ecograder_Logo.png}
+\end{center}
+
 \url{https://ecograder.com/}
 
 \textbf{Ecograder} es una herramienta gratuita que analiza la sostenibilidad de sitios web desde una perspectiva técnica y ambiental. Proporciona una puntuación de 1 a 100 basada en criterios como eficiencia del frontend, peso de la página, experiencia de usuario (UX) y uso de hosting sostenible. Utiliza el script \textbf{CO2.js}\footnote{Biblioteca de código abierto que estima las emisiones de carbono de una página web basándose en cuatro áreas: dispositivo, red, servidor y hardware.} para calcular las emisiones estimadas de carbono.
@@ -869,6 +906,10 @@ de configuración ni conocimientos avanzados.
 \end{itemize}
 
 \section*{\textbf{CodeCarbon}}
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{imagenes/CodeCarbon_Logo.jpg}
+\end{center}
 
 \url{https://codecarbon.io/}
 
@@ -900,8 +941,111 @@ cualquier \textbf{pipeline}\footnote{Secuencia automatizada de procesos o
 \end{itemize}
 
 \begin{section}{\textbf{Conclusiones de la comparativa de herramientas}}
+ % Cambiar a orientación paisaje para la tabla
+ \begin{landscape}
 
-\end {section}
+   % Colores
+   \definecolor{header1}{RGB}{33, 150, 243}   % Azul
+   \definecolor{header2}{RGB}{76, 175, 80}    % Verde
+   \definecolor{header3}{RGB}{244, 67, 54}    % Rojo
+   \definecolor{rowlight}{RGB}{245,245,245}
+
+   % Iconos ✔ y ✘ dentro de círculos con TikZ (más grandes)
+   \newcommand{\yes}{\tikz\draw[fill=green!70!black,draw=none] (0,0) circle (0.2) node[white,scale=1.2]{\checkmark};}
+   \newcommand{\no}{\tikz\draw[fill=red!80!black,draw=none] (0,0) circle (0.2) node[white,scale=1.2]{\textsf{x}};}
+   \newcommand{\casi}{\tikz\draw[fill=orange!80!black,draw=none] (0,0) circle (0.2) node[white,scale=1.2]{\text{*}};}
+
+   % Filas alternas
+   \rowcolors{2}{rowlight}{white}
+
+   % Espaciado más compacto
+   \renewcommand{\arraystretch}{1.2}
+
+   % Primera tabla: Criterios 1, 2 y 3
+   \resizebox{\linewidth}{!}{%
+     \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+       % Fila adicional con nombres destacados
+                                                                      &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large AWS}}          &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large Impact}}       &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large Carbon}}       &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large Cloud}}        &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large Carbonalyser}} &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large GreenFrame}}   &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large Website}}      &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large Ecograder}}    &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large CodeCarbon}}                                                           \\
+
+       \toprule
+       \textbf{1. Precisión y Fiabilidad del Cálculo}                 & \multicolumn{9}{c|}{}                                 \\
+       \midrule
+       Adopción del estándar SCI                                      & \no                   & \yes & \no & \no & \no & \no & \no & \no & \no \\
+       Modelos de estimación documentados                             & \casi                 & \yes & \casi & \yes & \yes & \casi & \yes & \yes & \yes \\
+       Contextualización regional                                     & \yes                  & \yes & \yes & \yes & \yes & \no & \casi & \casi & \yes \\
+       Transparencia metodológica                                     & \no                  & \yes & \casi & \yes & \yes & \casi & \yes & \yes & \yes \\
+       Validación de resultados                                       & \no                  & \casi & \casi & \casi & \no & \casi & \casi & \casi & \casi \\
+       \midrule
+       \textbf{2. Cobertura y Alcance}                                & \multicolumn{9}{c|}{}                                 \\
+       \midrule
+       Entornos locales                                               & \no                   & \yes & \casi & \casi & \no & \casi & \no & \no & \yes \\
+       Entornos cloud                                                 & \casi                  & \yes & \yes & \yes& \no & \casi & \no & \no & \yes \\
+       Scope 1, 2 y 3                                                 & \casi                  & \casi & \no & \yes & \no & \no & \casi & \no & \casi \\
+       Granularidad por componente                                    & \yes                  & \yes & \no & \yes & \casi & \yes & \casi & \casi & \yes \\
+       Proyecciones futuras                                           & \yes                  & \no & \casi & \no & \no & \no & \no & \no & \no \\
+       Carbono incorporado hardware                                   & \no                  & \no & \no & \yes & \no & \no & \casi & \no & \no \\
+       \midrule
+       \textbf{3. Facilidad de Integración y Uso}                     & \multicolumn{9}{c|}{}                                 \\
+       \midrule
+       Interfaz web                                                   & \yes                  & \no & \no & \yes & \yes & \yes & \yes & \yes & \casi \\
+       Interfaz CLI                                                   & \no                   & \yes & \yes & \yes & \no & \yes & \no & \no & \yes \\
+       API REST                                                       & \casi                  & \casi & \yes & \yes & \no & \casi & \casi & \no & \no \\
+       SDK disponible                                                 & \no                   & \yes & \yes & \casi & \no & \no & \no & \no & \yes \\
+       Integración CI/CD                                              & \no                  & \yes & \yes & \casi& \no & \yes & \no & \no & \casi \\
+       Visualización interactiva                                      & \yes                  & \no & \no & \yes & \yes & \yes & \yes & \yes & \yes \\
+       \bottomrule
+     \end{tabular}
+   }%
+
+   \vspace{2cm}
+
+   % Segunda tabla: Criterios 4 y 5
+   \resizebox{\linewidth}{!}{%
+     \begin{tabular}{|l|c|c|c|c|c|c|c|c|c|}
+       % Fila adicional con nombres destacados
+                                                                      &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large AWS}}          &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large Impact}}       &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large Carbon}}       &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large Cloud}}        &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large Carbonalyser}} &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large GreenFrame}}   &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large Website}}      &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large Ecograder}}    &
+       \multicolumn{1}{c|}{\color{black}\textbf{\large CodeCarbon}}                                                           \\
+
+       \toprule
+       \textbf{4. Accesibilidad y Usabilidad}                         & \multicolumn{9}{c|}{}                                 \\
+       \midrule
+       Curva de aprendizaje baja                                      & \casi                  & \no & \casi & \casi & \yes & \yes & \yes & \yes & \yes \\ 
+       Configuración guiada                                           & \no                  & \casi & \no & \casi & \yes & \yes & \yes & \yes & \yes \\
+       Adaptación a perfiles                                          & \no                  & \no & \no & \yes & \no & \casi & \no & \no & \casi \\
+       Equivalencias comprensibles                                    & \no                   & \no & \no & \no & \yes & \no & \no & \yes & \yes \\
+       Sistema de puntuación                                          & \no                   & \yes & \no & \no & \no & \no & \yes & \yes & \no \\
+       Recomendaciones personalizadas                                 & \casi                  & \no & \casi & \no & \casi & \no & \no & \yes & \casi \\
+       \midrule
+       \textbf{5. Capacidad de Exportación y Reporte}                 & \multicolumn{9}{c|}{}                                 \\
+       \midrule
+       Exportación CSV/JSON                                           & \yes                  & \yes & \casi & \yes & \no & \no & \no & \no & \yes \\
+       Generación de informes                                         & \yes                  & \casi & \no & \casi & \no & \casi & \no & \casi & \yes \\
+       Historial y seguimiento                                        & \yes                  & \casi & \casi & \yes & \no & \yes & \no & \no & \yes \\
+       Comparativas y benchmarks                                      & \casi                  & \casi & \casi & \casi & \casi & \yes & \casi & \no & \casi \\
+       \bottomrule
+     \end{tabular}
+   }%
+
+ \end{landscape}
+
+\end{section}
 
 \chapter{Propuesta de implementación de EcoCode}
 
@@ -927,21 +1071,21 @@ cualquier \textbf{pipeline}\footnote{Secuencia automatizada de procesos o
 \begin{thebibliography}{99}
   \bibitem{ref1}\hypertarget{bib:1}{}\href{https://www.acciona.com/es/cambio-climatico}{ACCIONA - Cambio Climático.}
 
-\bibitem{ref2}\hypertarget{bib:2}{}\href{https://www.sostenibilidad.com/cambio-climatico/impactos-cambio-climatico/}{Sostenibilidad - Impactos del Cambio Climático. }
+  \bibitem{ref2}\hypertarget{bib:2}{}\href{https://www.sostenibilidad.com/cambio-climatico/impactos-cambio-climatico/}{Sostenibilidad - Impactos del Cambio Climático. }
 
-\bibitem{ref3}\hypertarget{bib:3}{}\href{https://www.who.int/es/news-room/fact-sheets/detail/climate-change-and-health}{Organización Mundial de la Salud - Cambio climático y salud. }
+  \bibitem{ref3}\hypertarget{bib:3}{}\href{https://www.who.int/es/news-room/fact-sheets/detail/climate-change-and-health}{Organización Mundial de la Salud - Cambio climático y salud. }
 
-\bibitem{ref4}\hypertarget{bib:4}{}\href{https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris}{UNFCCC - El Acuerdo de París. }
+  \bibitem{ref4}\hypertarget{bib:4}{}\href{https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris}{UNFCCC - El Acuerdo de París. }
 
-\bibitem{ref5}\hypertarget{bib:5}{}\href{https://sci.greensoftware.foundation/}{Green Software Foundation - Software Carbon Intensity (SCI) Specification}
+  \bibitem{ref5}\hypertarget{bib:5}{}\href{https://sci.greensoftware.foundation/}{Green Software Foundation - Software Carbon Intensity (SCI) Specification}
 
-\bibitem{ref6}\hypertarget{bib:6}{}\href{https://www.v2.ai/insights/how-green-is-your-software-unravelling-the-software-carbon-intensity}{Michael Zajer - How Green is your Software? Unravelling the SCI}
+  \bibitem{ref6}\hypertarget{bib:6}{}\href{https://www.v2.ai/insights/how-green-is-your-software-unravelling-the-software-carbon-intensity}{Michael Zajer - How Green is your Software? Unravelling the SCI}
 
-\bibitem{ref7}\hypertarget{bib:7}{}\href{https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf}{Pereira et al. - Energy efficiency across programming languages}
+  \bibitem{ref7}\hypertarget{bib:7}{}\href{https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf}{Pereira et al. - Energy efficiency across programming languages}
 
-\bibitem{ref8}\hypertarget{bib:8}{}\href{https://app.electricitymaps.com/map}{Electricity Maps - Live CO2 emissions of electricity consumption}
+  \bibitem{ref8}\hypertarget{bib:8}{}\href{https://app.electricitymaps.com/map}{Electricity Maps - Live CO2 emissions of electricity consumption}
 
-\bibitem{ref9}\hypertarget{bib:9}{}\href{https://www.techcarbonstandard.org/technology-categories/lifecycle/example/server}{Data Centre and Server Hardware Example Emissions}
+  \bibitem{ref9}\hypertarget{bib:9}{}\href{https://www.techcarbonstandard.org/technology-categories/lifecycle/example/server}{Data Centre and Server Hardware Example Emissions}
 \end{thebibliography}
 
 \appendix
