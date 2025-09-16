@@ -355,7 +355,7 @@ El resultado de la fórmula, \textbf{SCI}, pertenece al conjunto de los números
 Pero vamos por partes para entender qué significa cada cosa:
 
 \begin{itemize}
-  \item \textbf{E (Energy consumption – Consumo de energía)}: El consumo energético del hardware donde se ejecuta tu software, medido en kilovatios-hora (kWh)
+  \item \textbf{E (Energy consumption – Consumo de energía)}: El consumo energético del hardware donde se ejecuta tu software.
 
         Representa la energía total que necesita el software para ejecutarse.
 
@@ -365,18 +365,22 @@ Pero vamos por partes para entender qué significa cada cosa:
 
         Cuanto más eficiente sea el software (menos procesos innecesarios, mejor gestión de memoria), menor será E.
 
-  \item \textbf{I (Carbon Intensity – Intensidad de carbono)}: Cuánto CO$_2$ genera la red eléctrica de tu región por cada kWh consumido (se mide en gramos de CO$_2$ equivalente por kilovatio-hora (gCO$_2$e/kWh))
+        \textbf{Unidad}: kilovatios-hora (kWh).
+
+  \item \textbf{I (Carbon Intensity – Intensidad de carbono)}: Cuánto CO$_2$ genera la red eléctrica de tu región por cada kWh consumido.
 
         No toda la electricidad contamina por igual. El valor \textbf{I} depende del \textbf{origen de la energía} en el lugar donde se ejecuta el software.
 
         \begin{itemize}
-          \item Si se genera con carbón o gas, I es alto (más contaminante)
-          \item Si proviene de energía solar, eólica o hidroeléctrica, I es bajo
+          \item Si se genera con carbón o gas, I es alto (más contaminante).
+          \item Si proviene de energía solar, eólica o hidroeléctrica, I es bajo.
         \end{itemize}
 
         Por eso, ejecutar el mismo software en un país con energía limpia puede reducir significativamente su impacto ambiental.
 
-  \item \textbf{M (Carbono incorporado)}: Las emisiones asociadas a la fabricación y eliminación del hardware donde se ejecuta el software (servidores, ordenadores, etc.) Se expresa generalmente en kgCO$_2$e (kilogramos de CO$_2$ equivalente)
+        \textbf{Unidad}: gramos o kilogramos de CO$_2$ equivalente por kWh (g CO$_2$e/kWh o kg CO$_2$e/kWh).
+
+  \item \textbf{M (Carbono incorporado)}: Las emisiones asociadas a la fabricación y eliminación del hardware donde se ejecuta el software (servidores, ordenadores, etc.)
 
         \textbf{Ejemplo:} construir un portátil o un servidor ya emite CO$_2$ (por los materiales, el transporte, el ensamblaje...).
 
@@ -384,15 +388,28 @@ Pero vamos por partes para entender qué significa cada cosa:
 
         Aunque no utilices mucha energía al ejecutar tu software, si lo haces en dispositivos fabricados con alto coste ambiental, M puede ser significativo.
 
+        \textbf{Unidad}: gramos o kilogramos de CO$_2$ equivalente (g CO$_2$e o kg CO$_2$e) por el periodo/uso asignado al software.
+
   \item \textbf{R (Unidad funcional)}: Cómo mides el ``trabajo'' de tu aplicación. Puede ser por usuario, por petición a la API, por transacción, etc.
 
         Se utiliza para normalizar el cálculo: no importa si el software se usa una vez o mil, lo que queremos saber es cuánto contamina una sola unidad de trabajo.
 
         Así podemos comparar diferentes versiones o soluciones: ¿cuánto CO$_2$eq se emite por una operación?
+
+        \textbf{Unidad}: número de unidades funcionales (usuarios, peticiones, transacciones, etc.).
 \end{itemize}
 
-\textbf{Lo que obtienes:}
-El resultado es una estimación que te dice cuánto CO$_2$eq genera tu software por cada unidad de trabajo (por ejemplo, gramos de CO$_2$eq por usuario o por petición). Cuanto más detallados, específicos y fiables sean los datos de entrada, mas se parecerá esta estimación a la realidad. Cuanto más bajo sea el número, mejor para el medio ambiente. Aunque es imposible llegar a 0 (siempre vas a consumir algo de energía), te ayuda a comparar diferentes soluciones y ver si vas mejorando \cite{ref6}.
+\textbf{Resultado:} El numerador $(E \times I) + M$ se expresa en g~\ce{CO2e} o kg~\ce{CO2e} (emisiones totales). El denominador $R$ es la cantidad de unidades funcionales. 
+
+Por tanto, la unidad del SCI es siempre:
+
+\[
+\text{g~\ce{CO2e} / unidad funcional} 
+\quad \text{o} \quad 
+\text{kg~\ce{CO2e} / unidad funcional}
+\]
+
+según cómo se expresen las emisiones. Esto deja claro que el SCI no tiene la misma unidad que $R$, sino que representa “emisiones de \ce{CO2} equivalente por cada unidad funcional” (por ejemplo, ``12~g~\ce{CO2e} por petición API'' o ``0,5~kg~\ce{CO2e} por usuario'').
 
 \subsubsection{Justificación de la elección del estándar SCI}
 
