@@ -399,17 +399,17 @@ Pero vamos por partes para entender qué significa cada cosa:
         \textbf{Unidad}: número de unidades funcionales (usuarios, peticiones, transacciones, etc.).
 \end{itemize}
 
-\textbf{Resultado:} El numerador $(E \times I) + M$ se expresa en g~\ce{CO2e} o kg~\ce{CO2e} (emisiones totales). El denominador $R$ es la cantidad de unidades funcionales. 
+\textbf{Resultado:} El numerador $(E \times I) + M$ se expresa en g~CO$_2$e o kg~CO$_2$e (emisiones totales). El denominador $R$ es la cantidad de unidades funcionales. 
 
 Por tanto, la unidad del SCI es siempre:
 
 \[
-\text{g~\ce{CO2e} / unidad funcional} 
+\text{g~CO$_2$e / unidad funcional} 
 \quad \text{o} \quad 
-\text{kg~\ce{CO2e} / unidad funcional}
+\text{kg~CO$_2$e / unidad funcional}
 \]
 
-según cómo se expresen las emisiones. Esto deja claro que el SCI no tiene la misma unidad que $R$, sino que representa “emisiones de \ce{CO2} equivalente por cada unidad funcional” (por ejemplo, ``12~g~\ce{CO2e} por petición API'' o ``0,5~kg~\ce{CO2e} por usuario'').
+según cómo se expresen las emisiones. Por ejemplo, ``12~g~CO$_2$e por petición API'' o ``0,5~kg~CO$_2$e por usuario''.
 
 \subsubsection{Justificación de la elección del estándar SCI}
 
@@ -437,17 +437,17 @@ Por estas razones, el SCI representa el equilibrio óptimo entre precisión, fac
 
 \subsubsection{El problema de la precisión}
 
-La fórmula del Software Carbon Intensity (SCI) se ha convertido en el estándar más utilizado para medir y comparar las emisiones de carbono de nuestros productos software. Sin embargo, como venimos diciendo anteriormente, presenta una serie de necesidades que afectan la fiabilidad de los resultados obtenidos. El principal inconveniente es que esta fórmula depende en gran medida de datos reales y detallados que, en la mayoría de casos, son muy complicados de conseguir. Obtener mediciones precisas y actualizadas del consumo energético, de la infraestructura utilizada o de los factores de emisión específicos puede resultar tedioso e incluso imposible en muchos entornos de desarrollo. Esta dificultad para acceder a datos fiables obliga a los equipos a utilizar estimaciones y aproximaciones en lugar de mediciones reales, lo que inevitablemente introduce errores en los cálculos finales.
+La fórmula del \textit{Software Carbon Intensity (SCI)} se ha convertido en el estándar más utilizado para medir y comparar las emisiones de carbono de nuestros productos software. Sin embargo, como venimos diciendo anteriormente, presenta una serie de necesidades que afectan la fiabilidad de los resultados obtenidos. El principal inconveniente es que esta fórmula depende en gran medida de datos reales y detallados que, en la mayoría de casos, son muy complicados de conseguir. Obtener mediciones precisas y actualizadas del consumo energético, de la infraestructura utilizada o de los factores de emisión específicos puede resultar tedioso e incluso imposible en muchos entornos de desarrollo. Esta dificultad para acceder a datos fiables obliga a los equipos a utilizar estimaciones y aproximaciones en lugar de mediciones reales, lo que inevitablemente introduce errores en los cálculos finales.
 
 Por otro lado, es importante tener claro que el SCI únicamente calcula las emisiones directas del funcionamiento del producto software. Esto significa que quedan fuera del cálculo muchas otras fuentes de emisiones relacionadas con el desarrollo del producto, como los desplazamientos de los empleados o el consumo energético de las oficinas. Estas emisiones adicionales suelen clasificarse dentro de los diferentes scopes del GHG Protocol y pueden representar una parte significativa de la huella de carbono total del proyecto software.
 
 \section{Criterios de Evaluación}
 
-En esta sección se definen los criterios fundamentales para la evaluación de herramientas destinadas a la medición de la huella de carbono del software. Estos criterios están orientados a garantizar que la herramienta sea precisa, de fácil uso, accesible para distintos perfiles de usuario y técnicamente robusta. Todos los criterios se basan en el estándar \textbf{Software Carbon Intensity (SCI)} adoptado para este trabajo, asegurando coherencia metodológica en la evaluación.
+En esta sección se definen los criterios fundamentales para la evaluación de herramientas destinadas a la medición de la huella de carbono del software. Estos criterios están orientados a garantizar que la herramienta sea precisa, de fácil uso, accesible para distintos perfiles de usuario y técnicamente robusta. Todos los criterios se basan en el estándar \textbf{SCI} adoptado para este trabajo, asegurando coherencia metodológica en la evaluación.
 
 \subsection*{1. Precisión y Fiabilidad del Cálculo}
 \begin{itemize}
-  \item \textbf{Adopción del estándar SCI}: Utiliza el estándar \textbf{Software Carbon Intensity (SCI)} como metodología principal, implementando correctamente la fórmula $(E \times I + M)/R$.
+  \item \textbf{Adopción del estándar SCI}: Utiliza el estándar \textbf{SCI} como metodología principal, implementando correctamente la fórmula $(E \times I + M)/R$.
   \item \textbf{Modelos de estimación}: Se basa en modelos de estimación documentados y contrastados (como \textit{OneByte}, \textit{Sustainable Web Design} o modelos propios validados).
   \item \textbf{Contextualización regional}: Permite configurar la intensidad de carbono específica de la región donde se ejecuta el software (gCO$_2$e/kWh).
   \item \textbf{Transparencia metodológica}: Documenta claramente los pasos de conversión de datos a emisiones, incluyendo las limitaciones y supuestos utilizados.
@@ -456,7 +456,7 @@ En esta sección se definen los criterios fundamentales para la evaluación de h
 
 \subsection*{2. Cobertura y Alcance}
 \begin{itemize}
-  \item \textbf{Entornos de ejecución}: Soporta mediciones en entornos locales, cloud (AWS, Azure, GCP) y híbridos.
+  \item \textbf{Entornos de ejecución}: Soporta mediciones en entornos locales, \textit{cloud} (AWS, Azure, GCP) y híbridos.
   \item \textbf{Alcances de emisiones}: Incluye Scope 1 (directas), Scope 2 (energía comprada) y Scope 3 (indirectas) según el GHG Protocol.
   \item \textbf{Granularidad de análisis}: Permite desglose de emisiones por componente (CPU, memoria, red, almacenamiento), proceso, servicio o región.
   \item \textbf{Proyecciones y simulaciones}: Ofrece capacidad de proyectar emisiones futuras o simular escenarios hipotéticos de reducción.
@@ -512,7 +512,7 @@ dilucidar una propuesta propia con lo aprendido.
 
 \href{https://aws.amazon.com/es/blogs/aws/new-customer-carbon-footprint-tool/}{https://aws.amazon.com/es/blogs/aws/new-customer-carbon-footprint-tool/}
 
-AWS Customer Carbon Footprint Tool es una herramienta integrada en la consola
+\textit{AWS Customer Carbon Footprint Tool} es una herramienta integrada en la consola
 de facturación de Amazon Web Services (\textbf{AWS})\footnote{Conjunto de servicios en la nube cuya huella de carbono mide esta herramienta.} que permite a los clientes
 conocer y analizar las emisiones de carbono asociadas al uso de sus servicios
 en la nube. Ofrece una visualización clara de datos históricos desde enero de
@@ -522,7 +522,7 @@ herramienta muestra un desglose de emisiones de carbono conforme al estándar
 internacional \textbf{GHG Protocol}\footnote{Marco internacional que establece cómo medir y reportar las emisiones de gases de efecto invernadero, incluido el CO\textsubscript{2}.}, diferenciando entre emisiones directas
 (\textbf{Scope 1})\footnote{Emisiones directas de carbono que genera tu empresa u organización—por ejemplo, las fugas de refrigerantes o calderas de gas.} y aquellas derivadas del consumo de electricidad
 (\textbf{Scope 2})\footnote{Emisiones de carbono asociadas a la electricidad, calor o frío que compras: las produce otra compañía pero tú las consumes.}. También detalla las emisiones por servicio utilizado (como
-EC2, S3, Lambda, etc.) y por región geográfica de AWS. Un aspecto destacable es
+EC2, S3, Lambda, etc.)\footnote{En este contexto, servicio hace referencia a cada uno de los productos concretos de AWS consumidos (por ejemplo, EC2 para cómputo, S3 para almacenamiento o Lambda para funciones sin servidor), a los que la herramienta asigna su parte de emisiones.} y por región geográfica de AWS. Un aspecto destacable es
 su capacidad para calcular el ahorro en carbono gracias a los proyectos de
 energía renovable de AWS, comparando métodos \textit{location-based}\footnote{Cálculo de emisiones eléctricas usando la intensidad media de carbono de la red eléctrica local donde opera tu infraestructura.} y
 \textit{market-based}\footnote{Cálculo de emisiones eléctricas usando contratos o certificados de energía renovable (RECs) que has comprado.}. Su aplicación es útil para medir la huella de carbono de
@@ -533,7 +533,7 @@ priorizar mejoras, y genera datos exportables para reportes corporativos de
 sostenibilidad. Gracias a su integración con \textbf{AWS Organizations}\footnote{Servicio que agrupa varias cuentas AWS para sumar todas sus emisiones de carbono en un único informe.}, es
 posible consolidar las métricas de distintas cuentas en un solo panel. Los
 datos pueden exportarse mediante \textbf{Data Exports}\footnote{Función de AWS que envía datos de emisiones y costes a un bucket S3 para que puedas procesarlos en otras herramientas.} para ser analizados en
-herramientas como \textbf{Amazon QuickSight}\footnote{Servicio de BI en AWS que permite crear paneles y análisis visuales con los datos de emisiones exportados.} o mediante consultas SQL.
+herramientas como \textbf{Amazon QuickSight}\footnote{Servicio de Business Intelligence (BI) de Amazon que, al igual que cualquier sistema de BI, se encarga de recopilar datos, analizarlos y mostrarlos en gráficos o paneles interactivos. En este caso, permite trabajar con los datos de emisiones exportados para entender mejor su origen y evolución en el tiempo.} o mediante consultas SQL.
 \subsection*{Puntos fuertes:}
 \begin{itemize}
   \item \textbf{Cobertura histórica}: muestra datos desde enero de 2020, con hasta 36 meses de historial disponible.
@@ -567,17 +567,18 @@ herramientas como \textbf{Amazon QuickSight}\footnote{Servicio de BI en AWS que 
 Impact Framework es un conjunto de herramientas diseñado para medir las
 emisiones de carbono generadas por el uso del software. Se basa en una
 arquitectura modular, es decir, está compuesto por partes independientes
-llamadas \textbf{plugins}\footnote{es un componente de software que añade una funcionalidad específica a un programa principal. Se utiliza para extender las capacidades de una aplicación sin modificar su núcleo} que se pueden combinar según las necesidades del análisis. Su
+llamadas \textbf{plugins}\footnote{es un componente de software que añade una funcionalidad específica a un programa principal. Se utiliza para extender las capacidades de una aplicación sin modificar su núcleo.} que se pueden combinar según las necesidades del análisis. Su
 objetivo es transformar métricas observables como el uso de CPU, los
 \textbf{bytes transferidos}\footnote{Cantidad de datos enviados o recibidos;
   base para estimar la energía consumida por la red y emisiones.} o el número de
 visitas a páginas en estimaciones del impacto ambiental, es decir, cuántas
 emisiones de CO\textsubscript{2} se producen.
 
-Existen dos tipos principales de plugins:
+Existen dos tipos principales de \textit{plugins}:
 
 \begin{itemize}
-  \item \textbf{Plugins de observación}: recogen datos del sistema. Por ejemplo, el plugin \texttt{webpage-impact} mide cuántos \textbf{bytes transferidos} al cargar una página web.
+  \item \textbf{Plugins de observación}: recogen datos del sistema. Por ejemplo, el plugin webpage-impact
+  mide cuántos bytes son transferidos al cargar una página web.
   \item \textbf{Plugins de cálculo}: transforman esos datos en estimaciones de emisiones. Un ejemplo es el plugin \texttt{co2js}, que utiliza modelos como \textbf{Sustainable Web Design}\footnote{Modelo que asigna emisiones de CO\textsubscript{2} según el tamaño y transferencia de recursos de una página web.} u \textbf{OneByte}\footnote{Modelo que calcula emisiones de carbono por byte transferido, basado en estadísticas de consumo energético.} para calcular el carbono emitido a partir de los \textbf{bytes transferidos}. Estos modelos asumen valores promedio de consumo energético por cada byte enviado o recurso digital utilizado.
 \end{itemize}
 
@@ -596,7 +597,7 @@ para comprobar que nuevas versiones del software no incrementen su huella de
 carbono. Además, sirve para comparar alternativas tecnológicas desde un enfoque
 de sostenibilidad.
 
-\subsection*{Puntos fuertes:}
+ema. Por ejemplo, el plugin \texttt{webpage-impact} mide cuántos \textbf{bytes transferidos} al cargar una página web.\subsection*{Puntos fuertes:}
 
 \begin{itemize}
   \item \textbf{Arquitectura modular}: al estar basado en plugins, se puede personalizar y extender fácilmente según el software que se quiera analizar.
