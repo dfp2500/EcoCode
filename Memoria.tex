@@ -1263,19 +1263,20 @@ Inicializamos la aplicación que hemos creado con:
 \end{tcolorbox}
 
 Lo cual nos sirve el \textit{frontend} en
-\href{http://localhost:3000}{http://localhost:3000}, en nuestro caso mostrado en la figura \ref{fig:frontccf}, en el cual se nos muestra
-toda la información y podemos decidir los filtros y opciones que queramos para
-una mejor visualización:
+\href{http://localhost:3000}{http://localhost:3000}, en nuestro caso mostrado en la figura \ref{fig:frontccf}.
+En esta vista se presenta toda la información, y podemos aplicar los filtros y opciones que deseemos para una mejor visualización. Por ejemplo, es posible consultar la cantidad de emisiones de CO\textsubscript{2}e generadas en dos de nuestras cuentas de Azure, ver a qué equivale en una comparación real (como las emisiones producidas por el vuelo de un avión) e incluso analizar la intensidad de carbono según los servidores de los distintos proveedores de servicios en la nube.
+Esta última información no solo aparece reflejada en la figura \ref{fig:frontccf}, sino también en un mapa mundial donde se señalan las ubicaciones de los servidores filtrados por proveedor junto con un color correspondiente a su nivel de intensidad de carbono, como podemos observar en la figura \ref{fig:mapaccf}.
 
 \begin{center}
-  \includegraphics[width=0.8\textwidth]{imagenes/CCF_1.png}
+  \includegraphics[width=1\textwidth]{imagenes/CCF_1.png}
   \captionof{figure}{Panel principal de Cloud Carbon Footprint}
   \label{fig:frontccf}
 \end{center}
 
 \begin{center}
   \includegraphics[width=0.8\textwidth]{imagenes/CCF_2.png}
-  \captionof{figure}{Visualización de métricas en Cloud Carbon Footprint}
+  \captionof{figure}{Ubicacion de servidores de AWS coloreados según su intensidad de carbono}
+  \label{fig:mapaccf}
 \end{center}
 
 También puedes clonar el repositorio y configurar la aplicación localmente para
@@ -1289,27 +1290,34 @@ menos flexible para personalización a largo plazo.
 
 \subsection{Carbonalyser}
 Al ser una extensión del navegador, es tan fácil como obtenerla como cualquier
-otra mediante el buscador de extensiones del navegador.
+otra mediante el buscador de extensiones del navegador, como podemos ver en la figura \ref{fig:tienda}.
 
 \begin{center}
-  \includegraphics[width=0.8\textwidth]{imagenes/Carbonalyser_1.png}
-  \captionof{figure}{Instalación de Carbonalyser en Firefox}
+  \includegraphics[width=1\textwidth]{imagenes/Carbonalyser_1.png}
+  \captionof{figure}{Página de instalación de la extensión en Firefox}
+  \label{fig:tienda}
 \end{center}
 
 Una vez instalada podremos iniciar un análisis que analizará nuestra actividad
-en el navegador a partir de ese punto.
+en el navegador a partir de ese punto. La extension nos mostrara una interfaz en la que
+podremos iniciarlo pulsando \textbf{Run analysis}, tal y como vemos en la figura \ref{fig:runanalysis}. 
 
 \begin{center}
   \includegraphics[width=0.8\textwidth]{imagenes/Carbonalyser_2.png}
-  \captionof{figure}{Interfaz de monitorización de Carbonalyser}
+  \captionof{figure}{Interfaz de Carbonalyser para comenzar el analisis}
+  \label{fig:runanalysis}
 \end{center}
 
 Una vez hemos terminado, volvemos e indicamos nuestra región y con esto nos
-dirá toda la información relevante en relación al análisis.
+dirá toda la información relevante en relación al análisis, lo cual podemos observar en la figura \ref{fig:resultCarbonalyser}. Esto nos mostrara datos como
+los 5 sitios visitados en los que hemos generado mas trafico, el tiempo que hemos estado junto a los
+datos que hemos descargado en consecuencia y su equivalente en consumo electrico o en gramos de CO\textsubscript{2}e, ademas
+de mostrarnos a que equivalen esta cantiadad de emisiones en casos reales como cantidad de kilmetros en coche o cargas completas de un smartphone. 
 
 \begin{center}
   \includegraphics[width=0.8\textwidth]{imagenes/Carbonalyser_3.png}
-  \captionof{figure}{Resultados del análisis de emisiones}
+  \captionof{figure}{Resultados del análisis de emisiones para un minuto de navegación}
+  \label{fig:resultCarbonalyser}
 \end{center}
 
 \subsection{Greenframe}
