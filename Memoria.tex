@@ -1188,9 +1188,12 @@ dotnet run emissions -l eastus,uksouth -s 2022-08-23T11:15 -e 2022-08-23T11:20
 \end{lstlisting}
 \end{tcolorbox}
 
+Lo que nos deja un resumen que podemos observar en la figura \ref{fig:runemissions}, en la que vemos la intensidad de carbono de la región en cada momento que le hemos pedido, representada con el dato "rating". Cuando este valor sea más bajo, estaremos ante una región con una intensidad de carbono menor en dicho momento y, por lo tanto, estaríamos hablando de una región más limpia y eficiente energéticamente en la que ejecutar nuestro software.
+
 \begin{center}
   \includegraphics[width=0.8\textwidth]{imagenes/CASDK_1.png}
   \captionof{figure}{Salida del comando de emisiones para dos regiones.}
+  \label{fig:runemissions}
 \end{center}
 
 Y para obtener el mejor momento y la región con menos emisiones en una ventana
@@ -1238,7 +1241,7 @@ paquete ejecutando el comando del gestor de paquetes npx:
   \end{lstlisting}
 \end{tcolorbox}
 
-lo que te permite configurar rápidamente una instancia funcional de la
+Lo anterior permite configurar rápidamente una instancia funcional de la
 aplicación con mínima personalización.
 
 Terminamos de configurarlo con nuestras cuentas de los distintos servicios que
@@ -1259,14 +1262,15 @@ Inicializamos la aplicación que hemos creado con:
   \end{lstlisting}
 \end{tcolorbox}
 
-Lo cual nos sirve el frontend en
-\href{http://localhost:3000}{http://localhost:3000}, en el cual se nos muestra
+Lo cual nos sirve el \textit{frontend} en
+\href{http://localhost:3000}{http://localhost:3000}, en nuestro caso mostrado en la figura \ref{fig:frontccf}, en el cual se nos muestra
 toda la información y podemos decidir los filtros y opciones que queramos para
 una mejor visualización:
 
 \begin{center}
   \includegraphics[width=0.8\textwidth]{imagenes/CCF_1.png}
   \captionof{figure}{Panel principal de Cloud Carbon Footprint}
+  \label{fig:frontccf}
 \end{center}
 
 \begin{center}
