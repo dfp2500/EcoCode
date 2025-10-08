@@ -1322,13 +1322,16 @@ de mostrarnos a que equivalen esta cantiadad de emisiones en casos reales como c
 
 \subsection{Greenframe}
 La forma más accesible y recomendada para comenzar con \textbf{GreenFrame} es a
-través de su interfaz web.
+través de su interfaz web. Nos podremos registrar en su web y crear una cuenta gratuita como vemos en la figura \ref{fig:greenframelogin}.
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/Greenframe_1.png}
+  \captionof{figure}{Registro en GreenFrame}
+  \label{fig:greenframelogin}
 \end{center}
 
-Tras crear una cuenta gratuita (1 mes), puedes iniciar un proyecto y elegir
+Tras crear una cuenta gratuita (1 mes), puedes iniciar un proyecto directamente 
+desde la pagina de proyectos \ref{fig:greenframeprojects} y elegir
 entre dos tipos de análisis: \textbf{"Single page"} y \textbf{"Full stack"}. El
 tipo \textit{Single page} está pensado para medir el impacto ambiental de una
 visita a una página web concreta, como por ejemplo una
@@ -1342,9 +1345,11 @@ más completa de la huella digital de toda la aplicación.
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/Greenframe_2.png}
+  \captionof{figure}{Pagina de proyectos de GreenFrame}
+  \label{fig:greenframeprojects}
 \end{center}
 
-Una vez que defines el tipo de proyecto e introduces la URL a analizar,
+Una vez que defines el tipo de proyecto e introduces la URL a analizar \ref{fig:greenframeurl},
 \textbf{GreenFrame simula tres visitas reales al sitio} usando un navegador en
 la nube. Durante estas visitas registra múltiples métricas: uso de CPU, tráfico
 de red, consumo de memoria y tiempo de carga. Esto le permite calcular de forma
@@ -1357,50 +1362,56 @@ que produce la interacción simulada.
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/Greenframe_4.png}
+  \captionof{figure}{Introduccion de la URL a analizar}
+  \label{fig:greenframeurl}
 \end{center}
 
 Cuando el análisis finaliza (puede tardar unos minutos), se muestran los
 resultados en una vista gráfica e interactiva. Se incluye un resumen con la
 cantidad total de emisiones generadas y un \textbf{desglose por componentes y
-  etapas del escenario}. Puedes examinar el comportamiento temporal de cada
+  etapas del escenario} \ref{fig:greenframeresults}. Puedes examinar el comportamiento temporal de cada
 componente (por ejemplo, el navegador), accediendo a una línea de tiempo que
 detalla cómo y cuándo se generaron las emisiones durante la visita.
 
 \begin{center}
-  \includegraphics[width=0.9\textwidth]{imagenes/Greenframe_5.png}
-\end{center}
-
-\begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/Greenframe_6.png}
+  \captionof{figure}{Resumen de los resultados del análisis}
+  \label{fig:greenframeresults}
 \end{center}
 
 Además, GreenFrame permite comparar diferentes análisis realizados sobre la
-misma página o en distintas versiones del sitio. Esto es útil para evaluar si
+misma página o en distintas versiones del sitio \ref{fig:greenframecompare}. Esto es útil para evaluar si
 los cambios en el código o contenido han reducido (o aumentado) el impacto
 ambiental. El sistema te avisa si las diferencias entre análisis son mínimas y
-podrían no ser significativas.
+podrían no ser significativas mediante porcentajes de aumento o reducción como podemos observar en la figura \ref{fig:greenframedifference}.
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/Greenframe_7.png}
+  \captionof{figure}{Comparacion de diferentes analisis}
+  \label{fig:greenframecompare}
 \end{center}
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/Greenframe_8.png}
+  \captionof{figure}{Diferencias entre analisis mediante porcentajes de aumento o reducción}
+  \label{fig:greenframedifference}
 \end{center}
 
 Además, puedes usar \textbf{GreenFrame desde la terminal con su CLI}, o
 integrarlo en un \textbf{pipeline de integración continua
-  (CI}\footnote{(Continuous Integration) Técnica de desarrollo que automatiza la
+  (CI}\footnote{\textit{(Continuous Integration)} Técnica de desarrollo que automatiza la
   integración de código mediante pruebas continuas.}) para análisis
 automatizados. Estas opciones son más potentes para desarrolladores que buscan
 incorporar la sostenibilidad en sus flujos de trabajo.
 
 \subsection{Website Carbon Calculator}
 La forma más sencilla y recomendada de utilizar Website Carbon Calculator es a
-través de su interfaz web.
+través de su interfaz web, donde podemos introducir la URL del sitio web a analizar como vemos en la figura \ref{fig:wccurl}.
 
 \begin{center}
   \includegraphics[width=0.7\textwidth]{imagenes/WCC_1.png}
+  \captionof{figure}{Pagina de introduccion de la URL a analizar}
+  \label{fig:wccurl}
 \end{center}
 
 Al introducir la URL del sitio web a analizar, la herramienta realiza las
@@ -1420,33 +1431,33 @@ siguientes acciones:
         utilizando factores de conversión basados en la fuente de energía.
 \end{itemize}
 
-El resultado del análisis incluye:
+El resultado del análisis, como podemos observar en la figura \ref{fig:wccnota} incluye:
 
 \begin{itemize}
   \item \textbf{Emisiones estimadas por visita} (en gCO$_2$e).
   \item Comparación con el \textbf{promedio global} (\textasciitilde0.8
         gCO$_2$e/vista).
   \item \textbf{Porcentaje ''cleanerThan''}\footnote{Métrica que indica el porcentaje de sitios web más contaminantes que el analizado.}: indica qué proporción de sitios analizados son más contaminantes que el tuyo.
-  \item Estimación anual de emisiones basada en el número de visitas.
+  \item Estimación anual de emisiones basada en el número de visitas \ref{fig:wccanual}.
 \end{itemize}
 
 \begin{center}
   \includegraphics[width=0.7\textwidth]{imagenes/WCC_2.png}
+  \captionof{figure}{Resultado del analisis y nota energetica}
+  \label{fig:wccnota}
 \end{center}
 
 \begin{center}
   \includegraphics[width=0.7\textwidth]{imagenes/WCC_3.png}
+  \captionof{figure}{Estimacion anual de emisiones basada en el numero de visitas}
+  \label{fig:wccanual}
 \end{center}
 
 \subsection{Ecograder}
 Para usarlo solo necesitaremos entrar en su web \url{https://ecograder.com/} y
 introducir la URL de la web que queremos analizar.
 
-\begin{center}
-  \includegraphics[width=0.9\textwidth]{imagenes/Ecograder_1.png}
-\end{center}
-
-ECOGrader lanzará un análisis que combina
+ECOGrader lanzará un análisis como podemos observar en la figura \ref{fig:ecograderload} que combina
 \textbf{Lighthouse}\footnote{Herramienta automatizada de Google que audita el
   rendimiento, accesibilidad y buenas prácticas de páginas web.} y
 \textbf{CO2.js} para estimar las emisiones de CO$_2$ equivalente (gCO$_2$e).
@@ -1464,19 +1475,48 @@ parte, \textbf{Lighthouse} aporta métricas de rendimiento como "\textbf{First
 para generar recomendaciones de optimización.
 
 \begin{center}
-  \includegraphics[width=0.9\textwidth]{imagenes/Ecograder_2.png}
+  \includegraphics[width=0.9\textwidth]{imagenes/Ecograder_1.png}
+  \captionof{figure}{Pagina de carga con comentarios relevantes sobre sostenibilidad}
+  \label{fig:ecograderload}
 \end{center}
+
+Tras esto, podemos observar en la figura \ref{fig:ecograderresults} los resultados del análisis.
+Ecograder nos entregas una nota energetica en funcion del rendimiento, eficiencia y expericencia de usuario
+ademas de las estimaciones de emisiones de carbono resultantes y si dispone de hosting verde.
+La nota se calcula comparando estos datos con los de las demas webs analizadas por Ecograder.
+
+Ademas se nos muestra el peso en MB de la pagina colmparandola con el peso promedio de las demas webs analizadas,
+ las emisiones en gramos de CO$_2$e en funcion del numero de visitas las cuales podemos elegir de un desplegable el numero 
+ de visitas que queremos analizar.
+
+\begin{center}
+  \includegraphics[width=0.9\textwidth]{imagenes/Ecograder_2.png}
+  \captionof{figure}{Resultados del análisis y puntuaciones}
+  \label{fig:ecograderresults}
+\end{center}
+
+Mas adelante en la pagina podemos observar en la figura \ref{fig:estimacionassets} las estimaciones de emisiones de carbono de cada uno de los recursos de la pagina.
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/Ecograder_3.png}
+  \captionof{figure}{Estimaciones de emisiones de cada uno de los recursos de la pagina}
+  \label{fig:estimacionassets}
 \end{center}
+
+Por ultimo finaliza con una tabla de las recomendaciones de optimizacion de la pagina, como podemos observar en las figuras \ref{fig:recomendaciones} y \ref{fig:recomendaciones2}.
+En esta parte se nos muestran 3 categorias de recomendaciones segun el apartado de la pagina a evaluar: peso de la pagina, experiencia de usuario y hosting y cada una se reparte en apartados individuales con una notas de 0 a 100 y las
+recomendaciones de optimizacion posibles junto a donde se encuentran en la pagina esas posibilidades de optimizacion:
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/Ecograder_4.png}
+  \captionof{figure}{Recomendaciones de optimizacion del peso de la pagina (En detalle optimizacion de recursos multimedia)}
+  \label{fig:recomendaciones}
 \end{center}
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/Ecograder_5.png}
+  \captionof{figure}{Desglose de optimizacion para la experiencia de usuario y hosting}
+  \label{fig:recomendaciones2}
 \end{center}
 
 \subsection{CodeCarbon}
@@ -1572,9 +1612,9 @@ Y finalmente, si tu código está en una función, puedes decorarla con
   \end{lstlisting}
 \end{tcolorbox}
 
-Además, dispones de dos formas de visualizar los datos recopilados:
+Además, dispones de dos formas de visualizar los datos recopilados para nuestros proyectos \footnote{En CodeCarbon, un “proyecto” se refiere al conjunto de ejecuciones o mediciones de huella de carbono (CO$_2$e) que pertenecen a una misma tarea, experimento o aplicación que estás analizando.}:
 
-\textbf{Offline}, con la herramienta \texttt{carbonboard}:
+\textbf{\textit{Offline}}, con la herramienta \texttt{carbonboard}, como podemos observar en la figura \ref{fig:ccoffline} en la cual podemos ver tanto el consumo de energia su equivalente en carbono equivalente. Ademas tambien se nos dan equivalencias de ejemplo para comparar con acciones del dia a dia, como por ejemplo el trayecto equivalente a esas emisiones recorrido en coche (En este caso 293 millas que equivalen a 471,538 Kilometros).
 
 \begin{tcolorbox}[colback=codebackground, colframe=codeborder, boxrule=0.8pt, arc=0mm, boxsep=5pt, left=5pt, right=5pt, top=5pt, bottom=5pt]
   \begin{lstlisting}[language=bash]
@@ -1584,24 +1624,36 @@ Además, dispones de dos formas de visualizar los datos recopilados:
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/CC_1.png}
+  \captionof{figure}{Visualizacion de los datos recopilados para un proyecto usando carbonboard}
+  \label{fig:ccoffline}
 \end{center}
+
+Adicionalmente podemos ver un mapa con equivalencias de las emisiones que produciria en comparacion si la ejecucion se realizase en dsintintas regiones del planeta en funcion de su mix energetico. Esto lo observamos en la figura \ref{fig:ccmap}.
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/CC_2.png}
+  \captionof{figure}{Mapa de equivalencias de carbono del proyecto en funcion de las regiones}
+  \label{fig:ccmap}
 \end{center}
 
-\textbf{Online}, si permites subir datos a la API pública de CodeCarbon, accediendo a un dashboard web:
+\textbf{\textit{Online}}, si permites subir datos a la API pública de CodeCarbon, accediendo a un \textit{dashboard} web. De esta forma se nos muestra una interfaz mas moderna en la que tenemos la misma informacion que en la anterior pero se le añade la posibilidad de :
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/CC_3.png}
+  \captionof{figure}{}
+  \label{}
 \end{center}
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/CC_4.png}
+  \captionof{figure}{}
+  \label{}
 \end{center}
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/CC_5.png}
+  \captionof{figure}{}
+  \label{}
 \end{center}
 
 \end{document}
