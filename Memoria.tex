@@ -1628,7 +1628,9 @@ Además, dispones de dos formas de visualizar los datos recopilados para nuestro
   \label{fig:ccoffline}
 \end{center}
 
-Adicionalmente podemos ver un mapa con equivalencias de las emisiones que produciria en comparacion si la ejecucion se realizase en dsintintas regiones del planeta en funcion de su mix energetico. Esto lo observamos en la figura \ref{fig:ccmap}.
+Adicionalmente podemos ver un mapa con equivalencias de las emisiones que produciria en comparacion si 
+la ejecucion se realizase en dsintintas regiones del planeta en funcion de su mix energetico. Esto lo 
+observamos en la figura \ref{fig:ccmap}.
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/CC_2.png}
@@ -1636,24 +1638,34 @@ Adicionalmente podemos ver un mapa con equivalencias de las emisiones que produc
   \label{fig:ccmap}
 \end{center}
 
-\textbf{\textit{Online}}, si permites subir datos a la API pública de CodeCarbon, accediendo a un \textit{dashboard} web. De esta forma se nos muestra una interfaz mas moderna en la que tenemos la misma informacion que en la anterior pero se le añade la posibilidad de :
+\textbf{\textit{Online}}, si permites subir datos a la API pública de CodeCarbon, accediendo a un 
+\textit{dashboard} web. De esta forma se nos muestra una interfaz mas moderna en la que tenemos 
+la misma informacion que en la anterior solo que la información ahora proviene de la API de la herramienta. 
+Podemos verlo en las figuras \ref{fig:cconline} y \ref{fig:ccmapweb}:
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/CC_3.png}
-  \captionof{figure}{}
-  \label{}
-\end{center}
-
-\begin{center}
-  \includegraphics[width=0.9\textwidth]{imagenes/CC_4.png}
-  \captionof{figure}{}
-  \label{}
+  \captionof{figure}{\textit{dashboard} web de CodeCarbon para un proyecto.}
+  \label{fig:cconline}
 \end{center}
 
 \begin{center}
   \includegraphics[width=0.9\textwidth]{imagenes/CC_5.png}
-  \captionof{figure}{}
-  \label{}
+  \captionof{figure}{Mapa de intensidad de carbono de la interfaz web.}
+  \label{fig:ccmapweb}
+\end{center}
+
+Además, dado que cada proyecto puede dividirse en varios experimentos y, en cada experimento, pueden 
+realizarse varias ejecuciones (“runs”), como se muestra en la figura \ref{fig:ccchart}, las emisiones 
+totales de los experimentos se representan en el gráfico de barras de la parte derecha, mientras que las 
+ejecuciones aparecen en el gráfico de burbujas de la parte izquierda. Si el proyecto cuenta con varios 
+experimentos, es posible cambiar entre las ejecuciones de un experimento a otro haciendo clic en el 
+gráfico de barras.
+
+\begin{center}
+  \includegraphics[width=0.9\textwidth]{imagenes/CC_4.png}
+  \captionof{figure}{Emisiones por experimento y ejecución en CodeCarbon.}
+  \label{fig:ccchart}
 \end{center}
 
 \end{document}
