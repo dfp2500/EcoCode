@@ -73,11 +73,18 @@ la huella de carbono generada por un sistema software. Este cálculo se
 realizará mediante la medición y análisis de los distintos factores que
 influyen en el consumo energético del software.
 
-\section{Contexto}
+Por ello, es dde vital importancia conocer tanto los factores influyentes, como
+los modelos de calculo pero lo mas importante sera conocer el problema subyacente 
+que constituye el por que del trabajo.
 
-En esta sección de contexto abordaremos dos cuestiones clave. En primer lugar, en la sección 1.1.1 se expone cómo el cambio climático constituye un problema global, cuáles son sus causas y las principales consecuencias derivadas del aumento de gases de efecto invernadero. Posteriormente, en la sección 1.1.2 se analiza cómo, aunque el software sea un producto digital e intangible, su uso masivo genera un impacto ambiental significativo debido al consumo energético asociado, lo que plantea desafíos específicos a la hora de calcular su huella de carbono.
+En primer lugar, en la sección 1.1 se expone cómo el cambio climático constituye 
+un problema global, cuáles son sus causas y las principales consecuencias derivadas 
+del aumento de gases de efecto invernadero. En la sección 1.2 se analiza cómo, 
+aunque el software sea un producto digital e intangible, su uso masivo genera un 
+impacto ambiental significativo debido al consumo energético asociado, lo que 
+plantea desafíos específicos a la hora de calcular su huella de carbono.
 
-\subsection{Cambio climático y gases de efecto invernadero}
+\section{Cambio climático y gases de efecto invernadero}
 
 En la actualidad, está en boca de todos y cada día es más notable el debate
 sobre el cambio climático y la necesidad de reducir nuestra huella de carbono.
@@ -87,7 +94,7 @@ significan estos conceptos. Antes de continuar explicando su importancia, es
 necesario que conozcamos estos conceptos y su significado.
 
 El calentamiento global es el aumento de la temperatura media de la Tierra, que
-se ha incrementado en aproximadamente 1.2 grados Celsius desde finales del
+se ha incrementado en aproximadamente 1,2 grados Celsius desde finales del
 siglo XIX. Como consecuencia de este aumento, se han producido cambios en los
 patrones climáticos, lo que ha llevado a fenómenos extremos como sequías,
 inundaciones y huracanes. A esta serie de cambios que de manera natural no se
@@ -141,7 +148,7 @@ adoptado una serie de acuerdos y compromisos para reducir las emisiones de
 gases de efecto invernadero y mitigar los efectos del cambio climático. Uno de
 los más importantes es el Acuerdo de París, que establece un marco para limitar
 el aumento de la temperatura global a menos de 2 grados Celsius por encima de
-los niveles preindustriales y fomentar esfuerzos para limitar el aumento a 1.5
+los niveles preindustriales y fomentar esfuerzos para limitar el aumento a 1,5
 grados Celsius. Este acuerdo fue adoptado en 2015 por 196 países y ha sido
 ratificado por la mayoría de ellos. \textbf{El Acuerdo de París}\footnote{\href{https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris}{https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris}} establece un marco para
 que los países presenten sus \textit{Contribuciones Determinadas a Nivel Nacional} (NDC)
@@ -154,7 +161,37 @@ importante que seamos conscientes de ello y que tomemos medidas para reducir
 nuestra huella de carbono. Nuestro objetivo es asegurarnos de que por cada
 gramo de carbono que emitimos a la atmosfera obtengamos el mayor valor posible.
 
-\subsection{Desafíos específicos del cálculo de la huella de carbono del software}
+En el ámbito tecnológico, también se han propuesto iniciativas orientadas a reducir 
+el impacto ambiental derivado del uso intensivo de la computación. Una de ellas es 
+el desarrollo de algoritmos verdes, cuyo objetivo es optimizar los procesos de 
+cálculo y el consumo energético de los sistemas informáticos. Estos algoritmos 
+buscan maximizar la eficiencia de los recursos computacionales, reduciendo así las 
+emisiones de carbono asociadas al procesamiento de datos y al funcionamiento de los 
+centros de datos \cite{ref5}.
+
+\section{Factores del cálculo de la huella de carbono del software}
+
+Motivados por el propósito de la generación de software "verde", resulta fundamental 
+comprender qué factores influyen en la huella de carbono de nuestras aplicaciones. 
+Sin embargo, medir con precisión estas emisiones es una tarea que presenta numerosos 
+desafíos técnicos y metodológicos.
+
+El problema es que hay muchos factores que hacen que estos cálculos sean realmente complicados:
+
+\textbf{Los lenguajes de programación no son todos iguales:} Los estudios muestran que no todos los lenguajes consumen la misma energía. Por ejemplo, C puede usar hasta 75 veces menos energía que Python para hacer la misma tarea. Java y C\# están en un punto intermedio, consumiendo entre 2 y 3 veces más que C \cite{ref8}. Esto significa que la elección del lenguaje puede tener un impacto enorme en tu huella de carbono.
+
+\textbf{La ubicación y el momento importan muchísimo:} Aquí viene una de las partes más sorprendentes: el mismo programa puede generar 10 veces más CO$_2$ dependiendo de dónde y cuándo se ejecute \cite{ref9}. En Francia, donde usan mucha energía nuclear, la intensidad de carbono es de unos 23g CO$_2$/kWh. En Polonia, que usa mucho carbón, ronda los 503g CO$_2$/kWh. Además, durante un mismo día, estas cifras pueden variar dependiendo de las fuentes de energía que se estén usando en cada momento.
+
+\textbf{El hardware también cuenta:} No podemos olvidarnos de que fabricar los servidores también genera CO$_2$. El carbono incorporado de un servidor típico ronda el 20\% de todas las emisiones en su ciclo de vida \cite{ref10}, y tenemos que repartir esas emisiones entre todas las aplicaciones que va a ejecutar durante su vida útil.
+\textbf{HAY QUE EXTENDER ESTE PUNTO IMPORTANTE}
+
+\textbf{TABLA DE CONSUMOS}
+
+\textbf{Los sistemas se adaptan automáticamente:} Los sistemas modernos pueden aumentar o disminuir automáticamente sus recursos según la demanda. Durante los picos de uso, pueden consumir muchísimo más, así que no basta con medir una vez: necesitas entender los patrones de uso completos.
+
+\textbf{FIGURA 1,2,3,4}
+
+\section{Modelos para el calculo de la huella de carbono del software}
 
 \href{https://sci.greensoftware.foundation/}{Software Carbon Intensity (SCI) Specification}
 
@@ -164,7 +201,7 @@ gramo de carbono que emitimos a la atmosfera obtengamos el mayor valor posible.
 
 Calcular la huella de carbono del software es más complicado de lo que puede parecer inicialmente. A diferencia de otros sectores industriales donde podemos medir directamente las emisiones (como el humo de una fábrica), en el software tenemos que usar métodos indirectos para relacionar el consumo de recursos informáticos con el impacto ambiental. Esto se vuelve especialmente difícil cuando trabajamos con servicios en la nube, donde no tenemos acceso directo a los datos detallados del hardware.
 
-\subsubsection*{Modelos existentes para calcular la huella de carbono del software}
+\subsection*{Modelos existentes para calcular la huella de carbono del software}
 
 Actualmente existen diversas metodologías que buscan estandarizar la medición de emisiones asociadas al software. Aunque el modelo SCI (\textit{Software Carbon Intensity}) es uno de los más adoptados, no es el único enfoque, y cada uno tiene sus puntos fuertes y débiles.
 
@@ -251,21 +288,9 @@ Actualmente existen diversas metodologías que buscan estandarizar la medición 
 
 Cada enfoque responde a necesidades distintas. Por eso, la elección de una metodología depende tanto del tipo de software como del objetivo del análisis. Algunas metodologías priorizan la precisión, otras la rapidez o la facilidad de adopción.
 
-\subsubsection{Las variables que lo complican todo}
+\section{Desafios especificos del calculo de la huella de carbono del software}
 
-El problema es que hay muchos factores que hacen que estos cálculos sean realmente complicados:
-
-\textbf{Los lenguajes de programación no son todos iguales:} Los estudios muestran que no todos los lenguajes consumen la misma energía. Por ejemplo, C puede usar hasta 75 veces menos energía que Python para hacer la misma tarea. Java y C\# están en un punto intermedio, consumiendo entre 2 y 3 veces más que C \cite{ref7}. Esto significa que la elección del lenguaje puede tener un impacto enorme en tu huella de carbono.
-
-\textbf{La ubicación y el momento importan muchísimo:} Aquí viene una de las partes más sorprendentes: el mismo programa puede generar 10 veces más CO$_2$ dependiendo de dónde y cuándo se ejecute \cite{ref8}. En Francia, donde usan mucha energía nuclear, la intensidad de carbono es de unos 23g CO$_2$/kWh. En Polonia, que usa mucho carbón, ronda los 503g CO$_2$/kWh. Además, durante un mismo día, estas cifras pueden variar dependiendo de las fuentes de energía que se estén usando en cada momento.
-
-\textbf{El hardware también cuenta:} No podemos olvidarnos de que fabricar los servidores también genera CO$_2$. El carbono incorporado de un servidor típico ronda el 20\% de todas las emisiones en su ciclo de vida \cite{ref9}, y tenemos que repartir esas emisiones entre todas las aplicaciones que va a ejecutar durante su vida útil.
-
-\textbf{Los sistemas se adaptan automáticamente:} Los sistemas modernos pueden aumentar o disminuir automáticamente sus recursos según la demanda. Durante los picos de uso, pueden consumir muchísimo más, así que no basta con medir una vez: necesitas entender los patrones de uso completos.
-
-\subsubsection{Por qué necesitamos herramientas especializadas}
-
-Después de revisar todos estos desafíos, queda claro que medir la huella de carbono del software no es nada sencillo. El problema principal es que, en la práctica, hacer estos cálculos manualmente es muy complicado. Tienes que recopilar información del código, del hardware donde se ejecuta, de la red eléctrica de la región, de cómo usan la aplicación los usuarios... y luego intentar combinar todo eso de manera que tenga sentido.
+Medir la huella de carbono del software no es nada sencillo. El problema principal es que, en la práctica, hacer estos cálculos manualmente es muy complicado. Tienes que recopilar información del código, del hardware donde se ejecuta, de la red eléctrica de la región, de cómo usan la aplicación los usuarios... y luego intentar combinar todo eso de manera que tenga sentido.
 
 Esto no solo lleva mucho tiempo, sino que es muy fácil cometer errores o pasar algo por alto. Además, muchos proveedores de servicios en la nube no ofrecen datos detallados sobre el consumo energético o las emisiones de carbono de sus infraestructuras, lo que hace que tengamos que trabajar con estimaciones y aproximaciones que pueden no reflejar la realidad completamente.
 
@@ -273,7 +298,7 @@ Por todo esto, creemos que hace falta desarrollar herramientas especializadas qu
 
 Esta necesidad es lo que justifica nuestro trabajo: queremos crear una solución que aborde estos problemas y haga que medir la sostenibilidad del software sea algo práctico y factible para cualquier equipo de desarrollo.
 
-\section{Objetivo General}
+\section{Objetivo General del TFG}
 
 La principal motivación que ha impulsado este proyecto es la urgencia de
 reducir el impacto ambiental derivado del creciente consumo energético en el
@@ -297,21 +322,21 @@ Para alcanzar el objetivo general se han definido los siguientes objetivos
 específicos:
 
 \begin{itemize}
-  \item Investigarlos principales factores que influyen en el consumo
+  \item \textbf{OE1}: Investigarlos principales factores que influyen en el consumo
         energético de los sistemas software, incluyendo el uso de CPU, memoria,
         almacenamiento y red.
-  \item Diseñar un modelo de cálculo de la huella de carbono basado en el consumo
+  \item \textbf{OE2}: Diseñar un modelo de cálculo de la huella de carbono basado en el consumo
         energético y en las fuentes de energía utilizadas por el sistema.
-  \item Desarrollar una herramienta capaz de monitorizar la actividad de un software
+  \item \textbf{OE3}: Desarrollar una herramienta capaz de monitorizar la actividad de un software
         durante su ejecución y recoger datos relevantes para el cálculo energético.
-  \item Implementar la conversión del consumo energético en emisiones de
+  \item \textbf{OE4}: Implementar la conversión del consumo energético en emisiones de
         CO\textsubscript{2} equivalente, considerando el mix energético del entorno
         donde se ejecuta el software.
-  \item Validar la herramienta mediante pruebas con diferentes tipos de aplicaciones
+  \item \textbf{OE5}: Validar la herramienta mediante pruebas con diferentes tipos de aplicaciones
         software y entornos de ejecución.
-  \item Proporcionar un informe detallado con los resultados del análisis y
+  \item \textbf{OE6}: Proporcionar un informe detallado con los resultados del análisis y
         recomendaciones para reducir la huella de carbono del software evaluado.
-  \item Fomentar la concienciación sobre el impacto ambiental del desarrollo software y
+  \item \textbf{OE7}: Fomentar la concienciación sobre el impacto ambiental del desarrollo software y
         promover prácticas sostenibles en la industria tecnológica.
 \end{itemize}
 
@@ -321,8 +346,8 @@ Para facilitar la comprensión del proceso seguido y la coherencia en la
 exposición de los temas, la memoria se estructura de la siguiente manera:
 
 \begin{itemize}
-  \item \textbf{Capítulo 1: Introducción.} Se ha explicado brevemente la motivacion a la hora de la realizción de este proyecto ademas de poner informar al lector sobre el contexto y la importancia de la huella
-        de carbono en el software.
+  \item \textbf{Presente capitulo de itroducción.} Explica brevemente la motivacion intrinseca a la hora de la realizción de este proyecto ademas de poner informar al lector sobre el contexto y la importancia de la huella
+        de carbono en el software y los modelos y factores existentes en el calculo.
   \item \textbf{Capítulo 2: Estado del arte.} Se recopilan las herramientas y métodos existentes para la medición de la huella de carbono en software. Se detectan los puntos fuertes y débiles de estas herramientas, y se incluye una tabla resumen de las mismas. Este capítulo también identifica oportunidades para implementar una herramienta de evaluación más realista y coherente con los sistemas software actuales.
   \item \textbf{Capítulo 3: Propuesta de implementación de EcoCode.} En este capítulo se presenta \textbf{EcoCode}, la herramienta propuesta en este trabajo, detallando su propuesta de valor frente a otras herramientas existentes. Se especifican los requisitos funcionales y no funcionales, así como el diseño de la interfaz, incluyendo el sitemap, el labeling, el moodboard y los wireframes.
   \item \textbf{Capítulo 4: Diseño técnico.} Se explica el diseño técnico de EcoCode, incluyendo la selección de librerías, el diseño de la base de datos, y la metodología de desarrollo utilizada. Además, se describen las etapas de implementación y se presentan los puntos críticos de la implementación, con comentarios y pseudocódigo explicativo.
@@ -342,7 +367,7 @@ herramienta más realista y adaptada a los sistemas software actuales.
 
 \subsubsection{Metodologías emergentes: Software Carbon Intensity (SCI)}
 
-Para intentar estandarizar estas mediciones, la Green Software Foundation ha desarrollado la especificación Software Carbon Intensity (SCI), que nos permite calcular cuánto CO$_2$ genera un sistema de software \cite{ref5}. Esta metodología se ha convertido en el estándar de referencia para la medición de la huella de carbono del software y será la base tanto para evaluar las herramientas existentes como para desarrollar nuestra propia solución.
+Para intentar estandarizar estas mediciones, la Green Software Foundation ha desarrollado la especificación Software Carbon Intensity (SCI), que nos permite calcular cuánto CO$_2$ genera un sistema de software \cite{ref6}. Esta metodología se ha convertido en el estándar de referencia para la medición de la huella de carbono del software y será la base tanto para evaluar las herramientas existentes como para desarrollar nuestra propia solución.
 
 La fórmula del SCI es bastante directa:
 
@@ -1085,15 +1110,17 @@ cualquier \textbf{pipeline}\footnote{Secuencia automatizada de procesos o
 
   \bibitem{ref4}\hypertarget{bib:4}{}\href{https://unfccc.int/es/acerca-de-las-ndc/el-acuerdo-de-paris}{UNFCCC - El Acuerdo de París. }
 
-  \bibitem{ref5}\hypertarget{bib:5}{}\href{https://sci.greensoftware.foundation/}{Green Software Foundation - Software Carbon Intensity (SCI) Specification}
+  \bibitem{ref5}\hypertarget{bib:5}{}\href{https://arxiv.org/abs/2312.09610}{A Synthesis of Green Architectural Tactics for ML-Enabled Systems}
 
-  \bibitem{ref6}\hypertarget{bib:6}{}\href{https://www.v2.ai/insights/how-green-is-your-software-unravelling-the-software-carbon-intensity}{Michael Zajer - How Green is your Software? Unravelling the SCI}
+  \bibitem{ref6}\hypertarget{bib:6}{}\href{https://sci.greensoftware.foundation/}{Green Software Foundation - Software Carbon Intensity (SCI) Specification}
 
-  \bibitem{ref7}\hypertarget{bib:7}{}\href{https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf}{Pereira et al. - Energy efficiency across programming languages}
+  \bibitem{ref7}\hypertarget{bib:7}{}\href{https://www.v2.ai/insights/how-green-is-your-software-unravelling-the-software-carbon-intensity}{Michael Zajer - How Green is your Software? Unravelling the SCI}
 
-  \bibitem{ref8}\hypertarget{bib:8}{}\href{https://app.electricitymaps.com/map}{Electricity Maps - Live CO2 emissions of electricity consumption}
+  \bibitem{ref8}\hypertarget{bib:8}{}\href{https://greenlab.di.uminho.pt/wp-content/uploads/2017/10/sleFinal.pdf}{Pereira et al. - Energy efficiency across programming languages}
 
-  \bibitem{ref9}\hypertarget{bib:9}{}\href{https://www.techcarbonstandard.org/technology-categories/lifecycle/example/server}{Data Centre and Server Hardware Example Emissions}
+  \bibitem{ref9}\hypertarget{bib:9}{}\href{https://app.electricitymaps.com/map}{Electricity Maps - Live CO2 emissions of electricity consumption}
+
+  \bibitem{ref10}\hypertarget{bib:10}{}\href{https://www.techcarbonstandard.org/technology-categories/lifecycle/example/server}{Data Centre and Server Hardware Example Emissions}
 \end{thebibliography}
 
 \appendix
