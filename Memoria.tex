@@ -380,11 +380,11 @@ El resultado de la fórmula, \textbf{SCI}, pertenece al conjunto de los números
 Pero vamos por partes para entender qué significa cada cosa:
 
 \begin{itemize}
-  \item \textbf{E (Energy consumption – Consumo de energía)}: El consumo energético del hardware donde se ejecuta tu software.
+  \item \textbf{E (Energy consumption – Consumo de energía)}: el consumo energético del hardware donde se ejecuta tu software.
 
         Representa la energía total que necesita el software para ejecutarse.
 
-        \textbf{Por ejemplo:} si un software realiza muchas operaciones, utiliza más CPU y RAM, lo que se traduce en mayor consumo energético.
+        \textbf{Por ejemplo:} si un software realiza muchas oeraciones, utiliza más CPU y RAM, lo que se traduce en mayor consumo energético.
 
         Esta energía puede medirse directamente si se tiene acceso al hardware, o estimarse utilizando métricas proporcionadas por los proveedores de nube o fabricantes.
 
@@ -392,7 +392,7 @@ Pero vamos por partes para entender qué significa cada cosa:
 
         \textbf{Unidad}: kilovatios-hora (kWh).
 
-  \item \textbf{I (Carbon Intensity – Intensidad de carbono)}: Cuánto CO$_2$ genera la red eléctrica de tu región por cada kWh consumido.
+  \item \textbf{I (Carbon Intensity – Intensidad de carbono)}: cuánto CO$_2$ genera la red eléctrica de tu región por cada kWh consumido.
 
         No toda la electricidad contamina por igual. El valor \textbf{I} depende del \textbf{origen de la energía} en el lugar donde se ejecuta el software.
 
@@ -405,7 +405,7 @@ Pero vamos por partes para entender qué significa cada cosa:
 
         \textbf{Unidad}: gramos o kilogramos de CO$_2$ equivalente por kWh (g CO$_2$e/kWh o kg CO$_2$e/kWh).
 
-  \item \textbf{M (Carbono incorporado)}: Las emisiones asociadas a la fabricación y eliminación del hardware donde se ejecuta el software (servidores, ordenadores, etc.)
+  \item \textbf{M (Carbono incorporado)}: las emisiones asociadas a la fabricación y eliminación del hardware donde se ejecuta el software (servidores, ordenadores, etc.)
 
         \textbf{Ejemplo:} construir un portátil o un servidor ya emite CO$_2$ (por los materiales, el transporte, el ensamblaje...).
 
@@ -415,16 +415,16 @@ Pero vamos por partes para entender qué significa cada cosa:
 
         \textbf{Unidad}: gramos o kilogramos de CO$_2$ equivalente (g CO$_2$e o kg CO$_2$e) por el periodo/uso asignado al software.
 
-  \item \textbf{R (Unidad funcional)}: Cómo mides el ``trabajo'' de tu aplicación. Puede ser por usuario, por petición a la API, por transacción, etc.
+  \item \textbf{R (Unidad funcional)}: cómo mides el ``trabajo'' de tu aplicación. Puede ser por usuario, por petición a la API, por transacción, etc.
 
         Se utiliza para normalizar el cálculo: no importa si el software se usa una vez o mil, lo que queremos saber es cuánto contamina una sola unidad de trabajo.
 
-        Así podemos comparar diferentes versiones o soluciones: ¿cuánto CO$_2$eq se emite por una operación?
+        Así podemos comparar diferentes versiones o soluciones: ¿cuánto CO$_2$e se emite por una operación?
 
         \textbf{Unidad}: número de unidades funcionales (usuarios, peticiones, transacciones, etc.).
 \end{itemize}
 
-\textbf{Resultado:} El numerador $(E \times I) + M$ se expresa en g~CO$_2$e o kg~CO$_2$e (emisiones totales). El denominador $R$ es la cantidad de unidades funcionales. 
+\textbf{Resultado:} el numerador $(E \times I) + M$ se expresa en g~CO$_2$e o kg~CO$_2$e (emisiones totales). El denominador $R$ es la cantidad de unidades funcionales. 
 
 Por tanto, la unidad del SCI es siempre:
 
@@ -441,17 +441,17 @@ según cómo se expresen las emisiones. Por ejemplo, ``12~g~CO$_2$e por petició
 Tras analizar las diferentes metodologías disponibles para el cálculo de la huella de carbono del software, se ha decidido adoptar el estándar \textbf{Software Carbon Intensity (SCI)} como base para nuestro trabajo. Esta decisión se fundamenta en los siguientes criterios:
 
 \begin{itemize}
-  \item \textbf{Reconocimiento internacional}: El SCI es desarrollado y mantenido por la Green Software Foundation, una organización reconocida en el ámbito de la sostenibilidad del software, lo que le confiere credibilidad y aceptación en la comunidad técnica.
+  \item \textbf{Reconocimiento internacional}: el SCI es desarrollado y mantenido por la Green Software Foundation, una organización reconocida en el ámbito de la sostenibilidad del software, lo que le confiere credibilidad y aceptación en la comunidad técnica.
 
-  \item \textbf{Enfoque integral}: A diferencia de otras metodologías que se centran únicamente en aspectos específicos (como el consumo energético o las emisiones directas), el SCI considera tanto el consumo energético (E), la intensidad de carbono regional (I), el carbono incorporado del hardware (M) y la normalización por unidad funcional (R).
+  \item \textbf{Enfoque integral}: a diferencia de otras metodologías que se centran únicamente en aspectos específicos (como el consumo energético o las emisiones directas), el SCI considera tanto el consumo energético (E), la intensidad de carbono regional (I), el carbono incorporado del hardware (M) y la normalización por unidad funcional (R).
 
-  \item \textbf{Comparabilidad}: La normalización por unidad funcional permite comparar diferentes versiones de software, diferentes tecnologías y diferentes implementaciones de manera objetiva, facilitando la toma de decisiones informadas.
+  \item \textbf{Comparabilidad}: aa normalización por unidad funcional permite comparar diferentes versiones de software, diferentes tecnologías y diferentes implementaciones de manera objetiva, facilitando la toma de decisiones informadas.
 
-  \item \textbf{Adaptabilidad}: El modelo se puede adaptar a diferentes tipos de software, desde aplicaciones web hasta sistemas embebidos, y a diferentes entornos de ejecución, incluyendo infraestructura local y servicios en la nube.
+  \item \textbf{Adaptabilidad}: el modelo se puede adaptar a diferentes tipos de software, desde aplicaciones web hasta sistemas embebidos, y a diferentes entornos de ejecución, incluyendo infraestructura local y servicios en la nube.
 
-  \item \textbf{Transparencia metodológica}: La fórmula es clara, documentada y reproducible, lo que facilita la verificación de resultados y la adopción por parte de la comunidad.
+  \item \textbf{Transparencia metodológica}: la fórmula es clara, documentada y reproducible, lo que facilita la verificación de resultados y la adopción por parte de la comunidad.
 
-  \item \textbf{Integración con estándares existentes}: El SCI se alinea con otros estándares de sostenibilidad como el GHG Protocol, facilitando la integración en reportes corporativos de sostenibilidad.
+  \item \textbf{Integración con estándares existentes}: el SCI se alinea con otros estándares de sostenibilidad como el GHG Protocol, facilitando la integración en reportes corporativos de sostenibilidad.
 \end{itemize}
 
 Aunque otras metodologías como el \textbf{Life Cycle Assessment (LCA)} ofrecen una visión más exhaustiva del ciclo de vida completo del software, su complejidad operativa y coste los hacen poco viables para proyectos ágiles o con recursos limitados. Por otro lado, herramientas basadas únicamente en estimaciones de energía como \textbf{PowerAPI} carecen de la visión integral que proporciona el SCI.
@@ -472,48 +472,48 @@ En esta sección se definen los criterios fundamentales para la evaluación de h
 
 \subsection*{1. Precisión y Fiabilidad del Cálculo}
 \begin{itemize}
-  \item \textbf{Adopción del estándar SCI}: Utiliza el estándar \textbf{SCI} como metodología principal, implementando correctamente la fórmula $(E \times I + M)/R$.
-  \item \textbf{Modelos de estimación}: Se basa en modelos de estimación documentados y contrastados (como \textit{OneByte}, \textit{Sustainable Web Design} o modelos propios validados).
-  \item \textbf{Contextualización regional}: Permite configurar la intensidad de carbono específica de la región donde se ejecuta el software (gCO$_2$e/kWh).
-  \item \textbf{Transparencia metodológica}: Documenta claramente los pasos de conversión de datos a emisiones, incluyendo las limitaciones y supuestos utilizados.
-  \item \textbf{Validación de resultados}: Proporciona mecanismos para verificar la precisión de los cálculos mediante comparaciones con datos reales o benchmarks establecidos.
+  \item \textbf{Adopción del estándar SCI}: utiliza el estándar \textbf{SCI} como metodología principal, implementando correctamente la fórmula $(E \times I + M)/R$. Sin embargo, la mayoría de las herramientas que se analizarán en base a estos criterios no implementan aún este estándar, ya que, a pesar de su utilidad y de ser un modelo unificador en la medición del impacto ambiental del software, el \textbf{SCI} es relativamente reciente. Por este motivo, todavía no existen muchas soluciones que lo integren, más allá de las desarrolladas o promovidas por la propia \textit{Green Software Foundation}. Las herramientas previas a la aparición de este modelo suelen emplear sus propias metodologias para estimar el impacto energético o de carbono.
+  \item \textbf{Modelos de estimación}: se basa en modelos de estimación documentados y contrastados (como \textit{OneByte}, \textit{Sustainable Web Design} o modelos propios validados).
+  \item \textbf{Contextualización regional}: permite configurar la intensidad de carbono específica de la región donde se ejecuta el software (gCO$_2$e/kWh).
+  \item \textbf{Transparencia metodológica}: documenta claramente los pasos de conversión de datos a emisiones, incluyendo las limitaciones y supuestos utilizados.
+  \item \textbf{Validación de resultados}: proporciona mecanismos para verificar la precisión de los cálculos mediante comparaciones con datos reales o benchmarks establecidos.
 \end{itemize}
 
 \subsection*{2. Cobertura y Alcance}
 \begin{itemize}
-  \item \textbf{Entornos de ejecución}: Soporta mediciones en entornos locales, \textit{cloud} (AWS, Azure, GCP) y híbridos.
-  \item \textbf{Alcances de emisiones}: Incluye Scope 1 (directas), Scope 2 (energía comprada) y Scope 3 (indirectas) según el GHG Protocol.
-  \item \textbf{Granularidad de análisis}: Permite desglose de emisiones por componente (CPU, memoria, red, almacenamiento), proceso, servicio o región.
-  \item \textbf{Proyecciones y simulaciones}: Ofrece capacidad de proyectar emisiones futuras o simular escenarios hipotéticos de reducción.
-  \item \textbf{Integración de carbono incorporado}: Considera las emisiones asociadas a la fabricación y eliminación del hardware utilizado.
+  \item \textbf{Entornos de ejecución}: soporta mediciones en entornos locales, \textit{cloud} (AWS, Azure, GCP) y híbridos.
+  \item \textbf{Alcances de emisiones}: incluye Scope 1 (directas), Scope 2 (energía comprada) y Scope 3 (indirectas) según el GHG Protocol.
+  \item \textbf{Granularidad de análisis}: permite desglose de emisiones por componente (CPU, memoria, red, almacenamiento), proceso, servicio o región.
+  \item \textbf{Proyecciones y simulaciones}: ofrece capacidad de proyectar emisiones futuras o simular escenarios hipotéticos de reducción.
+  \item \textbf{Integración de carbono incorporado}: considera las emisiones asociadas a la fabricación y eliminación del hardware utilizado.
 \end{itemize}
 
 \subsection*{3. Facilidad de Integración y Uso}
 \begin{itemize}
-  \item \textbf{Interfaces disponibles}: Ofrece múltiples interfaces (web, CLI, API REST, SDK) para diferentes casos de uso.
-  \item \textbf{Flexibilidad de instalación}: Se puede ejecutar localmente, en contenedores, o como servicio en la nube.
-  \item \textbf{Integración con CI/CD}\footnote{CI (Integración Continua): automatizar pruebas y comprobaciones cada vez que alguien sube cambios al repositorio, para detectar errores pronto. CD (Entrega/Despliegue Continuo): automatizar la preparación y, en su caso, el despliegue de nuevas versiones para que lleguen a los usuarios con seguridad y rapidez.}: Permite automatizar la medición en \textbf{pipelines}\footnote{Cadena de pasos automáticos (por ejemplo: probar, analizar, construir y desplegar) que se ejecutan cada vez que hay cambios.} de desarrollo continuo dentro de entornos DevOps.
-  \item \textbf{Visualización de resultados}: Proporciona paneles interactivos, gráficos y tablas comprensibles.
-  \item \textbf{Interfaz intuitiva}: Diseño de usuario que facilita la introducción de datos y configuración sin conocimientos técnicos avanzados.
-  \item \textbf{Independencia de proveedores}: Minimiza dependencias de terceros sin alternativas de respaldo.
+  \item \textbf{Interfaces disponibles}: ofrece múltiples interfaces (web, CLI, API REST, SDK) para diferentes casos de uso.
+  \item \textbf{Flexibilidad de instalación}: se puede ejecutar localmente, en contenedores, o como servicio en la nube.
+  \item \textbf{Integración con CI/CD}\footnote{CI (Integración Continua): automatizar pruebas y comprobaciones cada vez que alguien sube cambios al repositorio, para detectar errores pronto. CD (Entrega/Despliegue Continuo): automatizar la preparación y, en su caso, el despliegue de nuevas versiones para que lleguen a los usuarios con seguridad y rapidez.}: permite automatizar la medición en \textbf{pipelines}\footnote{Cadena de pasos automáticos (por ejemplo: probar, analizar, construir y desplegar) que se ejecutan cada vez que hay cambios.} de desarrollo continuo dentro de entornos DevOps.
+  \item \textbf{Visualización de resultados}: proporciona paneles interactivos, gráficos y tablas comprensibles.
+  \item \textbf{Interfaz intuitiva}: diseño de usuario que facilita la introducción de datos y configuración sin conocimientos técnicos avanzados.
+  \item \textbf{Independencia de proveedores}: minimiza dependencias de terceros sin alternativas de respaldo.
 \end{itemize}
 
 \subsection*{4. Accesibilidad y Usabilidad}
 \begin{itemize}
-  \item \textbf{Curva de aprendizaje}: Requiere mínimos conocimientos técnicos para uso básico, con opciones avanzadas para expertos.
-  \item \textbf{Configuración guiada}: Incluye asistentes o procedimientos paso a paso para la configuración inicial.
-  \item \textbf{Adaptación a perfiles}: Resultados y recomendaciones adaptados a diferentes perfiles (desarrolladores, responsables de sostenibilidad, usuarios no técnicos).
-  \item \textbf{Equivalencias contextualizadas}: Expresa resultados en términos comprensibles (km en coche, horas de TV, árboles plantados).
-  \item \textbf{Sistema de puntuación}: Proporciona métricas claras (escalas, rankings, categorías) para evaluar el rendimiento ambiental.
-  \item \textbf{Recomendaciones personalizadas}: Ofrece consejos prácticos y específicos para mejorar la huella de carbono del software analizado.
+  \item \textbf{Curva de aprendizaje}: requiere mínimos conocimientos técnicos para uso básico, con opciones avanzadas para expertos.
+  \item \textbf{Configuración guiada}: incluye asistentes o procedimientos paso a paso para la configuración inicial.
+  \item \textbf{Adaptación a perfiles}: resultados y recomendaciones adaptados a diferentes perfiles (desarrolladores, responsables de sostenibilidad, usuarios no técnicos).
+  \item \textbf{Equivalencias contextualizadas}: expresa resultados en términos comprensibles (km en coche, horas de TV, árboles plantados).
+  \item \textbf{Sistema de puntuación}: proporciona métricas claras (escalas, rankings, categorías) para evaluar el rendimiento ambiental.
+  \item \textbf{Recomendaciones personalizadas}: ofrece consejos prácticos y específicos para mejorar la huella de carbono del software analizado.
 \end{itemize}
 
 \subsection*{5. Capacidad de Exportación y Reporte}
 \begin{itemize}
-  \item \textbf{Formatos de exportación}: Permite exportar datos en formatos estándar (CSV, JSON, Excel) y APIs para integración.
-  \item \textbf{Generación de informes}: Crea informes personalizables para auditorías, presentaciones corporativas o cumplimiento normativo.
-  \item \textbf{Historial y seguimiento}: Mantiene un registro histórico de mediciones para análisis de tendencias y evolución temporal.
-  \item \textbf{Comparativas y benchmarks}: Permite comparar resultados con estándares de la industria o versiones anteriores.
+  \item \textbf{Formatos de exportación}: permite exportar datos en formatos estándar (CSV, JSON, Excel) y APIs para integración.
+  \item \textbf{Generación de informes}: crea informes personalizables para auditorías, presentaciones corporativas o cumplimiento normativo.
+  \item \textbf{Historial y seguimiento}: mantiene un registro histórico de mediciones para análisis de tendencias y evolución temporal.
+  \item \textbf{Comparativas y benchmarks}: permite comparar resultados con estándares de la industria o versiones anteriores.
 \end{itemize}
 
 \section{Análisis de herramientas existentes}
@@ -631,7 +631,7 @@ de sostenibilidad.
 \subsection*{Puntos débiles:}
 
 \begin{itemize}
-  \item \textbf{Precisión limitada}: como se basa en estimaciones, los resultados dependen de suposiciones generales que no siempre se ajustan a cada caso concreto. \href{https://www.npmjs.com/package/@tgwf/co2}{https://www.npmjs.com/package/@tgwf/co2}
+  \item \textbf{Precisión limitada}: como se basa en estimaciones, los resultados dependen de suposiciones generales que no siempre se ajustan a cada caso concreto \cite{ref10}.
   \item \textbf{Curva de aprendizaje}: es necesario tener conocimientos técnicos para configurarlo correctamente, especialmente el archivo \textbf{IMP}\footnote{Archivo de configuración de Impact Framework con extensión .imp. Define qué plugins se utilizan y cómo se combinan para recoger datos (por ejemplo, uso de CPU o bytes transferidos) y transformarlos en estimaciones de emisiones.} y la selección de plugins.
   \item \textbf{Cobertura parcial}: es una herramienta relativamente nueva y todavía tiene pocos plugins disponibles, lo que limita su alcance actual.
 \end{itemize}
